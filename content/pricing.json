@@ -1,0 +1,55 @@
+{
+  "_note": "Biz in a Box service kits — rendered by components/PricingKits.tsx on the homepage and in the shared page tail. Copy replicated 1:1 from the live site's pricing widget.",
+  "heading": "brandbizkit services",
+  "subheading": "Everything you need to launch your brand with confidence.",
+  "kits": [
+    {
+      "name": "Starter Kit",
+      "pricePhp": "₱11,800",
+      "priceUsd": "$199",
+      "cadence": "one-time",
+      "popular": false,
+      "features": [
+        "Brand & Client Audit (report + guided workbook)",
+        "Ecosystem Map (editable Canva template)",
+        "Community Persona Builder (4 persona boards)",
+        "Brand Voice & Culture Board (editable Canva board)",
+        "Landing Page Funnel Wireframe + Copy Formula",
+        "Starter Social Kit Framework",
+        "CTA Funnel Recap (1-page roadmap)"
+      ],
+      "outcome": "A plug-and-play starter toolkit. You do the implementation using your own products, services, and tools."
+    },
+    {
+      "name": "Launch Kit",
+      "pricePhp": "₱21,500",
+      "priceUsd": "$359",
+      "cadence": "one-time",
+      "popular": true,
+      "features": [
+        "1 hour consulting on brand visuals, messaging, and voice.",
+        "1-3 Page Professional Website",
+        "CRM",
+        "Inquiry & Booking Forms",
+        "Mobile-Ready & SEO-Friendly",
+        "Social Media & Map Integration"
+      ],
+      "outcome": "A ready-to-launch brand system — designed, built, and delivered. Just plug in your products/services and go live."
+    },
+    {
+      "name": "Social Media Management",
+      "pricePhp": "₱50,000+",
+      "priceUsd": "$850+",
+      "cadence": "monthly",
+      "popular": false,
+      "features": [
+        "1 hour consulting on brand visuals, messaging, and voice.",
+        "12–16 fully branded posts per month (static + reels)",
+        "Content calendar + scheduling",
+        "Engagement management (comments + DMs)",
+        "Monthly analytics report"
+      ],
+      "outcome": "Don't have time to grow your social media presence? We do it for you: consistent, on-brand visibility that turns followers into customers."
+    }
+  ]
+}

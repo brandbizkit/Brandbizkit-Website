@@ -1,0 +1,33 @@
+{
+ "slug": "ai-school",
+ "title": "brandbizkit AI School | BrandBizkit",
+ "description": "Join AI School where we demystify AI by providing you with real tools, real workflows, and real results. We believe in hands-on learning with real-world use cases. Relevant for startup founders, professionals, or businesses ready to integrate AI into their operations.",
+ "h1": "Sign up for AI School",
+ "image": "/assets/brandbizkit-hero-background3-YbNJRPaDG0hqKple.png",
+ "blocks": [
+  {
+   "tag": "h1",
+   "text": "Sign up for AI School",
+   "href": null
+  },
+  {
+   "tag": "p",
+   "text": "We create customized 1-on-1 classes and online group sessions for companies and individuals that want to learn more about AI and how to implement AI in their daily workflows.",
+   "href": null
+  },
+  {
+   "tag": "p",
+   "text": "Launch your brand with free AI tools today.",
+   "href": null
+  }
+ ],
+ "images": [
+  {
+   "src": "/assets/unsplash-photo-1522202176988-66273c2fd55f.jpg",
+   "alt": "three people sitting in front of table laughing together"
+  }
+ ],
+ "videos": [],
+ "iframes": [],
+ "hasForm": true
+}

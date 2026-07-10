@@ -1,0 +1,38 @@
+{
+ "slug": "newsletter",
+ "title": "Newsletter | BrandBizkit",
+ "description": "",
+ "h1": "Newsletter",
+ "image": "/assets/brandbizkit-logo-icon_newsletter-YyvDX60nPpc78a83.png",
+ "blocks": [
+  {
+   "tag": "h3",
+   "text": "Thank you for your interest in receiving future updates and announcements from brandbizkit",
+   "href": null
+  },
+  {
+   "tag": "p",
+   "text": "Karla K.",
+   "href": null
+  },
+  {
+   "tag": "h3",
+   "text": "Wanna learn how to use AI for your business?",
+   "href": null
+  },
+  {
+   "tag": "p",
+   "text": "We can help you get started using ChatGPT and other popular AI tools. If you already have some basic knowledge and understanding of AI we can also help you level up your game, teach you new ways using AI and enhance your output and productivity with super efficient prompts. Wanna know more about our next learning session click below and sign up.",
+   "href": null
+  },
+  {
+   "tag": "a",
+   "text": "Learn More",
+   "href": "/ai-school"
+  }
+ ],
+ "images": [],
+ "videos": [],
+ "iframes": [],
+ "hasForm": true
+}

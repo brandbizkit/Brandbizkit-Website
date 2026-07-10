@@ -1,0 +1,37 @@
+{
+ "slug": "google-gemini",
+ "name": "Google Gemini",
+ "question": "What is Gemini AI?",
+ "title": "What is Google Gemini? | BrandBizkit",
+ "description": "Understanding the basics of Google Gemini AI. What it is, what it can do, and how it works.\nExplore the revolutionary AI technology that's transforming how we interact with machines and access information",
+ "tagline": "The Future of Multimodal AI",
+ "paragraphs": [
+  "Gemini is Google's most advanced AI model, designed from the ground up to be multimodal. This means it can seamlessly understand, operate across, and combine different types of information including text, images, audio, video, and code.",
+  "Developed by Google DeepMind, Gemini represents a significant leap forward in AI capabilities. It's not just an upgrade but a fundamental rethinking of how AI models should be built to better understand and interact with the world in a way that's more similar to how humans do.",
+  "Gemini comes in three sizes\u2014Ultra, Pro, and Nano\u2014each optimized for different tasks and computational requirements, making it versatile enough to run on everything from data centers to mobile devices.",
+  "We can help you get started using Google Gemini AI and other related AI tools. If you already are a user of Gemini we can also help you level up your game, teach you new ways of using AI and enhance your output and productivity with super efficient prompts. Wanna know more about our next learning session click below and sign up."
+ ],
+ "courseUrl": null,
+ "courseLabel": null,
+ "image": "/assets/gemini-3d-header-image-mp84k05K2kheqoGl.png",
+ "images": [
+  {
+   "src": "/assets/gemini-3d-header-image-mp84k05K2kheqoGl.png",
+   "alt": "a green square with a white knot on it"
+  },
+  {
+   "src": "/assets/reimagined_gemini_brandbizkit-m6LbeKPnzRcBKwxO.png",
+   "alt": ""
+  },
+  {
+   "src": "/assets/reimagined_gemini_brandbizkit-m6LbeKPnzRcBKwxO.png",
+   "alt": ""
+  },
+  {
+   "src": "/assets/website-cover_brandbizkit-Yyv0rblGk4c4gDeg.png",
+   "alt": "an abstract photo of a curved building with a blue sky in the background"
+  }
+ ],
+ "videos": [],
+ "cardImage": "/assets/reimagined_gemini_brandbizkit-m6LbeKPnzRcBKwxO.png"
+}

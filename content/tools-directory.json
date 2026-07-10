@@ -1,0 +1,680 @@
+{
+  "updatedAt": "2026-07-10",
+  "updateNote": "Removed the old per-category tool cap and expanded coverage with more free tools from Google and other developers: added Playground AI, Google Flow (video), Google AI Studio Build mode (app building), Gemini Code Assist + Amazon Q Developer (coding), Dify + Flowise (agents/automation), Wordtune (writing), Google Stitch (design, beta access limited in some countries), and TTSMaker (voice). Also updated Figma's free tier to include its 150 AI credits/day (500/month) allowance.",
+  "pricingLabels": {
+    "free": "100% Free",
+    "free-credits": "Free credits",
+    "freemium": "Free plan"
+  },
+  "categories": [
+    {
+      "id": "top-ai-image-tools",
+      "title": "Top AI Image Generation Tools",
+      "blurb": "Create logos, product shots, social graphics and brand imagery \u2014 free or with recurring credits, no credit card required.",
+      "tools": [
+        {
+          "name": "Google Gemini (Nano Banana 2)",
+          "url": "https://gemini.google.com",
+          "why": "The best all-around free image generator \u2014 about 20 images a day at up to 1K resolution, no credit card needed, just a Google account.",
+          "pricing": "free-credits",
+          "freeDetails": "~20 images/day, resets daily",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Leonardo.ai",
+          "url": "https://leonardo.ai",
+          "why": "The most generous daily reload of any dedicated image tool \u2014 150 credits every 24 hours with commercial-use rights, signup is email-only.",
+          "pricing": "free-credits",
+          "freeDetails": "150 credits/day, resets every 24h",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Ideogram",
+          "url": "https://ideogram.ai",
+          "why": "Still the best free option when your image needs readable text \u2014 labels, quotes, headlines \u2014 refreshed daily with no card on file.",
+          "pricing": "free-credits",
+          "freeDetails": "10 slow-queue generations/day",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Freepik AI",
+          "url": "https://www.freepik.com",
+          "why": "A huge existing stock-asset library paired with a genuinely daily-reloading AI generator, handy if you already source imagery from Freepik.",
+          "pricing": "free-credits",
+          "freeDetails": "20 images/day (Auto model), resets daily",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Playground AI",
+          "url": "https://playgroundai.com",
+          "why": "One of the largest free daily allowances of any image tool, bundled with a full editor (background remover, mockups, logo maker) built around the results.",
+          "pricing": "free-credits",
+          "freeDetails": "50-100 images/day (reports vary), resets daily",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Bing Image Creator",
+          "url": "https://www.bing.com/create",
+          "why": "A Reddit favorite for no-friction, DALL\u00b7E-quality images \u2014 a weekly batch of fast generations plus unlimited slower-queue images after, with just a Microsoft account.",
+          "pricing": "free-credits",
+          "freeDetails": "15\u201325 fast generations/week + unlimited slow queue",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Flux (Black Forest Labs)",
+          "url": "https://blackforestlabs.ai",
+          "why": "Open-source and genuinely unlimited if you self-host (12GB+ GPU) \u2014 no account, no card, no recurring limit at all.",
+          "pricing": "free",
+          "freeDetails": "Unlimited, self-hosted open source",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Adobe Firefly",
+          "url": "https://firefly.adobe.com",
+          "why": "The safest pick for client-facing commercial work \u2014 trained only on licensed Adobe Stock content, though the monthly allowance is thin.",
+          "pricing": "free-credits",
+          "freeDetails": "25 generative credits/month, resets monthly",
+          "lastVerified": "2026-07-10"
+        }
+      ]
+    },
+    {
+      "id": "top-ai-video-tools",
+      "title": "Top AI Video Generation Tools",
+      "blurb": "Turn ideas and images into short-form video for reels, ads and product demos \u2014 recurring free credits, no credit card required.",
+      "tools": [
+        {
+          "name": "Kling AI",
+          "url": "https://klingai.com",
+          "why": "The benchmark free video tool right now \u2014 66 credits reset every 24 hours, no card required, on one of the most commercially proven video models.",
+          "pricing": "free-credits",
+          "freeDetails": "66 credits/day, resets every 24h",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Google Veo 3",
+          "url": "https://gemini.google.com",
+          "why": "Frontier-quality, sound-native video inside the free Gemini app \u2014 50 credits a day is the easiest way to test cinematic AI video at no cost.",
+          "pricing": "free-credits",
+          "freeDetails": "50 credits/day, resets daily",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Google Flow",
+          "url": "https://labs.google/fx/tools/flow",
+          "why": "Google's dedicated AI filmmaking studio for Veo 3.1 — storyboarding, camera controls and shot-to-shot consistency that the plain Gemini app doesn't offer, with credits that reload every day. Note: the daily allowance varies significantly by country — around 50 credits/day (~12 clips) in most places, but up to 180/day has been reported in India, Brazil and parts of Southeast Asia.",
+          "pricing": "free-credits",
+          "freeDetails": "~50 credits/day (~12 clips) in most countries, up to 180/day in some regions; availability and limits vary by country",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Luma Dream Machine",
+          "url": "https://lumalabs.ai",
+          "why": "A consistently top-ranked free tier for clip quality, with a full daily reload rather than a one-time trial.",
+          "pricing": "free-credits",
+          "freeDetails": "~80 credits/day, resets every 24h (720p, watermarked)",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Pika",
+          "url": "https://pika.art",
+          "why": "Fun, social-ready clips with a real monthly reload \u2014 no card needed to sign up with email, Google or Discord.",
+          "pricing": "free-credits",
+          "freeDetails": "80 credits/month, resets monthly (watermarked)",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Hailuo AI",
+          "url": "https://hailuoai.video",
+          "why": "Remarkably photorealistic output \u2014 especially human subjects \u2014 with a handful of free generations refreshing every day.",
+          "pricing": "free-credits",
+          "freeDetails": "3\u20135 generations/day, resets daily",
+          "lastVerified": "2026-07-10"
+        }
+      ]
+    },
+    {
+      "id": "top-ai-website-app-building-tools",
+      "title": "Top AI Website & App Building Tools",
+      "blurb": "Describe your idea in plain English and get a working site or app \u2014 recurring free tokens or credits, no credit card required.",
+      "tools": [
+        {
+          "name": "Bolt.new",
+          "url": "https://bolt.new",
+          "why": "Full-stack apps in the browser with zero setup \u2014 a real daily-and-monthly token allowance instead of a one-time trial.",
+          "pricing": "free-credits",
+          "freeDetails": "300K tokens/day, up to 1M tokens/month",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Lovable",
+          "url": "https://lovable.dev",
+          "why": "The most beginner-friendly idea-to-app builder \u2014 daily credits mean you can keep coming back without ever entering payment details.",
+          "pricing": "free-credits",
+          "freeDetails": "5 credits/day (~30/month)",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "v0 by Vercel",
+          "why": "The best free option for polished landing pages and UI \u2014 produces production-grade React/Tailwind you can deploy straight to Vercel.",
+          "url": "https://v0.dev",
+          "pricing": "free-credits",
+          "freeDetails": "$5 in credits/month, resets monthly",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Replit",
+          "url": "https://replit.com",
+          "why": "Cloud IDE plus an AI agent that handles multi-step builds \u2014 a genuine monthly allowance of dev time and AI completions to learn on.",
+          "pricing": "free-credits",
+          "freeDetails": "1,200 dev minutes + 100 AI completions/month",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Base44",
+          "url": "https://base44.com",
+          "why": "Popular with non-technical founders for going from prompt to working app fast, with credits that renew every month.",
+          "pricing": "free-credits",
+          "freeDetails": "25 message credits + 100 integration credits/month",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Dyad",
+          "url": "https://dyad.sh",
+          "why": "A free, open-source app builder that runs on your own machine \u2014 no signup, no card, and your code stays private by default.",
+          "pricing": "free",
+          "freeDetails": "Free & open source, runs locally",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Google AI Studio (Build mode)",
+          "url": "https://aistudio.google.com",
+          "why": "Google's free 'vibe coding' surface \u2014 describe an app in plain English and Gemini assembles a working React/Tailwind or native Android app, with free Cloud Run deployment for new builders and no card on file.",
+          "pricing": "free",
+          "freeDetails": "Free, no card required; includes free Cloud Run deployment for new builders",
+          "lastVerified": "2026-07-10"
+        }
+      ]
+    },
+    {
+      "id": "top-ai-coding-assistant-tools",
+      "title": "Top AI Coding Assistant Tools",
+      "blurb": "In-editor AI pair programmers that autocomplete, refactor and chat through your codebase \u2014 recurring free quotas, no credit card required.",
+      "tools": [
+        {
+          "name": "Cursor",
+          "url": "https://cursor.com",
+          "why": "The dominant AI-native code editor right now \u2014 a real monthly allowance of completions and premium requests on the free Hobby tier.",
+          "pricing": "free-credits",
+          "freeDetails": "2,000 completions + 50 premium requests/month",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "GitHub Copilot Free",
+          "url": "https://github.com/features/copilot",
+          "why": "The highest-rated coding assistant on G2/Capterra, with a genuinely free monthly tier bundled straight into your GitHub account.",
+          "pricing": "free-credits",
+          "freeDetails": "2,000 completions + 50 chat requests/month",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Windsurf",
+          "url": "https://windsurf.com",
+          "why": "Unlimited autocomplete plus a recurring agent quota make this a strong Copilot alternative for founders coding solo.",
+          "pricing": "free-credits",
+          "freeDetails": "Unlimited Tab autocomplete + recurring Cascade quota",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Cline",
+          "url": "https://cline.bot",
+          "why": "Free and open source with no platform credits to run out of \u2014 bring your own API key and it runs in VS Code or JetBrains indefinitely.",
+          "pricing": "free",
+          "freeDetails": "Free & open source (bring your own API key)",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Google Jules",
+          "url": "https://jules.google",
+          "why": "Google's async coding agent hands off whole tasks \u2014 bug fixes, PRs \u2014 for free every day with just a Google account.",
+          "pricing": "free-credits",
+          "freeDetails": "15\u201320 tasks/day",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Gemini CLI",
+          "url": "https://github.com/google-gemini/gemini-cli",
+          "why": "The lowest-friction way to get an AI coding agent in your terminal \u2014 genuinely free with no account required for basic use.",
+          "pricing": "free",
+          "freeDetails": "Free, no account required for basic use",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Gemini Code Assist",
+          "url": "https://codeassist.google",
+          "why": "By far the largest free coding quota available anywhere \u2014 roughly 90x GitHub Copilot's free tier \u2014 running on Gemini 2.5 Pro inside VS Code, JetBrains and Android Studio.",
+          "pricing": "free",
+          "freeDetails": "180,000 completions/month (~6,000/day) + 240 chat messages/day",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Amazon Q Developer",
+          "url": "https://aws.amazon.com/q/developer/",
+          "why": "AWS's free coding assistant \u2014 unlimited inline suggestions plus a recurring monthly quota of agentic tasks, signed up for free with just an AWS Builder ID (no AWS account or card needed).",
+          "pricing": "free-credits",
+          "freeDetails": "Unlimited code suggestions + 50 agentic requests/month",
+          "lastVerified": "2026-07-10"
+        }
+      ]
+    },
+    {
+      "id": "top-ai-agents-automation-tools",
+      "title": "Top AI Agents & Automation Tools",
+      "blurb": "Automate repetitive busywork and build AI agents that run your workflows \u2014 recurring free tasks or credits, no credit card required.",
+      "tools": [
+        {
+          "name": "n8n",
+          "url": "https://n8n.io",
+          "why": "The most popular open-source automation platform \u2014 self-host the Community Edition for unlimited workflows at zero cost (n8n's own cloud free tier has since been discontinued).",
+          "pricing": "free",
+          "freeDetails": "Free self-hosted Community Edition, unlimited executions",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Zapier",
+          "url": "https://zapier.com",
+          "why": "8,000+ app connections and the easiest on-ramp for non-technical teams, with a permanent free plan that renews every month.",
+          "pricing": "free-credits",
+          "freeDetails": "100 tasks/month, resets monthly",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Latenode",
+          "url": "https://latenode.com",
+          "why": "Free tier is priced in raw compute (CPU-seconds) rather than opaque credits, so simple workflows stretch further before you hit a paywall.",
+          "pricing": "free-credits",
+          "freeDetails": "10,000 CPU-seconds/month (~10K executions)",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Activepieces",
+          "url": "https://www.activepieces.com",
+          "why": "An open-source Zapier alternative with a genuinely free cloud tier, or self-host the Community Edition for unlimited automations.",
+          "pricing": "free-credits",
+          "freeDetails": "1,000 tasks + 200 AI credits/month (cloud); unlimited if self-hosted",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Gumloop",
+          "url": "https://www.gumloop.com",
+          "why": "A visual agent builder with one of the more generous monthly credit allowances for building real automations without paying.",
+          "pricing": "free-credits",
+          "freeDetails": "~2,000 credits/month",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Lindy",
+          "url": "https://www.lindy.ai",
+          "why": "An \"AI employee\" builder popular on r/nocode for handling email, scheduling and support \u2014 400 credits renew every month.",
+          "pricing": "free-credits",
+          "freeDetails": "400 credits/month",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Botpress",
+          "url": "https://botpress.com",
+          "why": "A well-regarded platform for building support and sales chatbots, with a pay-as-you-go free plan that never requires a card to start.",
+          "pricing": "free-credits",
+          "freeDetails": "500 messages + $5 AI credit/month",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Dify",
+          "url": "https://dify.ai",
+          "why": "A production-grade open-source platform for building RAG-powered agents and workflows — self-host the Community Edition for free with no usage caps and full data control.",
+          "pricing": "free",
+          "freeDetails": "Free self-hosted Community Edition, unlimited usage",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Flowise",
+          "url": "https://flowiseai.com",
+          "why": "A LangChain-based drag-and-drop agent builder under a permissive MIT license — free to self-host and use commercially with no restrictions.",
+          "pricing": "free",
+          "freeDetails": "Free & open source (MIT), self-hosted, unlimited",
+          "lastVerified": "2026-07-10"
+        }
+      ]
+    },
+    {
+      "id": "top-ai-writing-copywriting-tools",
+      "title": "Top AI Writing & Copywriting Tools",
+      "blurb": "Draft ad copy, landing pages, emails and blog posts faster \u2014 recurring free words or prompts, no credit card required.",
+      "tools": [
+        {
+          "name": "Copy.ai",
+          "url": "https://www.copy.ai",
+          "why": "Consistently named the best free AI writer for marketing copy, with 90+ templates for ads, social and email.",
+          "pricing": "free-credits",
+          "freeDetails": "2,000 words/month, resets monthly",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Rytr",
+          "url": "https://rytr.me",
+          "why": "The most generous true-free AI writer for short-form copy, covering 40+ use cases and 20+ tones.",
+          "pricing": "free-credits",
+          "freeDetails": "10,000 characters/month, resets monthly",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Writesonic",
+          "url": "https://writesonic.com",
+          "why": "A favorite in SEO and content-marketing circles for its template range and built-in SEO checker, on a free plan that renews monthly.",
+          "pricing": "free-credits",
+          "freeDetails": "~10,000 words/month, resets monthly",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "QuillBot",
+          "url": "https://quillbot.com",
+          "why": "One of the most-recommended free rewriting and editing tools on Reddit and G2 \u2014 unlimited paraphrasing plus 50 AI prompts every day.",
+          "pricing": "freemium",
+          "freeDetails": "Unlimited paraphrasing + 50 AI prompts/day",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Grammarly",
+          "url": "https://www.grammarly.com",
+          "why": "Free writing cleanup everywhere you type \u2014 still the near-universal recommendation for a quick quality upgrade on customer-facing copy.",
+          "pricing": "freemium",
+          "freeDetails": "Free tier with unlimited core suggestions",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Wordtune",
+          "url": "https://www.wordtune.com",
+          "why": "The most-recommended free AI rewriting tool for tightening tone and clarity sentence-by-sentence, rather than generating copy from scratch.",
+          "pricing": "free-credits",
+          "freeDetails": "10 rewrites/day + 3 AI summaries/month",
+          "lastVerified": "2026-07-10"
+        }
+      ]
+    },
+    {
+      "id": "top-ai-design-tools",
+      "title": "Top AI Design Tools",
+      "blurb": "Brand kits, social templates and design assistance for founders without a design team \u2014 recurring free credits, no credit card required.",
+      "tools": [
+        {
+          "name": "Canva",
+          "url": "https://www.canva.com",
+          "why": "Still the #1 design tool for non-designers \u2014 a genuinely permanent free tier plus Magic Studio AI credits that renew monthly.",
+          "pricing": "freemium",
+          "freeDetails": "Free forever plan + monthly Magic Studio AI credits",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Recraft",
+          "url": "https://www.recraft.ai",
+          "why": "The only major free AI tool producing true scalable SVG vectors \u2014 the go-to for logos and brand illustration.",
+          "pricing": "free-credits",
+          "freeDetails": "30 credits/day, resets every 24h",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Adobe Express",
+          "url": "https://www.adobe.com/express",
+          "why": "Adobe-quality templates and Firefly-powered generation with commercially-safe training data, on a plan that renews monthly.",
+          "pricing": "freemium",
+          "freeDetails": "Free plan + 25 generative credits/month",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Microsoft Designer",
+          "url": "https://designer.microsoft.com",
+          "why": "A free, DALL\u00b7E-powered design tool tightly integrated with Bing \u2014 fast for social graphics with just a Microsoft account.",
+          "pricing": "free-credits",
+          "freeDetails": "15 AI credits/month, resets monthly",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Figma",
+          "url": "https://www.figma.com",
+          "why": "The professional standard for UI and marketing design \u2014 the free Starter plan is usable indefinitely, not a trial, and now bundles daily AI credits.",
+          "pricing": "freemium",
+          "freeDetails": "Free Starter plan (3 projects) + 150 AI credits/day (500/month), no expiry",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Google Stitch",
+          "url": "https://stitch.withgoogle.com",
+          "why": "Google's free AI UI designer \u2014 describe an app and get a multi-screen interface exportable straight to Figma or code. Note: it's still a Google Labs beta, and access has been reported as unreliable or blocked in some countries, including Ukraine, parts of the Balkans (North Macedonia, Serbia, Bosnia and Herzegovina), the UAE, Andorra and Spain.",
+          "pricing": "free",
+          "freeDetails": "550 generations/month (350 standard + 200 Pro); access unreliable in a handful of countries",
+          "lastVerified": "2026-07-10"
+        }
+      ]
+    },
+    {
+      "id": "top-ai-voice-transcription-tools",
+      "title": "Top AI Voice & Transcription Tools",
+      "blurb": "Natural AI voice-overs and accurate speech-to-text for podcasts, reels and meeting notes \u2014 recurring free minutes or characters, no credit card required.",
+      "tools": [
+        {
+          "name": "ElevenLabs",
+          "url": "https://elevenlabs.io",
+          "why": "The most realistic AI voices available \u2014 10,000 free characters a month is enough for weekly short-form voice-overs.",
+          "pricing": "free-credits",
+          "freeDetails": "10,000 characters/month, resets monthly",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Otter.ai",
+          "url": "https://otter.ai",
+          "why": "The most-recommended free meeting-transcription tool on Reddit and G2 \u2014 300 minutes reset every month.",
+          "pricing": "free-credits",
+          "freeDetails": "300 minutes/month, resets monthly",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "OpenAI Whisper",
+          "url": "https://github.com/openai/whisper",
+          "why": "Unlimited free offline transcription in 99+ languages \u2014 the open-source workhorse behind most transcription apps, free forever if self-hosted.",
+          "pricing": "free",
+          "freeDetails": "Unlimited, open source, self-hosted",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Wispr Flow",
+          "url": "https://wisprflow.ai",
+          "why": "Real-time voice dictation into any app on your computer or phone \u2014 talk instead of type, with a weekly word allowance that resets every Sunday.",
+          "pricing": "free-credits",
+          "freeDetails": "2,000 words/week on desktop, resets weekly",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Fish Audio",
+          "url": "https://fish.audio",
+          "why": "A lightweight ElevenLabs alternative with a genuine monthly reload and a community library of 2M+ cloned voices.",
+          "pricing": "free-credits",
+          "freeDetails": "8,000 credits/month (~7 min TTS), resets monthly",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Descript",
+          "url": "https://www.descript.com",
+          "why": "An all-in-one audio/video editor with transcript-based editing \u2014 60 free minutes a month is enough for short-form creator workflows.",
+          "pricing": "free-credits",
+          "freeDetails": "60 transcription/media minutes/month",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "NaturalReader",
+          "url": "https://www.naturalreaders.com",
+          "why": "Unlimited free text-to-speech listening with standard voices \u2014 the long-standing pick for turning articles and PDFs into audio.",
+          "pricing": "freemium",
+          "freeDetails": "Unlimited standard-voice TTS, free web app",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "TTSMaker",
+          "url": "https://ttsmaker.com",
+          "why": "The most generous no-signup text-to-speech tool \u2014 a real weekly character allowance with no account required, handy for quick voice-overs without commitment.",
+          "pricing": "free",
+          "freeDetails": "20,000 characters/week, no signup required",
+          "lastVerified": "2026-07-10"
+        }
+      ]
+    },
+    {
+      "id": "top-ai-music-audio-tools",
+      "title": "Top AI Music & Audio Generation Tools",
+      "blurb": "Generate original background music, jingles and full songs for content and ads \u2014 recurring free credits, no credit card required.",
+      "tools": [
+        {
+          "name": "Suno",
+          "url": "https://suno.com",
+          "why": "The consensus pick for best free AI music generator \u2014 natural-sounding vocals and the easiest prompt-to-song workflow, with credits that renew daily.",
+          "pricing": "free-credits",
+          "freeDetails": "50 credits/day (~10 songs), resets daily",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Udio",
+          "url": "https://www.udio.com",
+          "why": "Praised for high-fidelity instrumentals and finer creative control than most rivals, on credits that renew monthly and daily.",
+          "pricing": "free-credits",
+          "freeDetails": "100 credits/month + 10/day, resets monthly/daily",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Boomy",
+          "url": "https://boomy.com",
+          "why": "The fastest path from idea to finished song for non-musicians, with a monthly allowance and an optional (paid) Spotify distribution path.",
+          "pricing": "free-credits",
+          "freeDetails": "25 song creations/month, resets monthly",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "AIVA",
+          "url": "https://www.aiva.ai",
+          "why": "A long-standing favorite among indie creators for instrumental and orchestral scoring, with a free download allowance every month.",
+          "pricing": "free-credits",
+          "freeDetails": "3 downloads/month, resets monthly (non-commercial)",
+          "lastVerified": "2026-07-10"
+        }
+      ]
+    },
+    {
+      "id": "other-free-ai-tools",
+      "title": "Other Free AI Tools",
+      "blurb": "Everyday assistants and business essentials that every founder should have open in a tab.",
+      "tools": [
+        {
+          "name": "ChatGPT",
+          "url": "https://chatgpt.com",
+          "why": "The default AI assistant \u2014 free access to GPT-5-class models for writing, planning and coding, refreshing on a rolling daily window.",
+          "pricing": "freemium",
+          "freeDetails": "Free tier, rolling daily/hourly message limits",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Claude",
+          "url": "https://claude.ai",
+          "why": "The strongest free assistant for long documents and careful writing \u2014 paste an entire business plan and get thoughtful feedback.",
+          "pricing": "freemium",
+          "freeDetails": "Free tier, resets on a rolling 5-hour window",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Perplexity",
+          "url": "https://perplexity.ai",
+          "why": "AI search with citations \u2014 unlimited standard search plus a handful of free Pro searches every day to verify competitors and market data.",
+          "pricing": "freemium",
+          "freeDetails": "Unlimited standard search + 5 Pro searches/day",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Google Gemini",
+          "url": "https://gemini.google.com",
+          "why": "A strong free ChatGPT alternative with deep multimodal and image-generation features, backed by a Google account only.",
+          "pricing": "freemium",
+          "freeDetails": "Free tier, rolling 5-hour usage window",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "NotebookLM",
+          "url": "https://notebooklm.google.com",
+          "why": "Upload your own documents and get a grounded research assistant, plus one-click audio overviews \u2014 completely free with a Google account.",
+          "pricing": "free",
+          "freeDetails": "100 notebooks, 50 chats + 3 audio overviews/day",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "DeepSeek",
+          "url": "https://chat.deepseek.com",
+          "why": "A genuinely free, unmetered chat assistant frequently recommended on Reddit for coding and reasoning tasks at zero cost.",
+          "pricing": "free",
+          "freeDetails": "Free, unmetered chat usage",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "HubSpot CRM",
+          "url": "https://www.hubspot.com/products/crm",
+          "why": "The strongest free CRM for founders \u2014 contacts, pipeline and email tracking free forever, no card required to start.",
+          "pricing": "freemium",
+          "freeDetails": "Free forever core CRM (1,000 contacts, 2 users)",
+          "lastVerified": "2026-07-10"
+        }
+      ]
+    },
+    {
+      "id": "ai-tools-worth-paying-for",
+      "title": "AI Tools Worth Paying For",
+      "blurb": "When you outgrow the free tiers, these are the upgrades that actually pay for themselves.",
+      "tools": [
+        {
+          "name": "ChatGPT Plus",
+          "url": "https://chatgpt.com",
+          "why": "$20/month removes the limits on your most-used assistant \u2014 priority access, advanced models and heavier custom-GPT usage.",
+          "pricing": "freemium",
+          "freeDetails": "$20/month",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Claude Pro",
+          "url": "https://claude.ai",
+          "why": "$20/month for much higher limits on the best long-document assistant \u2014 worth it the week you start writing serious content.",
+          "pricing": "freemium",
+          "freeDetails": "$20/month",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Canva Pro",
+          "url": "https://www.canva.com",
+          "why": "$15/month unlocks the brand kit, background remover and premium templates \u2014 the single best value upgrade for solo founders.",
+          "pricing": "freemium",
+          "freeDetails": "$15/month per user",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Google AI Pro",
+          "url": "https://one.google.com/ai",
+          "why": "$19.99/month bundles Gemini's top models, Veo video credits and 2TB storage \u2014 the broadest AI bundle per dollar.",
+          "pricing": "freemium",
+          "freeDetails": "$19.99/month",
+          "lastVerified": "2026-07-10"
+        },
+        {
+          "name": "Kling AI Pro",
+          "url": "https://klingai.com",
+          "why": "Paid tiers unlock 1080p, longer clips and commercial licensing on the most production-ready video model.",
+          "pricing": "freemium",
+          "freeDetails": "From ~$10/month",
+          "lastVerified": "2026-07-10"
+        }
+      ]
+    }
+  ]
+}

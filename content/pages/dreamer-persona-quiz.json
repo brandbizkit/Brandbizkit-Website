@@ -1,0 +1,46 @@
+{
+ "slug": "dreamer-persona-quiz",
+ "title": "Dreamer Persona Quiz | BrandBizkit",
+ "description": "Take the brandbizkit persona quiz and discover your entrepreneurial starting point. Are you the Dreamer, Creator, Builder, or Launcher. We have the tools and solutions you need for every stage of your business. We provide you with FREE, verified AI tools that can help you get started today!",
+ "h1": "The Dreamer",
+ "image": "/assets/brandbizkit-logo-icon_biz-in-a-box-m2WqBe1lo1IyOwpo.png",
+ "blocks": [
+  {
+   "tag": "h1",
+   "text": "The Dreamer",
+   "href": null
+  },
+  {
+   "tag": "h3",
+   "text": "You are the Vision Starter",
+   "href": null
+  },
+  {
+   "tag": "p",
+   "text": "You\u2019ve got the spark \u2014 an idea, a dream, maybe even a \u201cwhat if?\u201d moment \u2014 but you\u2019re not sure where to start. The Dreamer thrives on possibility but needs clarity, structure, and a simple roadmap to turn ideas into something real.",
+   "href": null
+  },
+  {
+   "tag": "p",
+   "text": "Check out your brand launch kit below specifying your needs, your AI toolkit, a few starter prompts and your action plan. If you still need help getting started we've got you covered. Simply click here and join our completely FREE AI introduction course.",
+   "href": null
+  }
+ ],
+ "images": [
+  {
+   "src": "/assets/beauty_d9ba178f-f281-47b2-b70d-fb4cd52eb19f-Yg2yNo0rPVsglPxv.png",
+   "alt": ""
+  },
+  {
+   "src": "/assets/beauty_d9ba178f-f281-47b2-b70d-fb4cd52eb19f-Yg2yNo0rPVsglPxv.png",
+   "alt": ""
+  },
+  {
+   "src": "/assets/creativity_f5e1cf52-0d3c-4516-9234-2cc03d9114a8-ALpPR1jp8EIkJjOD.png",
+   "alt": ""
+  }
+ ],
+ "videos": [],
+ "iframes": [],
+ "hasForm": true
+}

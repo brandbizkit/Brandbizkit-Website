@@ -1,0 +1,25 @@
+{
+ "slug": "ai-news",
+ "title": "AI News and Insights | BrandBizkit",
+ "description": "Check out our latest AI news and strategic insights relevant for startup founders, entrepreneurs and business leaders in general who want to stay informed about the lates AI updates.",
+ "h1": "Insights",
+ "image": "/assets/brandbizkit-logo-icon_insights-AzGMjWN910TVyEyR.png",
+ "blocks": [
+  {
+   "tag": "h1",
+   "text": "Insights",
+   "href": null
+  },
+  {
+   "tag": "p",
+   "text": "Launch your brand with free AI tools today.",
+   "href": null
+  }
+ ],
+ "images": [],
+ "videos": [
+  "file:https://videos.pexels.com/video-files/3571264/3571264-hd_1920_1080_30fps.mp4"
+ ],
+ "iframes": [],
+ "hasForm": true
+}

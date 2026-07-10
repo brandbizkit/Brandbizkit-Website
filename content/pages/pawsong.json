@@ -1,0 +1,35 @@
+{
+ "slug": "pawsong",
+ "title": "PAWsong | BrandBizkit",
+ "description": "",
+ "h1": "PAWsong",
+ "image": "/assets/brandbizkit-hero-background3-YbNJRPaDG0hqKple.png",
+ "blocks": [
+  {
+   "tag": "p",
+   "text": "Launch your brand with free AI tools today.",
+   "href": null
+  }
+ ],
+ "images": [
+  {
+   "src": "/assets/pawsong-K6xfbN9leddjHrbp.jpg",
+   "alt": ""
+  },
+  {
+   "src": "/assets/pawsong-K6xfbN9leddjHrbp.jpg",
+   "alt": ""
+  },
+  {
+   "src": "/assets/pawsong2-dPNngmk9rtCZTXYu.jpg",
+   "alt": ""
+  },
+  {
+   "src": "/assets/pawsong2-dPNngmk9rtCZTXYu.jpg",
+   "alt": ""
+  }
+ ],
+ "videos": [],
+ "iframes": [],
+ "hasForm": true
+}

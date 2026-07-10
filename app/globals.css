@@ -1,0 +1,216 @@
+@import "tailwindcss";
+
+/*
+ * BrandBizkit design system.
+ *
+ * Palette extracted from the original live site, with roles assigned:
+ *  - Accent (primary CTA / highlights): red-orange #FF4232 (+ #FF5733 for the quiz)
+ *  - Brand gradient (hero moments, footer): #FF4B2B → #FF416C
+ *  - Secondary (links, secondary buttons): periwinkle #697BDC
+ *  - Highlight (hero CTA, badges, stars): yellow #F3C82E
+ *  - Section tints: blue band #92A7DB, cream #FFF5ED, light #F4F4F6
+ *  - Ink #0d141a (headings) / text #1d1e20 (body) on white
+ *  - Poppins everywhere (400–800)
+ */
+@theme {
+  --color-brand-ink: #0d141a;
+  --color-brand-text: #1d1e20;
+  --color-brand-accent: #ff4232;
+  --color-brand-accent-hover: #d93222;
+  --color-brand-orange: #ff5733;
+  --color-brand-periwinkle: #697bdc;
+  --color-brand-periwinkle-dark: #4d5fc4;
+  --color-brand-yellow: #f3c82e;
+  --color-brand-blue-band: #92a7db;
+  --color-brand-cream: #fff5ed;
+  --color-brand-light: #f4f4f6;
+  --color-brand-green: #0e5c46;
+  --color-brand-green-dark: #0b4a39;
+  --font-display: var(--font-poppins), "Poppins", sans-serif;
+  --font-body: var(--font-poppins), "Poppins", var(--font-inter), sans-serif;
+  --shadow-card: 0 1px 2px rgb(13 20 26 / 0.05), 0 4px 12px rgb(13 20 26 / 0.06);
+  --shadow-card-hover: 0 4px 8px rgb(13 20 26 / 0.06), 0 12px 28px rgb(13 20 26 / 0.12);
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    font-family: var(--font-body);
+    background: #ffffff;
+    color: var(--color-brand-text);
+  }
+
+  h1, h2, h3, h4 {
+    font-family: var(--font-display);
+    color: var(--color-brand-ink);
+    letter-spacing: -0.01em;
+    text-wrap: balance;
+  }
+
+  ::selection {
+    background: var(--color-brand-yellow);
+    color: var(--color-brand-ink);
+  }
+
+  /* Accessible focus ring, everywhere */
+  :focus-visible {
+    outline: 2px solid var(--color-brand-periwinkle);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+}
+
+@layer components {
+  /* ---- Buttons ---- */
+  .btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    border-radius: 9999px;
+    padding: 0.75rem 1.75rem;
+    font-family: var(--font-display);
+    font-weight: 600;
+    line-height: 1.25;
+    transition: background-color 0.2s ease, color 0.2s ease, border-color 0.2s ease,
+      transform 0.2s ease, box-shadow 0.2s ease;
+  }
+  .btn:hover {
+    transform: translateY(-1px);
+  }
+  .btn:active {
+    transform: translateY(0);
+  }
+  .btn-primary {
+    background: var(--color-brand-accent);
+    color: #fff;
+    box-shadow: 0 4px 14px rgb(255 66 50 / 0.35);
+  }
+  .btn-primary:hover {
+    background: var(--color-brand-accent-hover);
+    box-shadow: 0 6px 20px rgb(255 66 50 / 0.4);
+  }
+  .btn-secondary {
+    background: var(--color-brand-periwinkle);
+    color: #fff;
+    box-shadow: 0 4px 14px rgb(105 123 220 / 0.35);
+  }
+  .btn-secondary:hover {
+    background: var(--color-brand-periwinkle-dark);
+  }
+  .btn-outline {
+    border: 2px solid var(--color-brand-accent);
+    color: var(--color-brand-accent);
+    background: transparent;
+  }
+  .btn-outline:hover {
+    background: var(--color-brand-accent);
+    color: #fff;
+  }
+  .btn-quiz {
+    background: var(--color-brand-orange);
+    color: #fff;
+    box-shadow: 0 4px 14px rgb(255 87 51 / 0.35);
+  }
+  .btn-quiz:hover {
+    background: var(--color-brand-ink);
+  }
+
+  /* ---- Cards ---- */
+  .card {
+    border-radius: 1rem;
+    border: 1px solid rgb(13 20 26 / 0.08);
+    background: #fff;
+    box-shadow: var(--shadow-card);
+    transition: box-shadow 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+  }
+  .card-hover:hover {
+    box-shadow: var(--shadow-card-hover);
+    transform: translateY(-4px);
+  }
+
+  /* ---- Section rhythm ---- */
+  .section-eyebrow {
+    display: inline-block;
+    font-family: var(--font-display);
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--color-brand-accent);
+  }
+  .section-title {
+    font-family: var(--font-display);
+    font-size: clamp(1.75rem, 1.3rem + 2vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.15;
+    color: var(--color-brand-ink);
+  }
+  .section-sub {
+    margin-top: 0.75rem;
+    max-width: 42rem;
+    color: rgb(29 30 32 / 0.72);
+    line-height: 1.7;
+  }
+
+  .bg-brand-gradient {
+    background-image: linear-gradient(135deg, #ff4b2b, #ff416c);
+  }
+}
+
+/* Prose styling for markdown-rendered articles and legal pages */
+.prose-bb {
+  max-width: 48rem;
+  line-height: 1.8;
+  color: rgba(29, 30, 32, 0.88);
+  font-size: 1.0625rem;
+}
+.prose-bb h2 {
+  font-size: 1.6rem;
+  font-weight: 700;
+  color: var(--color-brand-ink);
+  margin: 2.5rem 0 0.85rem;
+}
+.prose-bb h3 {
+  font-size: 1.25rem;
+  font-weight: 600;
+  color: var(--color-brand-ink);
+  margin: 1.9rem 0 0.6rem;
+}
+.prose-bb p {
+  margin: 1.05rem 0;
+}
+.prose-bb ul, .prose-bb ol {
+  margin: 1.05rem 0 1.05rem 1.5rem;
+  list-style: disc;
+}
+.prose-bb li {
+  margin: 0.45rem 0;
+}
+.prose-bb li::marker {
+  color: var(--color-brand-accent);
+}
+.prose-bb a {
+  color: var(--color-brand-accent);
+  text-decoration: underline;
+  text-underline-offset: 3px;
+}
+.prose-bb a:hover {
+  color: var(--color-brand-accent-hover);
+}
+.prose-bb blockquote {
+  border-left: 3px solid var(--color-brand-accent);
+  padding: 0.25rem 0 0.25rem 1.25rem;
+  font-style: italic;
+  margin: 1.5rem 0;
+  color: rgb(29 30 32 / 0.75);
+}
+.prose-bb strong { color: var(--color-brand-ink); }
+
+/* Quiz slider thumb (replicates original #FF5733 round thumb) */
+input[type="range"].bb-slider {
+  accent-color: var(--color-brand-orange);
+}

@@ -1,0 +1,89 @@
+{
+ "slug": "chatgpt",
+ "name": "ChatGPT",
+ "question": "What is ChatGPT?",
+ "title": "What is ChatGPT? | BrandBizkit",
+ "description": "Understanding the basics of ChatGPT by OpenAI. What it is, what it can do, and how it works.\nExplore the revolutionary AI technology that's transforming how we interact with machines and access information",
+ "tagline": "A Revolutionary AI Language Model",
+ "paragraphs": [
+  "ChatGPT is a large language model developed by OpenAI that uses deep learning techniques to generate human-like text based on the input it receives. It's part of the GPT (Generative Pre-trained Transformer) series of models.",
+  "Unlike traditional chatbots that follow predefined scripts, ChatGPT can engage in dynamic conversations, answer complex questions, create content, and assist with a wide range of tasks by understanding context and generating relevant responses.",
+  "Since its introduction, ChatGPT has revolutionized how people interact with AI, making advanced language technology accessible to millions of users worldwide.",
+  "We can help you get started using ChatGPT and other related AI tools. If you already are a user of ChatGPT we can also help you level up your game, teach you new ways using AI and enhance your output and productivity with super efficient prompts. Wanna know more about our next learning session click below and sign up."
+ ],
+ "courseUrl": "https://pbra5ipeonqojktp0qvp.app.clientclub.net/courses/offers/46d2b9cf-dfc5-4d97-a328-24113fa18a41",
+ "courseLabel": "FREE COURSE",
+ "image": "/assets/reimagined_chatgpt_brandbizkit-YrDJrP1e6xc1peDA.png",
+ "images": [
+  {
+   "src": "/assets/bb_laptop-YbNJEPyLNyhr9yo9.png",
+   "alt": "a laptop displaying an AI-powered dashboard on a modern desk"
+  },
+  {
+   "src": "/assets/reimagined_chatgpt_brandbizkit-YrDJrP1e6xc1peDA.png",
+   "alt": ""
+  },
+  {
+   "src": "/assets/reimagined_chatgpt_brandbizkit-YrDJrP1e6xc1peDA.png",
+   "alt": ""
+  },
+  {
+   "src": "/assets/website-cover_brandbizkit-Yyv0rblGk4c4gDeg.png",
+   "alt": "an abstract photo of a curved building with a blue sky in the background"
+  }
+ ],
+ "videos": [],
+ "cardImage": "/assets/reimagined_chatgpt_brandbizkit-YrDJrP1e6xc1peDA.png",
+ "capabilities": {
+  "heading": "What Can ChatGPT Do?",
+  "sub": "Exploring the diverse capabilities of this powerful AI assistant.",
+  "items": [
+   {
+    "title": "Natural Conversations",
+    "text": "Engage in human-like dialogue, understand context, remember previous parts of the conversation, and provide coherent responses."
+   },
+   {
+    "title": "Content Creation",
+    "text": "Generate articles, stories, poems, social media posts, marketing copy, and other written content on virtually any topic."
+   },
+   {
+    "title": "Code Generation",
+    "text": "Write, debug, and explain code in various programming languages, making it a valuable tool for developers."
+   },
+   {
+    "title": "Language Translation",
+    "text": "Translate text between multiple languages with impressive accuracy and natural phrasing."
+   },
+   {
+    "title": "Ideation & Brainstorming",
+    "text": "Help generate ideas for projects, business strategies, creative endeavors, and problem-solving approaches."
+   },
+   {
+    "title": "Learning & Research",
+    "text": "Explain complex topics, answer questions, and summarize information to support studying and research."
+   }
+  ]
+ },
+ "howItWorks": {
+  "heading": "How ChatGPT Works",
+  "sub": "The technology behind this revolutionary AI system.",
+  "steps": [
+   {
+    "title": "Input Processing",
+    "text": "When you enter a prompt, ChatGPT breaks down your text into tokens (words or parts of words) that it can process."
+   },
+   {
+    "title": "Context Analysis",
+    "text": "The model analyzes the input tokens along with previous conversation history to understand context and intent."
+   },
+   {
+    "title": "Prediction Generation",
+    "text": "Using its neural network architecture, ChatGPT predicts the most appropriate sequence of tokens to form a response."
+   },
+   {
+    "title": "Response Delivery",
+    "text": "The generated tokens are converted back into human-readable text and presented as the AI's response."
+   }
+  ]
+ }
+}

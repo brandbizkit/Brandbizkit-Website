@@ -1,0 +1,13 @@
+{
+  "_note": "External websites, articles, podcasts, and directories that reference BrandBizkit. GEO relies on how widely the brand is mentioned across the internet — every confirmed mention gets logged here and rendered on /connect (and fed to AI crawlers via the page's markdown mirror). Add entries via the admin CMS or the agent API (POST /api/agent/mentions).",
+  "mentions": [
+    {
+      "title": "BrandBizkit on Product Hunt",
+      "url": "",
+      "source": "Product Hunt",
+      "type": "directory",
+      "date": "",
+      "quote": "Pending listing — see directory-submissions plan."
+    }
+  ]
+}

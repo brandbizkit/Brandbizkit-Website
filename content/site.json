@@ -1,0 +1,107 @@
+{
+  "name": "BrandBizkit",
+  "legalName": "BrandBizkit",
+  "tagline": "FREE Ai Tools, Templates, & Guides in ONE BIZKIT",
+  "url": "https://brandbizkit.com",
+  "email": "hello@brandbizkit.com",
+  "logo": "/assets/brandbizkit-logo-ALpPa1XW42i4y9oO.png",
+  "logoIcon": "/assets/brandbizkit-logo-icon_biz-in-a-box-m2WqBe1lo1IyOwpo.png",
+  "description": "BrandBizkit empowers aspiring entrepreneurs to launch brands or businesses using curated, free AI tools \u2014 with zero coding, zero overwhelm, and step-by-step guidance.",
+  "founders": [
+    {
+      "name": "Michael Nielsen"
+    },
+    {
+      "name": "Karla K."
+    }
+  ],
+  "keywords": [
+    "brand building",
+    "free AI tools",
+    "AI tools for businesses",
+    "AI education",
+    "no-code",
+    "entrepreneurship"
+  ],
+  "social": {
+    "instagram": "https://www.instagram.com/brandbizkit",
+    "facebook": "https://www.facebook.com/brandbizkit",
+    "youtube": "https://www.youtube.com/@brandbizkit",
+    "tiktok": "https://www.tiktok.com/@brandbizkit",
+    "linkedin": "https://www.linkedin.com/company/brandbizkit",
+    "x": "https://x.com/brandbizkit"
+  },
+  "nav": [
+    {
+      "label": "Home",
+      "href": "/"
+    },
+    {
+      "label": "Services",
+      "href": "/#services"
+    },
+    {
+      "label": "FREE Ai Tools",
+      "href": "/free-ai-tools",
+      "children": [
+        {
+          "label": "Top FREE Ai Tools {YEAR}",
+          "href": "/top-free-ai-tools-{YEAR}"
+        },
+        {
+          "label": "Top FREE Ai image tools {YEAR}",
+          "href": "/top-free-ai-image-tools-{YEAR}"
+        },
+        {
+          "label": "Top FREE Ai video tools {YEAR}",
+          "href": "/top-free-ai-video-tools-{YEAR}"
+        },
+        {
+          "label": "Top FREE Ai no-code tools {YEAR}",
+          "href": "/top-free-ai-no-code-tools-{YEAR}"
+        }
+      ]
+    },
+    {
+      "label": "Popular Ai Tools",
+      "href": "/popular-ai-tools",
+      "children": [
+        {
+          "label": "ChatGPT",
+          "href": "/chatgpt"
+        },
+        {
+          "label": "Claude Ai",
+          "href": "/claude-ai"
+        },
+        {
+          "label": "Google Gemini",
+          "href": "/google-gemini"
+        },
+        {
+          "label": "Canva",
+          "href": "/canva"
+        },
+        {
+          "label": "Kling Ai",
+          "href": "/kling-ai"
+        }
+      ]
+    },
+    {
+      "label": "Bizkit Insights",
+      "href": "/ai-news"
+    },
+    {
+      "label": "Ai School",
+      "href": "/ai-school",
+      "cta": true
+    }
+  ],
+  "footerExpect": [
+    "Find free, simple AI tools to kickstart your business\u2014no tech skills needed.",
+    "Easy, step-by-step guides so you always know what to do next.",
+    "Use ready-made templates for branding, marketing, and more. Get started fast.",
+    "Build your brand easily\u2014no coding or stress. Everything's made simple."
+  ]
+}

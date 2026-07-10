@@ -1,0 +1,46 @@
+{
+ "slug": "launcher-persona-quiz",
+ "title": "Dreamer Persona Quiz | BrandBizkit",
+ "description": "Take the brandbizkit persona quiz and discover your entrepreneurial starting point. Are you the Dreamer, Creator, Builder, or Launcher. We have the tools and solutions you need for every stage of your business. We provide you with FREE, verified AI tools that can help you get started today!",
+ "h1": "The Launcher",
+ "image": "/assets/brandbizkit-logo-icon_biz-in-a-box-m2WqBe1lo1IyOwpo.png",
+ "blocks": [
+  {
+   "tag": "h1",
+   "text": "The Launcher",
+   "href": null
+  },
+  {
+   "tag": "h3",
+   "text": "You are the Momentum Maximizer",
+   "href": null
+  },
+  {
+   "tag": "p",
+   "text": "You know what you want and have the foundations in place \u2014 now it\u2019s all about scaling, launching, and automating at speed. The Launcher is execution-focused and ready to grow.",
+   "href": null
+  },
+  {
+   "tag": "p",
+   "text": "Check out your brand launch kit below specifying your needs, your AI toolkit, a few starter prompts and your action plan. If you still need help getting started we've got you covered. Simply click here and join our completely FREE AI introduction course.",
+   "href": null
+  }
+ ],
+ "images": [
+  {
+   "src": "/assets/courage_5db8dbd0-90be-4bff-a200-d2ce91d0a8f6-ALpPRN6qOXI68yz8.png",
+   "alt": ""
+  },
+  {
+   "src": "/assets/courage_5db8dbd0-90be-4bff-a200-d2ce91d0a8f6-ALpPRN6qOXI68yz8.png",
+   "alt": ""
+  },
+  {
+   "src": "/assets/courage_5db8dbd0-90be-4bff-a200-d2ce91d0a8f6-ALpPRN6qOXI68yz8.png",
+   "alt": ""
+  }
+ ],
+ "videos": [],
+ "iframes": [],
+ "hasForm": true
+}

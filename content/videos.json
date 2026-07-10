@@ -1,0 +1,69 @@
+{
+  "videos": [
+    {
+      "id": "03oAwu-8Xv0",
+      "provider": "youtube",
+      "title": "BrandBizkit — Launch Your Brand with Free AI Tools",
+      "description": "How BrandBizkit helps aspiring entrepreneurs launch brands with curated free AI tools.",
+      "pages": ["/"],
+      "transcript": ""
+    },
+    {
+      "id": "3UwIDyhsiHg",
+      "provider": "youtube",
+      "title": "Popular AI Tools — Overview",
+      "description": "A walkthrough of the most popular AI tools for entrepreneurs.",
+      "pages": ["/popular-ai-tools"],
+      "transcript": ""
+    },
+    {
+      "id": "4Q9sYkhTDPg",
+      "provider": "youtube",
+      "title": "Popular AI Tools — Deep Dive 1",
+      "description": "Hands-on demo of popular AI tools for brand building.",
+      "pages": ["/popular-ai-tools"],
+      "transcript": ""
+    },
+    {
+      "id": "LDpafb0r04M",
+      "provider": "youtube",
+      "title": "Popular AI Tools — Deep Dive 2",
+      "description": "Hands-on demo of popular AI tools for content and marketing.",
+      "pages": ["/popular-ai-tools"],
+      "transcript": ""
+    },
+    {
+      "id": "Lb11VuI9iCA",
+      "provider": "youtube",
+      "title": "Popular AI Tools — Deep Dive 3",
+      "description": "Hands-on demo of popular AI tools for automation.",
+      "pages": ["/popular-ai-tools"],
+      "transcript": ""
+    },
+    {
+      "id": "QFc7jXZ2pdE",
+      "provider": "youtube",
+      "title": "Popular AI Tools — Deep Dive 4",
+      "description": "Hands-on demo of popular AI tools for design.",
+      "pages": ["/popular-ai-tools"],
+      "transcript": ""
+    },
+    {
+      "id": "Rz6kvbgL8os",
+      "provider": "youtube",
+      "title": "AI Insights — Why Boring AI Wins",
+      "description": "Why the most exciting thing about AI is how boring it is.",
+      "pages": ["/the-most-exciting-thing-about-ai-is-how-boring-it-is"],
+      "transcript": ""
+    },
+    {
+      "id": "bEZwhhLOqpw",
+      "provider": "youtube",
+      "title": "AI Insights — Companion Video",
+      "description": "Companion video for BrandBizkit insights.",
+      "pages": ["/the-most-exciting-thing-about-ai-is-how-boring-it-is", "/ai-news"],
+      "transcript": ""
+    }
+  ],
+  "_note": "Add full transcripts to each video. Transcripts are rendered on-page and emitted as VideoObject schema so AI search engines can recommend specific videos. Use `npm run dev` then POST /api/agent/videos to update via the agent API."
+}

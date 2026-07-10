@@ -1,0 +1,37 @@
+{
+ "slug": "claude-ai",
+ "name": "Claude Ai",
+ "question": "What is Claude AI?",
+ "title": "What is Claude AI? | BrandBizkit",
+ "description": "Understanding the basics of Claude AI by Anthropic. What it is, what it can do, and how it works.\nExplore the revolutionary AI technology that's transforming how we interact with machines and access information",
+ "tagline": "A Constitutional AI Assistant",
+ "paragraphs": [
+  "Claude is an AI assistant created by Anthropic, designed using a novel approach called Constitutional AI. This method trains AI systems to better align with human values by following a set of principles or a \"constitution.\"",
+  "Unlike traditional AI models, Claude is specifically trained to be helpful, harmless, and honest. It aims to provide reliable information while avoiding harmful outputs and maintaining transparency about its limitations.",
+  "Claude excels at thoughtful dialogue, complex reasoning, creative writing, and detailed analysis across a wide range of topics, making it a powerful tool for both individuals and businesses.",
+  "We can help you get started using Claude AI and other related AI tools. If you already are a user of Claude we can also help you level up your game, teach you new ways of using AI and enhance your output and productivity with super efficient prompts. Wanna know more about our next learning session click below and sign up."
+ ],
+ "courseUrl": null,
+ "courseLabel": null,
+ "image": "/assets/claude-ai-3d-16-9-YX4jO0Pa15S6R098.png",
+ "images": [
+  {
+   "src": "/assets/claude-ai-3d-16-9-YX4jO0Pa15S6R098.png",
+   "alt": "a green square with a white knot on it"
+  },
+  {
+   "src": "/assets/reimagined_claude_brandbizkit-AQEZR08l3LsvaQDn.png",
+   "alt": ""
+  },
+  {
+   "src": "/assets/reimagined_claude_brandbizkit-AQEZR08l3LsvaQDn.png",
+   "alt": ""
+  },
+  {
+   "src": "/assets/website-cover_brandbizkit-Yyv0rblGk4c4gDeg.png",
+   "alt": "an abstract photo of a curved building with a blue sky in the background"
+  }
+ ],
+ "videos": [],
+ "cardImage": "/assets/reimagined_claude_brandbizkit-AQEZR08l3LsvaQDn.png"
+}
