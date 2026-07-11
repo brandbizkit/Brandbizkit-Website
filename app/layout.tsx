@@ -5,6 +5,7 @@ import { getSite } from "@/lib/content";
 import { organizationSchema, webSiteSchema, schemaScript } from "@/lib/schema";
 import Nav from "@/components/Nav";
 import Footer from "@/components/Footer";
+import ScrollSignupPopup from "@/components/ScrollSignupPopup";
 
 const poppins = Poppins({
   weight: ["400", "500", "600", "700", "800"],
@@ -38,6 +39,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <Nav site={site} />
         <main id="main">{children}</main>
         <Footer site={site} />
+        <ScrollSignupPopup />
       </body>
     </html>
   );

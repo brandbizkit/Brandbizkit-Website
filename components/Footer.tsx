@@ -1,5 +1,6 @@
 import Link from "next/link";
 import type { SiteConfig } from "@/lib/content";
+import NewsletterSignup from "./NewsletterSignup";
 
 const SOCIAL_LABELS: Record<string, string> = {
   instagram: "Instagram",
@@ -45,6 +46,17 @@ export default function Footer({ site }: { site: SiteConfig }) {
           </p>
           <p className="mt-3 max-w-md text-white/90">Launch your brand with free AI tools today.</p>
 
+          {/* Newsletter signup */}
+          <div className="mt-10 max-w-lg border-t border-white/25 pt-8">
+            <p className="font-display text-lg font-bold">Join the newsletter</p>
+            <p className="mt-1.5 text-sm text-white/80">
+              Free AI tools, guides and brand templates — straight to your inbox.
+            </p>
+            <div className="mt-4">
+              <NewsletterSignup source="footer" variant="dark" />
+            </div>
+          </div>
+
           <div className="mt-10 flex flex-col gap-6 border-t border-white/25 pt-8 md:flex-row md:items-center md:justify-between">
             <nav aria-label="Social media">
               <ul className="flex flex-wrap gap-x-5 gap-y-2">
@@ -66,6 +78,7 @@ export default function Footer({ site }: { site: SiteConfig }) {
             </nav>
 
             <nav aria-label="Footer" className="flex flex-wrap gap-x-6 gap-y-2 text-sm text-white/80">
+              <a href="#lets-talk" className="font-semibold transition hover:text-white">Get in Touch</a>
               <Link href="/terms-and-conditions" className="transition hover:text-white">Terms and Conditions</Link>
               <Link href="/privacy-policy" className="transition hover:text-white">Privacy Policy</Link>
               <Link href="/connect" className="transition hover:text-white">Connect &amp; Mentions</Link>

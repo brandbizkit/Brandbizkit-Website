@@ -18,6 +18,7 @@ export default function LeadForm({ source }: { source: string }) {
         phone: form.get("phone"),
         message: form.get("message"),
         source,
+        pagePath: window.location.pathname,
       }),
     });
     setStatus(res.ok ? "sent" : "error");

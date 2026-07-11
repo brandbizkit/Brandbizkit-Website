@@ -7,6 +7,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
   return [
     { url: site.url, priority: 1, changeFrequency: "weekly", lastModified: new Date() },
     { url: `${site.url}/connect`, priority: 0.6, changeFrequency: "monthly" },
+    { url: `${site.url}/growth-score`, priority: 0.8, changeFrequency: "monthly" },
     ...getAllSlugs().map(({ slug, type }) => ({
       url: `${site.url}/${slug}`,
       priority: type === "post" || type === "tool" ? 0.8 : type === "legal" ? 0.3 : 0.6,

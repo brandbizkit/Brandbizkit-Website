@@ -1,4 +1,5 @@
 import Image from "next/image";
+import Link from "next/link";
 import LeadForm from "./LeadForm";
 import PricingKits from "./PricingKits";
 
@@ -21,9 +22,12 @@ export default function ServicesTail({ source }: { source: string }) {
               We help you build your brand from start to finish. Visual identity, messaging,
               go-to-market strategy, marketing and more — powered by curated free AI tools.
             </p>
-            <a href="#lets-talk" className="btn btn-primary mt-7">
+            <Link href="/growth-score" className="btn btn-primary mt-7">
               Start Now
-            </a>
+            </Link>
+            <p className="mt-3 text-sm text-brand-text/55">
+              Takes 3 minutes — get your free Business Growth Score and see exactly what to fix first.
+            </p>
           </div>
           <Image
             src="/assets/start-your-business_brandbizkit-YX4xQvWke1T9D6Eb.jpg"

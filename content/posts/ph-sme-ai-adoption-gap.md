@@ -1,29 +1,40 @@
 ---
-title: "The Philippines Is Wired for AI. Almost Nobody's Using It Yet"
-description: "9 in 10 Filipino businesses own a computer and 8 in 10 have internet — but new research shows only 3% have actually adopted AI. Here's why the gap exists, and where it's already closing."
-date: "2026-07-10"
-author: "Michael Nielsen"
-readTime: "3 min read"
-image: "/assets/insights/ph-sme-ai-adoption-gap.jpg"
-imageAlt: "A Filipino small business owner taking a call while writing in a notebook at her flower shop"
+title: The Philippines Is Wired for AI. Almost Nobody's Using It Yet
+description: >-
+  9 in 10 Filipino businesses own a computer and 8 in 10 have internet — but new
+  research shows only 3% have actually adopted AI. Here's why the gap exists,
+  and where it's already closing.
+date: '2026-07-11'
+author: Michael Nielsen
+readTime: 3 min read
+image: /assets/insights/ph-sme-ai-adoption-gap.jpg
+imageAlt: >-
+  A Filipino small business owner taking a call while writing in a notebook at
+  her flower shop
 videos: []
 charts:
-  - type: "bar"
-    title: "Digital access vs. actual AI adoption, Philippine businesses (2025)"
-    unit: "%"
-    source: "PIDS, Readiness for AI Adoption of Philippine Business and Industry, 2025"
+  - type: bar
+    title: 'Digital access vs. actual AI adoption, Philippine businesses (2025)'
+    unit: '%'
+    source: 'PIDS, Readiness for AI Adoption of Philippine Business and Industry, 2025'
     data:
-      - { label: "Own a computer", value: 90.8 }
-      - { label: "Have internet access", value: 81 }
-      - { label: "Use AI tools", value: 14.9 }
-      - { label: "Adopted AI (industry avg.)", value: 3 }
-  - type: "line"
-    title: "Philippine digital economy, gross value added"
-    unit: "₱ trillion"
-    source: "Philippine Statistics Authority, via GMA News, April 30, 2026"
+      - label: Own a computer
+        value: 90.8
+      - label: Have internet access
+        value: 81
+      - label: Use AI tools
+        value: 14.9
+      - label: Adopted AI (industry avg.)
+        value: 3
+  - type: line
+    title: 'Philippine digital economy, gross value added'
+    unit: ₱ trillion
+    source: 'Philippine Statistics Authority, via GMA News, April 30, 2026'
     data:
-      - { label: "2024", value: 2.59 }
-      - { label: "2025", value: 2.74 }
+      - label: '2024'
+        value: 2.59
+      - label: '2025'
+        value: 2.74
 ---
 
 Here's a number that should stop every Filipino business owner mid-scroll: 90.8% of Philippine establishments own a computer, and 81% have internet access. That's a country built for AI.

@@ -30,6 +30,17 @@
   --font-body: var(--font-poppins), "Poppins", var(--font-inter), sans-serif;
   --shadow-card: 0 1px 2px rgb(13 20 26 / 0.05), 0 4px 12px rgb(13 20 26 / 0.06);
   --shadow-card-hover: 0 4px 8px rgb(13 20 26 / 0.06), 0 12px 28px rgb(13 20 26 / 0.12);
+  --animate-fade-in: fadeIn 0.2s ease;
+  --animate-pop-in: popIn 0.25s cubic-bezier(0.16, 1, 0.3, 1);
+
+  @keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+  }
+  @keyframes popIn {
+    from { opacity: 0; transform: translateY(12px) scale(0.97); }
+    to { opacity: 1; transform: translateY(0) scale(1); }
+  }
 }
 
 @layer base {

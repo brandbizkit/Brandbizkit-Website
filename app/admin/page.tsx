@@ -34,9 +34,9 @@ export default async function AdminPage({
   const authed = !!adminKey && cookieStore.get("bb_admin")?.value === adminKey;
   if (!authed) return <Login error={!!error} />;
 
-  const leads = listLeads();
+  const leads = await listLeads();
   const drafts = getDrafts();
-  const subs = listSubscribers();
+  const subs = await listSubscribers();
   const events = listEvents(50);
   const slugs = getAllSlugs();
   const posts = getPosts();
@@ -116,13 +116,14 @@ export default async function AdminPage({
               <th className="p-3">Name</th>
               <th className="p-3">Email</th>
               <th className="p-3">Source</th>
+              <th className="p-3">AI experience</th>
               <th className="p-3">GHL sync</th>
               <th className="p-3">Message</th>
             </tr>
           </thead>
           <tbody>
             {leads.length === 0 && (
-              <tr><td colSpan={6} className="p-4 text-brand-text/50">No leads yet — they land here (and forward to GoHighLevel if configured).</td></tr>
+              <tr><td colSpan={7} className="p-4 text-brand-text/50">No leads yet — they land here (and forward to GoHighLevel if configured).</td></tr>
             )}
             {leads.slice(0, 25).map((l) => (
               <tr key={l.id} className="border-t border-brand-ink/10">
@@ -130,8 +131,38 @@ export default async function AdminPage({
                 <td className="p-3">{l.name}</td>
                 <td className="p-3">{l.email}</td>
                 <td className="p-3">{l.source}</td>
+                <td className="p-3 text-brand-text/60">{l.experience_level ?? "—"}</td>
                 <td className="p-3">{l.synced_to_ghl ? "✅" : "—"}</td>
                 <td className="max-w-xs truncate p-3 text-brand-text/70">{l.message}</td>
+              </tr>
+            ))}
+          </tbody>
+        </table>
+      </div>
+
+      <h2 className="mt-12 font-display text-xl font-bold">📬 Newsletter subscribers</h2>
+      <div className="mt-4 overflow-x-auto rounded-2xl border border-brand-ink/10">
+        <table className="w-full text-sm">
+          <thead className="bg-brand-light text-left text-brand-text/70">
+            <tr>
+              <th className="p-3">When</th>
+              <th className="p-3">Email</th>
+              <th className="p-3">Name</th>
+              <th className="p-3">Source</th>
+              <th className="p-3">Page</th>
+            </tr>
+          </thead>
+          <tbody>
+            {subs.length === 0 && (
+              <tr><td colSpan={5} className="p-4 text-brand-text/50">No subscribers yet — footer signup and popups feed in here.</td></tr>
+            )}
+            {subs.slice(0, 25).map((s) => (
+              <tr key={s.id} className="border-t border-brand-ink/10">
+                <td className="p-3 text-brand-text/60">{s.created_at}</td>
+                <td className="p-3">{s.email}</td>
+                <td className="p-3">{s.name ?? "—"}</td>
+                <td className="p-3">{s.source ?? "—"}</td>
+                <td className="p-3 text-brand-text/60">{s.page_path ?? "—"}</td>
               </tr>
             ))}
           </tbody>

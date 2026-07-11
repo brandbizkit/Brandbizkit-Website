@@ -1,0 +1,241 @@
+{
+  "_note": "The Business Growth Score — ScoreApp-style assessment funnel at /growth-score. 14 questions: 1 stage + 12 scored (4 dimensions x 3 questions, 0-3 points each) + 1 bottleneck. Edit copy here; logic lives in components/GrowthScore.tsx.",
+  "title": "The Business Growth Score",
+  "subtitle": "Answer 14 quick questions and get a personalized dashboard showing exactly where your business stands — and what to fix first.",
+  "durationNote": "Takes about 3 minutes · Free · No jargon",
+  "dimensions": [
+    {
+      "id": "brand",
+      "label": "Brand Clarity",
+      "icon": "🎯",
+      "blurb": "How clear and consistent your business looks and sounds to a stranger.",
+      "notes": {
+        "low": "Right now, customers likely can't tell what you offer or why you're different — that costs you sales before any marketing even starts. The good news: this is the fastest thing to fix.",
+        "mid": "You have the pieces of a brand, but they're not working together yet. Tightening your message and using one consistent look everywhere will make everything else you do more effective.",
+        "high": "Your brand is clear and consistent — a real asset. Keep it tight as you grow, and make sure every new channel uses the same look and message."
+      },
+      "quickWin": {
+        "low": "Write one sentence: \"I help [who] get [result] without [pain]\" — and put it everywhere.",
+        "mid": "Pick one logo, two colors, two fonts — then update all your profiles to match in one afternoon.",
+        "high": "Turn your brand into templates so every new post or page stays on-brand automatically."
+      }
+    },
+    {
+      "id": "presence",
+      "label": "Online Presence",
+      "icon": "🌐",
+      "blurb": "Whether customers can find you — on Google, on their phones, and now in AI tools like ChatGPT.",
+      "notes": {
+        "low": "If customers can't find you online, you don't exist for most of them — over 80% of people check a business online before buying. A simple professional site changes this fast.",
+        "mid": "You're findable, but you're leaking trust: an outdated site or thin Google presence makes customers hesitate. A refresh plus proper Google/AI setup would put you ahead of most local competitors.",
+        "high": "Strong presence — you're ahead of the pack. The next frontier is AI search: making sure ChatGPT and Google's AI can read and recommend your business."
+      },
+      "quickWin": {
+        "low": "Claim your free Google Business Profile today — it takes 30 minutes and makes you findable.",
+        "mid": "Open your website on your phone and fix the three most annoying things you see.",
+        "high": "Ask ChatGPT what it knows about your business — then fill the gaps it reveals."
+      }
+    },
+    {
+      "id": "customers",
+      "label": "Getting Customers",
+      "icon": "🧲",
+      "blurb": "How reliably new inquiries come in — and whether any of them slip through the cracks.",
+      "notes": {
+        "low": "Your business currently depends on luck and word of mouth. That feels fine until it goes quiet. Building one reliable channel — plus a way to capture every inquiry — is the priority.",
+        "mid": "Customers are coming, but inconsistently, and some inquiries likely slip away unanswered. A simple system that saves every lead and a steady content rhythm would smooth out the ups and downs.",
+        "high": "You have real customer flow. Now it's about scale: more channels, faster follow-up, and content that keeps working for you while you sleep."
+      },
+      "quickWin": {
+        "low": "Set up one simple contact form that saves every inquiry in one place — never rely on DMs alone.",
+        "mid": "Block 2 hours weekly to batch-create your posts — consistency beats brilliance.",
+        "high": "Add one new channel this quarter (blog, email list, or short video) and measure it."
+      }
+    },
+    {
+      "id": "systems",
+      "label": "Systems & AI",
+      "icon": "⚙️",
+      "blurb": "How much of your week gets eaten by repetitive work that tools could do for you.",
+      "notes": {
+        "low": "You're the bottleneck in your own business — hours go into work that free AI tools could do in minutes. Every week this continues is a week of growth you're giving away.",
+        "mid": "You've started using tools, but there's still a lot of copy-paste in your week. Connecting the pieces (forms → customer list → follow-up) would give you hours back.",
+        "high": "You run a modern operation — tools and AI are doing real work for you. The next level is automation that runs daily without you touching it."
+      },
+      "quickWin": {
+        "low": "Pick your most annoying weekly task and ask ChatGPT to do it — today, free.",
+        "mid": "Move your customer list out of your head/chats into one simple tool this week.",
+        "high": "Automate one full workflow end-to-end — from inquiry to follow-up — and let it run."
+      }
+    }
+  ],
+  "questions": [
+    {
+      "id": "stage",
+      "type": "profile",
+      "question": "Where is your business right now?",
+      "options": [
+        { "text": "I have an idea, but haven't started yet", "value": "idea" },
+        { "text": "I'm building it — getting ready to launch", "value": "starting" },
+        { "text": "I've launched and have my first customers", "value": "launched" },
+        { "text": "I'm established and focused on growing", "value": "growing" }
+      ]
+    },
+    {
+      "id": "brand1",
+      "dimension": "brand",
+      "question": "If a stranger asked what makes your business different, could you answer in one clear sentence?",
+      "options": [
+        { "text": "I honestly haven't figured that out yet", "points": 0 },
+        { "text": "I'd struggle — it comes out different every time", "points": 1 },
+        { "text": "Roughly — I know it, but it's not sharp", "points": 2 },
+        { "text": "Yes, instantly — and customers repeat it back", "points": 3 }
+      ]
+    },
+    {
+      "id": "brand2",
+      "dimension": "brand",
+      "question": "Do you have one consistent look — logo, colors, fonts — used everywhere?",
+      "options": [
+        { "text": "Nothing yet", "points": 0 },
+        { "text": "Just a basic logo", "points": 1 },
+        { "text": "Mostly — but it varies between places", "points": 2 },
+        { "text": "Yes — everything matches everywhere", "points": 3 }
+      ]
+    },
+    {
+      "id": "brand3",
+      "dimension": "brand",
+      "question": "How well do you know your ideal customer?",
+      "options": [
+        { "text": "Anyone who'll pay, really", "points": 0 },
+        { "text": "I have a rough idea", "points": 1 },
+        { "text": "I know who they are, but haven't written it down", "points": 2 },
+        { "text": "Exactly — I know who they are, what they want, and what they'll pay", "points": 3 }
+      ]
+    },
+    {
+      "id": "presence1",
+      "dimension": "presence",
+      "question": "What best describes your website?",
+      "options": [
+        { "text": "I don't have one", "points": 0 },
+        { "text": "Just a Facebook/Instagram page", "points": 1 },
+        { "text": "A basic site, but it's outdated or DIY", "points": 2 },
+        { "text": "A professional site I'm proud to share", "points": 3 }
+      ]
+    },
+    {
+      "id": "presence2",
+      "dimension": "presence",
+      "question": "If someone Googles your business — or asks ChatGPT about it — what do they find?",
+      "options": [
+        { "text": "Probably nothing", "points": 0 },
+        { "text": "Bits and pieces, some outdated", "points": 1 },
+        { "text": "Decent info, but I haven't checked in a while", "points": 2 },
+        { "text": "A strong, accurate presence — I've made sure of it", "points": 3 }
+      ]
+    },
+    {
+      "id": "presence3",
+      "dimension": "presence",
+      "question": "How does your business look on a phone?",
+      "options": [
+        { "text": "No idea — never checked", "points": 0 },
+        { "text": "Not great — things look broken or tiny", "points": 1 },
+        { "text": "Okay, but not impressive", "points": 2 },
+        { "text": "Great — fast, clean, easy to use", "points": 3 }
+      ]
+    },
+    {
+      "id": "customers1",
+      "dimension": "customers",
+      "question": "Where do new customers mostly come from?",
+      "options": [
+        { "text": "Word of mouth only — when it happens", "points": 0 },
+        { "text": "Occasional posts when I remember", "points": 1 },
+        { "text": "Steady flow from social media and referrals", "points": 2 },
+        { "text": "Several reliable channels bringing leads every week", "points": 3 }
+      ]
+    },
+    {
+      "id": "customers2",
+      "dimension": "customers",
+      "question": "When someone inquires about your business, what happens?",
+      "options": [
+        { "text": "Honestly, some slip through the cracks", "points": 0 },
+        { "text": "I reply when I can — sometimes days later", "points": 1 },
+        { "text": "Every inquiry is saved and answered within a day", "points": 2 },
+        { "text": "Instant confirmation, saved in a system, automatic follow-up", "points": 3 }
+      ]
+    },
+    {
+      "id": "customers3",
+      "dimension": "customers",
+      "question": "How often do you publish content (posts, articles, videos)?",
+      "options": [
+        { "text": "Rarely or never", "points": 0 },
+        { "text": "When inspiration strikes", "points": 1 },
+        { "text": "Most weeks", "points": 2 },
+        { "text": "On a consistent schedule, planned ahead", "points": 3 }
+      ]
+    },
+    {
+      "id": "systems1",
+      "dimension": "systems",
+      "question": "How many hours a week go into repetitive tasks — posting, invoices, follow-ups, admin?",
+      "options": [
+        { "text": "10+ hours — it eats my week", "points": 0 },
+        { "text": "5–10 hours", "points": 1 },
+        { "text": "A few hours", "points": 2 },
+        { "text": "Almost none — most of it runs automatically", "points": 3 }
+      ]
+    },
+    {
+      "id": "systems2",
+      "dimension": "systems",
+      "question": "Where does your customer information live?",
+      "options": [
+        { "text": "In my head and my chat threads", "points": 0 },
+        { "text": "A spreadsheet I sometimes update", "points": 1 },
+        { "text": "A simple tool or CRM I use regularly", "points": 2 },
+        { "text": "A connected system — every contact tracked, with follow-ups", "points": 3 }
+      ]
+    },
+    {
+      "id": "systems3",
+      "dimension": "systems",
+      "question": "How often do you use AI tools (ChatGPT, Canva AI, etc.) in your business?",
+      "options": [
+        { "text": "Never — I wouldn't know where to start", "points": 0 },
+        { "text": "Tried a few times", "points": 1 },
+        { "text": "Weekly, for a few tasks", "points": 2 },
+        { "text": "Daily — they're part of how I work", "points": 3 }
+      ]
+    },
+    {
+      "id": "bottleneck",
+      "type": "profile",
+      "question": "Last one: if we could take ONE thing off your plate tomorrow, what should it be?",
+      "options": [
+        { "text": "Figuring out my brand and message", "value": "brand" },
+        { "text": "Getting a proper website live", "value": "website" },
+        { "text": "Creating content and marketing consistently", "value": "content" },
+        { "text": "The repetitive admin work", "value": "admin" },
+        { "text": "Honestly — knowing where to start", "value": "direction" }
+      ]
+    }
+  ],
+  "grades": [
+    { "min": 0, "label": "Foundation Stage", "color": "#ff4232", "summary": "You're at the very start — which means every improvement from here has a big impact. Your score isn't a judgment; it's a map. Focus on the two lowest areas below and you'll feel the difference within weeks." },
+    { "min": 40, "label": "Momentum Building", "color": "#f3c82e", "summary": "You've built real foundations — now the gaps are what's holding you back. The pattern below shows exactly where effort is leaking. Fix the lowest bar first; it's usually the cheapest win." },
+    { "min": 65, "label": "Growth Ready", "color": "#697bdc", "summary": "You're ahead of most small businesses. What's left isn't about working harder — it's about systems and consistency doing the work for you. The notes below show where to focus." },
+    { "min": 85, "label": "Scale Mode", "color": "#0e5c46", "summary": "Impressive — you run a tighter operation than the vast majority of small businesses. Your opportunities now are automation and reach: making growth happen without more of your hours." }
+  ],
+  "kits": {
+    "idea": { "name": "Starter Kit", "price": "₱11,800 / $199", "why": "You're at idea stage — the Starter Kit gives you the brand, the plan, and the templates to make it real, without paying for things you don't need yet." },
+    "starting": { "name": "Launch Kit", "price": "₱21,500 / $359", "why": "You're building toward launch — the Launch Kit gets your website, forms, and online presence built and live for you, so you launch looking established from day one." },
+    "launched": { "name": "Launch Kit", "price": "₱21,500 / $359", "why": "You've launched, but your online foundation has gaps that cost you customers. The Launch Kit rebuilds it properly — website, lead capture, and findability on Google and AI search." },
+    "growing": { "name": "Growth Plan", "price": "₱50,000+ / $850+ monthly", "why": "You're past the setup stage — what you need is consistent marketing without doing it yourself. The Growth Plan handles content, posting, and replies every month while you run the business." }
+  }
+}

@@ -1,40 +1,27 @@
 /**
- * CRM datastore (SQLite). Leads, subscribers, and an event log for the
- * agentic pipeline. File lives in /data — swap for a hosted DB (Postgres,
- * Turso) before deploying to a serverless platform.
+ * CRM datastore.
+ *
+ * Leads and newsletter subscribers — the actual customer-facing data — live
+ * in Supabase (see lib/supabase.ts + supabase/schema.sql) so they survive a
+ * serverless deploy and are queryable outside this codebase. The internal
+ * agent/admin event log stays on local SQLite: it's a low-stakes debug
+ * trail, not customer data, and doesn't need to be durable across deploys.
  */
 import Database from "better-sqlite3";
 import fs from "fs";
 import path from "path";
+import { getSupabaseAdmin } from "./supabase";
 
 const DATA_DIR = path.join(process.cwd(), "data");
 if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
 
 let db: Database.Database | null = null;
 
-export function getDb(): Database.Database {
+function getDb(): Database.Database {
   if (db) return db;
   db = new Database(path.join(DATA_DIR, "crm.db"));
   db.pragma("journal_mode = WAL");
   db.exec(`
-    CREATE TABLE IF NOT EXISTS leads (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      name TEXT NOT NULL,
-      email TEXT NOT NULL,
-      phone TEXT,
-      message TEXT,
-      source TEXT,
-      status TEXT DEFAULT 'new',
-      synced_to_ghl INTEGER DEFAULT 0,
-      created_at TEXT DEFAULT (datetime('now'))
-    );
-    CREATE TABLE IF NOT EXISTS subscribers (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      email TEXT NOT NULL UNIQUE,
-      name TEXT,
-      source TEXT,
-      created_at TEXT DEFAULT (datetime('now'))
-    );
     CREATE TABLE IF NOT EXISTS events (
       id INTEGER PRIMARY KEY AUTOINCREMENT,
       type TEXT NOT NULL,
@@ -47,56 +34,97 @@ export function getDb(): Database.Database {
 }
 
 export type Lead = {
-  id: number;
+  id: string;
   name: string;
   email: string;
   phone?: string;
   message?: string;
   source?: string;
-  status: string;
-  synced_to_ghl: number;
+  page_path?: string;
+  experience_level?: string;
+  consent: boolean;
+  synced_to_ghl: boolean;
   created_at: string;
 };
 
-export function insertLead(lead: {
+export type Subscriber = {
+  id: string;
+  email: string;
+  name?: string;
+  source?: string;
+  page_path?: string;
+  created_at: string;
+};
+
+export async function insertLead(lead: {
   name: string;
   email: string;
   phone?: string;
   message?: string;
   source?: string;
-}): number {
-  const res = getDb()
-    .prepare(
-      "INSERT INTO leads (name, email, phone, message, source) VALUES (?, ?, ?, ?, ?)"
-    )
-    .run(lead.name, lead.email, lead.phone ?? null, lead.message ?? null, lead.source ?? null);
+  pagePath?: string;
+  experienceLevel?: string;
+  consent?: boolean;
+}): Promise<string> {
+  const { data, error } = await getSupabaseAdmin()
+    .from("leads")
+    .insert({
+      name: lead.name,
+      email: lead.email,
+      phone: lead.phone ?? null,
+      message: lead.message ?? null,
+      source: lead.source ?? null,
+      page_path: lead.pagePath ?? null,
+      experience_level: lead.experienceLevel ?? null,
+      consent: lead.consent ?? false,
+    })
+    .select("id")
+    .single();
+  if (error) throw new Error(`Supabase insertLead failed: ${error.message}`);
   logEvent("lead.created", "website", lead);
-  return Number(res.lastInsertRowid);
+  return data.id as string;
 }
 
-export function markLeadSynced(id: number): void {
-  getDb().prepare("UPDATE leads SET synced_to_ghl = 1 WHERE id = ?").run(id);
+export async function markLeadSynced(id: string): Promise<void> {
+  const { error } = await getSupabaseAdmin()
+    .from("leads")
+    .update({ synced_to_ghl: true })
+    .eq("id", id);
+  if (error) throw new Error(`Supabase markLeadSynced failed: ${error.message}`);
 }
 
-export function listLeads(): Lead[] {
-  return getDb().prepare("SELECT * FROM leads ORDER BY created_at DESC").all() as Lead[];
+export async function listLeads(): Promise<Lead[]> {
+  const { data, error } = await getSupabaseAdmin()
+    .from("leads")
+    .select("*")
+    .order("created_at", { ascending: false });
+  if (error) throw new Error(`Supabase listLeads failed: ${error.message}`);
+  return (data ?? []) as Lead[];
 }
 
-export function insertSubscriber(email: string, name?: string, source?: string): void {
-  getDb()
-    .prepare(
-      "INSERT INTO subscribers (email, name, source) VALUES (?, ?, ?) ON CONFLICT(email) DO NOTHING"
-    )
-    .run(email, name ?? null, source ?? null);
-  logEvent("subscriber.created", "website", { email, source });
+export async function insertSubscriber(
+  email: string,
+  name?: string,
+  source?: string,
+  pagePath?: string
+): Promise<void> {
+  const { error } = await getSupabaseAdmin()
+    .from("newsletter_subscribers")
+    .upsert(
+      { email, name: name ?? null, source: source ?? null, page_path: pagePath ?? null },
+      { onConflict: "email", ignoreDuplicates: true }
+    );
+  if (error) throw new Error(`Supabase insertSubscriber failed: ${error.message}`);
+  logEvent("subscriber.created", "website", { email, source, pagePath });
 }
 
-export function listSubscribers(): { email: string; name?: string; created_at: string }[] {
-  return getDb().prepare("SELECT * FROM subscribers ORDER BY created_at DESC").all() as {
-    email: string;
-    name?: string;
-    created_at: string;
-  }[];
+export async function listSubscribers(): Promise<Subscriber[]> {
+  const { data, error } = await getSupabaseAdmin()
+    .from("newsletter_subscribers")
+    .select("*")
+    .order("created_at", { ascending: false });
+  if (error) throw new Error(`Supabase listSubscribers failed: ${error.message}`);
+  return (data ?? []) as Subscriber[];
 }
 
 export function logEvent(type: string, actor: string, payload: unknown): void {

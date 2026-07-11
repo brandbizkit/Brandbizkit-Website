@@ -3,6 +3,8 @@ import path from "path";
 
 type Kit = {
   name: string;
+  stage?: string;
+  tagline?: string;
   pricePhp: string;
   priceUsd: string;
   cadence: string;
@@ -59,9 +61,17 @@ export default function PricingKits() {
                   ★ MOST POPULAR
                 </span>
               )}
-              <h3 className={`text-center font-display text-2xl font-bold ${kit.popular ? "text-brand-accent" : "text-brand-ink"}`}>
+              {kit.stage && (
+                <p className={`text-center text-sm font-bold uppercase tracking-wide ${kit.popular ? "text-brand-accent" : "text-brand-periwinkle-dark"}`}>
+                  {kit.stage}
+                </p>
+              )}
+              <h3 className={`mt-1 text-center font-display text-2xl font-bold ${kit.popular ? "text-brand-accent" : "text-brand-ink"}`}>
                 {kit.name}
               </h3>
+              {kit.tagline && (
+                <p className="mt-2 text-center text-sm leading-relaxed text-brand-text/70">{kit.tagline}</p>
+              )}
               <p className="mt-4 text-center">
                 <span className="font-display text-4xl font-extrabold tracking-tight text-brand-ink">{kit.pricePhp}</span>
                 <span className="text-brand-text/50"> / </span>

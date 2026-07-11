@@ -1,55 +1,63 @@
 {
-  "_note": "Biz in a Box service kits — rendered by components/PricingKits.tsx on the homepage and in the shared page tail. Copy replicated 1:1 from the live site's pricing widget.",
+  "_note": "Biz in a Box service kits — rendered by components/PricingKits.tsx on the homepage and in the shared page tail. Three offers laddered by business stage: starting out -> launching -> growing. Keep inclusions jargon-free and stage-relevant.",
   "heading": "brandbizkit services",
-  "subheading": "Everything you need to launch your brand with confidence.",
+  "subheading": "Three ways to work with us — pick the one that matches where your business is right now.",
   "kits": [
     {
       "name": "Starter Kit",
+      "stage": "Just starting out?",
+      "tagline": "Turn your idea into a real brand — with everything you need to do it yourself.",
       "pricePhp": "₱11,800",
       "priceUsd": "$199",
       "cadence": "one-time",
       "popular": false,
       "features": [
-        "Brand & Client Audit (report + guided workbook)",
-        "Ecosystem Map (editable Canva template)",
-        "Community Persona Builder (4 persona boards)",
-        "Brand Voice & Culture Board (editable Canva board)",
-        "Landing Page Funnel Wireframe + Copy Formula",
-        "Starter Social Kit Framework",
-        "CTA Funnel Recap (1-page roadmap)"
+        "A working session to get clear on your idea, your customers, and your first steps",
+        "Your brand look: logo direction, colors, and fonts — as easy-to-edit Canva templates",
+        "A short market report: who your customers are, what they pay, and who you're up against",
+        "AI writing prompts tuned to your brand — so ChatGPT writes like you, not like a robot",
+        "A 30-day content calendar with the post ideas already filled in",
+        "Ready-made templates for your first landing page, price list, and social posts",
+        "A simple 1-page plan for your first 90 days"
       ],
-      "outcome": "A plug-and-play starter toolkit. You do the implementation using your own products, services, and tools."
+      "outcome": "You know exactly what your brand is, who it's for, and what to do next — with all the templates to do it yourself."
     },
     {
       "name": "Launch Kit",
+      "stage": "Ready to launch?",
+      "tagline": "We build it and put it live — you just plug in your products and go.",
       "pricePhp": "₱21,500",
       "priceUsd": "$359",
       "cadence": "one-time",
       "popular": true,
       "features": [
-        "1 hour consulting on brand visuals, messaging, and voice.",
-        "1-3 Page Professional Website",
-        "CRM",
-        "Inquiry & Booking Forms",
-        "Mobile-Ready & SEO-Friendly",
-        "Social Media & Map Integration"
+        "Everything in the Starter Kit",
+        "A professional 3–5 page website — designed, built, and put live for you",
+        "Set up so customers find you on Google — and AI tools like ChatGPT can recommend you",
+        "Contact and booking forms, with every inquiry saved in one place so you never lose a lead",
+        "Looks great on phones — where most of your customers are",
+        "Connected to your social media accounts and Google Maps",
+        "30 days of support after launch — we fix, tweak, and answer questions"
       ],
-      "outcome": "A ready-to-launch brand system — designed, built, and delivered. Just plug in your products/services and go live."
+      "outcome": "A ready-to-launch brand with a live website that collects customers for you from day one."
     },
     {
-      "name": "Social Media Management",
+      "name": "Growth Plan",
+      "stage": "Up and running?",
+      "tagline": "We keep your marketing going every month — you approve, we do the rest.",
       "pricePhp": "₱50,000+",
       "priceUsd": "$850+",
       "cadence": "monthly",
       "popular": false,
       "features": [
-        "1 hour consulting on brand visuals, messaging, and voice.",
-        "12–16 fully branded posts per month (static + reels)",
-        "Content calendar + scheduling",
-        "Engagement management (comments + DMs)",
-        "Monthly analytics report"
+        "A monthly strategy call to plan what we post and why",
+        "12–16 branded posts per month (images + reels), written and designed for you",
+        "Blog articles with real data and research that bring customers from Google and AI search",
+        "Everything planned and scheduled in advance — you approve before it goes out",
+        "We reply to comments and messages so no customer is left waiting",
+        "A plain-English monthly report: what grew, what worked, what's next"
       ],
-      "outcome": "Don't have time to grow your social media presence? We do it for you: consistent, on-brand visibility that turns followers into customers."
+      "outcome": "Don't have time to do your own marketing? We do it for you: consistent, on-brand visibility that turns followers into customers."
     }
   ]
 }

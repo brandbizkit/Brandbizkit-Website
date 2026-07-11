@@ -98,12 +98,12 @@ export default function HomePage() {
               curated, free AI tools—with zero coding, zero overwhelm, and step-by-step guidance.
             </p>
             <div className="mt-8 flex flex-wrap gap-4">
-              <a
-                href="#persona-quiz"
+              <Link
+                href="/growth-score"
                 className="btn border-[3px] border-white bg-brand-yellow px-8 text-xl font-bold text-brand-ink shadow-[0_8px_24px_rgb(0_0_0/0.25)] hover:bg-brand-ink hover:text-white md:text-2xl"
               >
                 &gt;&gt;Start&lt;&lt;
-              </a>
+              </Link>
               <a
                 href="#popularaitools"
                 className="btn border-2 border-white px-8 text-xl font-semibold text-white hover:bg-white hover:text-brand-ink"

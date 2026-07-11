@@ -170,6 +170,7 @@ export function llmsTxt(): string {
     ...getVideos().map((v) => `- ${v.title}: https://www.youtube.com/watch?v=${v.id}`),
     "",
     "## Optional",
+    `- [Business Growth Score — free 3-minute assessment](${site.url}/growth-score)`,
     `- [Connect & social profiles](${site.url}/connect)`,
     `- [Full site content](${site.url}/llms-full.txt)`,
     `- [RSS feed](${site.url}/feed.xml)`,

@@ -26,6 +26,7 @@ import fs from "fs";
 import path from "path";
 import ServicesTail from "@/components/ServicesTail";
 import InsightArticle from "@/components/InsightArticle";
+import InsightsExitPopup from "@/components/InsightsExitPopup";
 import VideoWithTranscript from "@/components/VideoWithTranscript";
 import BlockRenderer from "@/components/BlockRenderer";
 import ToolsDirectoryView from "@/components/ToolsDirectory";
@@ -33,6 +34,8 @@ import ToolCategoryButtons from "@/components/ToolCategoryButtons";
 import WannaLearn from "@/components/WannaLearn";
 import ChatGptTools from "@/components/ChatGptTools";
 import BizToolKits, { type KitSection } from "@/components/BizToolKits";
+import AiSchoolLeadForm from "@/components/AiSchoolLeadForm";
+import PricingKits from "@/components/PricingKits";
 
 export function generateStaticParams() {
   return getAllSlugs().map(({ slug }) => ({ slug }));
@@ -134,6 +137,7 @@ export default async function ContentPage({
         <InsightArticle post={post} />
         <Videos pathName={pathName} />
         <ServicesTail source={slug} />
+        <InsightsExitPopup />
       </>
     );
   }
@@ -440,6 +444,48 @@ export default async function ContentPage({
     );
   }
 
+  // ---- ai-school: bespoke layout (hero + qualifying signup form + pricing) ----
+  if (slug === "ai-school") {
+    const page = getLandingPage(slug)!;
+    return (
+      <>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: schemaScript(listSchema(page)) }}
+        />
+        <section className="bg-white py-16">
+          <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 md:grid-cols-2">
+            <div>
+              <p className="section-eyebrow">Ai School</p>
+              <h1 className="mt-2 font-display text-4xl font-bold tracking-tight md:text-5xl">
+                {page.h1}
+              </h1>
+              <p className="section-sub">
+                We create customized 1-on-1 classes and online group sessions for companies and
+                individuals that want to learn more about AI and how to implement AI in their
+                daily workflows.
+              </p>
+              {page.image && (
+                <Image
+                  src={page.image}
+                  alt="AI School — hands-on AI training"
+                  width={640}
+                  height={400}
+                  className="mt-8 w-full rounded-2xl object-cover shadow-[0_18px_44px_rgb(13_20_26/0.12)]"
+                />
+              )}
+            </div>
+            <div>
+              <AiSchoolLeadForm />
+            </div>
+          </div>
+        </section>
+        <PricingKits />
+        <Videos pathName={pathName} />
+      </>
+    );
+  }
+
   // ---- Landing / listicle pages ----
   const page = getLandingPage(slug);
   if (page) {
@@ -498,6 +544,7 @@ export default async function ContentPage({
         )}
         <Videos pathName={pathName} />
         <ServicesTail source={slug} />
+        {isNewsIndex && <InsightsExitPopup />}
       </>
     );
   }
