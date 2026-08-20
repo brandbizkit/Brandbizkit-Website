@@ -45,6 +45,6 @@ export async function POST(req: NextRequest) {
     });
   }
   fs.writeFileSync(FILE, JSON.stringify(data, null, 1));
-  logEvent(existing ? "video.updated" : "video.added", "agent-api", { id });
+  await logEvent(existing ? "video.updated" : "video.added", "agent-api", { id });
   return NextResponse.json({ ok: true, id });
 }

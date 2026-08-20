@@ -10,31 +10,34 @@
     {
       "id": "top-ai-image-tools",
       "title": "Top AI Image Generation Tools",
-      "blurb": "Create logos, product shots, social graphics and brand imagery \u2014 free or with recurring credits, no credit card required.",
+      "blurb": "Create logos, product shots, social graphics and brand imagery — free or with recurring credits, no credit card required.",
       "tools": [
         {
           "name": "Google Gemini (Nano Banana 2)",
           "url": "https://gemini.google.com",
-          "why": "The best all-around free image generator \u2014 about 20 images a day at up to 1K resolution, no credit card needed, just a Google account.",
+          "why": "The best all-around free image generator — about 20 images a day at up to 1K resolution, no credit card needed, just a Google account.",
           "pricing": "free-credits",
           "freeDetails": "~20 images/day, resets daily",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Bundled into Google AI plans, not sold separately: AI Plus $4.99/mo, AI Pro $19.99/mo (~1,000 edits/day), AI Ultra from $99.99/mo."
         },
         {
           "name": "Leonardo.ai",
           "url": "https://leonardo.ai",
-          "why": "The most generous daily reload of any dedicated image tool \u2014 150 credits every 24 hours with commercial-use rights, signup is email-only.",
+          "why": "The most generous daily reload of any dedicated image tool — 150 credits every 24 hours with commercial-use rights, signup is email-only.",
           "pricing": "free-credits",
           "freeDetails": "150 credits/day, resets every 24h",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Apprentice $12/mo, Artisan $30/mo, Maestro $60/mo (annual billing ~20% cheaper). Paid plans add commercial rights and unlimited generations on Leonardo's own models."
         },
         {
           "name": "Ideogram",
           "url": "https://ideogram.ai",
-          "why": "Still the best free option when your image needs readable text \u2014 labels, quotes, headlines \u2014 refreshed daily with no card on file.",
+          "why": "Still the best free option when your image needs readable text — labels, quotes, headlines — refreshed daily with no card on file.",
           "pricing": "free-credits",
           "freeDetails": "10 slow-queue generations/day",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Basic $8/mo (400 credits), Plus $20/mo (1,000 credits), Pro $60/mo (3,500 credits) — roughly 25-30% cheaper billed annually."
         },
         {
           "name": "Freepik AI",
@@ -42,7 +45,8 @@
           "why": "A huge existing stock-asset library paired with a genuinely daily-reloading AI generator, handy if you already source imagery from Freepik.",
           "pricing": "free-credits",
           "freeDetails": "20 images/day (Auto model), resets daily",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Premium ~$20/mo ($14.50/mo annual), Premium+ ~$34/mo annual, Pro ~$210/mo annual. Freepik rebranded to Magnific in April 2026 — check magnific.com/pricing for current rates."
         },
         {
           "name": "Playground AI",
@@ -50,54 +54,62 @@
           "why": "One of the largest free daily allowances of any image tool, bundled with a full editor (background remover, mockups, logo maker) built around the results.",
           "pricing": "free-credits",
           "freeDetails": "50-100 images/day (reports vary), resets daily",
+          "paidPlan": "Pro $12-15/mo (120 edits/3hr, commercial rights), Pro Plus $36-45/mo (fastest speeds), Day Pass $8/24hr",
+          "addedOn": "2026-07-10",
           "lastVerified": "2026-07-10"
         },
         {
           "name": "Bing Image Creator",
           "url": "https://www.bing.com/create",
-          "why": "A Reddit favorite for no-friction, DALL\u00b7E-quality images \u2014 a weekly batch of fast generations plus unlimited slower-queue images after, with just a Microsoft account.",
+          "why": "A Reddit favorite for no-friction, DALL·E-quality images — a weekly batch of fast generations plus unlimited slower-queue images after, with just a Microsoft account.",
           "pricing": "free-credits",
-          "freeDetails": "15\u201325 fast generations/week + unlimited slow queue",
-          "lastVerified": "2026-07-10"
+          "freeDetails": "15–25 fast generations/week + unlimited slow queue",
+          "lastVerified": "2026-07-10",
+          "paidPlan": "No standalone paid plan — extra daily boosts come bundled into Microsoft Copilot Pro ($20/mo) or Microsoft 365 Personal/Premium ($9.99-$19.99/mo)."
         },
         {
           "name": "Flux (Black Forest Labs)",
           "url": "https://blackforestlabs.ai",
-          "why": "Open-source and genuinely unlimited if you self-host (12GB+ GPU) \u2014 no account, no card, no recurring limit at all.",
+          "why": "Open-source and genuinely unlimited if you self-host (12GB+ GPU) — no account, no card, no recurring limit at all.",
           "pricing": "free",
           "freeDetails": "Unlimited, self-hosted open source",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "access": "Self-hosted only — this free tier requires downloading the open-weight model and running it yourself on your own GPU (12GB+ VRAM). Not a website you can just sign up for.",
+          "paidPlan": "No official hosted paid plan from Black Forest Labs for consumers; developers can pay per-image via third-party API providers (Replicate, fal.ai, etc)."
         },
         {
           "name": "Adobe Firefly",
           "url": "https://firefly.adobe.com",
-          "why": "The safest pick for client-facing commercial work \u2014 trained only on licensed Adobe Stock content, though the monthly allowance is thin.",
+          "why": "The safest pick for client-facing commercial work — trained only on licensed Adobe Stock content, though the monthly allowance is thin.",
           "pricing": "free-credits",
           "freeDetails": "25 generative credits/month, resets monthly",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Standard $9.99/mo (2,000 credits), Pro $29.99/mo (7,000 credits), Premium $199.99/mo (50,000 credits)."
         }
       ]
     },
     {
       "id": "top-ai-video-tools",
       "title": "Top AI Video Generation Tools",
-      "blurb": "Turn ideas and images into short-form video for reels, ads and product demos \u2014 recurring free credits, no credit card required.",
+      "blurb": "Turn ideas and images into short-form video for reels, ads and product demos — recurring free credits, no credit card required.",
       "tools": [
         {
           "name": "Kling AI",
           "url": "https://klingai.com",
-          "why": "The benchmark free video tool right now \u2014 66 credits reset every 24 hours, no card required, on one of the most commercially proven video models.",
+          "why": "The benchmark free video tool right now — 66 credits reset every 24 hours, no card required, on one of the most commercially proven video models.",
           "pricing": "free-credits",
           "freeDetails": "66 credits/day, resets every 24h",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Standard ~$7/mo, Pro ~$26/mo, Premier ~$65/mo, Ultra ~$128-180/mo (regional pricing varies, annual billing ~20-34% cheaper). All paid tiers remove watermarks and unlock 1080p + commercial rights."
         },
         {
           "name": "Google Veo 3",
           "url": "https://gemini.google.com",
-          "why": "Frontier-quality, sound-native video inside the free Gemini app \u2014 50 credits a day is the easiest way to test cinematic AI video at no cost.",
+          "why": "Frontier-quality, sound-native video inside the free Gemini app — 50 credits a day is the easiest way to test cinematic AI video at no cost.",
           "pricing": "free-credits",
           "freeDetails": "50 credits/day, resets daily",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Bundled into Google AI plans, not sold separately: AI Plus $4.99/mo, AI Pro $19.99/mo, AI Ultra from $99.99/mo for the highest video credit allowances."
         },
         {
           "name": "Google Flow",
@@ -105,6 +117,8 @@
           "why": "Google's dedicated AI filmmaking studio for Veo 3.1 — storyboarding, camera controls and shot-to-shot consistency that the plain Gemini app doesn't offer, with credits that reload every day. Note: the daily allowance varies significantly by country — around 50 credits/day (~12 clips) in most places, but up to 180/day has been reported in India, Brazil and parts of Southeast Asia.",
           "pricing": "free-credits",
           "freeDetails": "~50 credits/day (~12 clips) in most countries, up to 180/day in some regions; availability and limits vary by country",
+          "paidPlan": "AI Plus $9.99/mo, AI Pro $19.99/mo (full-featured), AI Ultra $249.99/mo (highest credits, teams/enterprise)",
+          "addedOn": "2026-07-10",
           "lastVerified": "2026-07-10"
         },
         {
@@ -113,62 +127,69 @@
           "why": "A consistently top-ranked free tier for clip quality, with a full daily reload rather than a one-time trial.",
           "pricing": "free-credits",
           "freeDetails": "~80 credits/day, resets every 24h (720p, watermarked)",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Standard ~$30/mo (120 gens, no watermark), Pro ~$90/mo (400 gens), Premier ~$499/mo (2,000+ gens, studio-scale). ~20% cheaper billed annually."
         },
         {
           "name": "Pika",
           "url": "https://pika.art",
-          "why": "Fun, social-ready clips with a real monthly reload \u2014 no card needed to sign up with email, Google or Discord.",
+          "why": "Fun, social-ready clips with a real monthly reload — no card needed to sign up with email, Google or Discord.",
           "pricing": "free-credits",
           "freeDetails": "80 credits/month, resets monthly (watermarked)",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Standard $8/mo, Pro $28/mo, Fancy $76/mo — all paid tiers remove the watermark that's permanently stuck on free downloads."
         },
         {
           "name": "Hailuo AI",
           "url": "https://hailuoai.video",
-          "why": "Remarkably photorealistic output \u2014 especially human subjects \u2014 with a handful of free generations refreshing every day.",
+          "why": "Remarkably photorealistic output — especially human subjects — with a handful of free generations refreshing every day.",
           "pricing": "free-credits",
-          "freeDetails": "3\u20135 generations/day, resets daily",
-          "lastVerified": "2026-07-10"
+          "freeDetails": "3–5 generations/day, resets daily",
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Standard from ~$8-15/mo up to Max $199.99/mo, credit-based (video length/resolution changes how many credits each clip costs). Pricing varies by promo and region — confirm on hailuoai.video before recommending a number."
         }
       ]
     },
     {
       "id": "top-ai-website-app-building-tools",
       "title": "Top AI Website & App Building Tools",
-      "blurb": "Describe your idea in plain English and get a working site or app \u2014 recurring free tokens or credits, no credit card required.",
+      "blurb": "Describe your idea in plain English and get a working site or app — recurring free tokens or credits, no credit card required.",
       "tools": [
         {
           "name": "Bolt.new",
           "url": "https://bolt.new",
-          "why": "Full-stack apps in the browser with zero setup \u2014 a real daily-and-monthly token allowance instead of a one-time trial.",
+          "why": "Full-stack apps in the browser with zero setup — a real daily-and-monthly token allowance instead of a one-time trial.",
           "pricing": "free-credits",
           "freeDetails": "300K tokens/day, up to 1M tokens/month",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Pro $25/mo (10M tokens), Teams $30/member/mo. Costs scale with project complexity, not just number of interactions."
         },
         {
           "name": "Lovable",
           "url": "https://lovable.dev",
-          "why": "The most beginner-friendly idea-to-app builder \u2014 daily credits mean you can keep coming back without ever entering payment details.",
+          "why": "The most beginner-friendly idea-to-app builder — daily credits mean you can keep coming back without ever entering payment details.",
           "pricing": "free-credits",
           "freeDetails": "5 credits/day (~30/month)",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Pro $25/mo (100 credits), Business $50/mo (200 credits + SSO). Real total cost often runs 2-3x the sticker price once hosting/custom domains are added."
         },
         {
           "name": "v0 by Vercel",
-          "why": "The best free option for polished landing pages and UI \u2014 produces production-grade React/Tailwind you can deploy straight to Vercel.",
+          "why": "The best free option for polished landing pages and UI — produces production-grade React/Tailwind you can deploy straight to Vercel.",
           "url": "https://v0.dev",
           "pricing": "free-credits",
           "freeDetails": "$5 in credits/month, resets monthly",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Premium $20/mo, Team $30/user/mo, Business $100/user/mo — each tier includes a monthly credit pool for generations."
         },
         {
           "name": "Replit",
           "url": "https://replit.com",
-          "why": "Cloud IDE plus an AI agent that handles multi-step builds \u2014 a genuine monthly allowance of dev time and AI completions to learn on.",
+          "why": "Cloud IDE plus an AI agent that handles multi-step builds — a genuine monthly allowance of dev time and AI completions to learn on.",
           "pricing": "free-credits",
           "freeDetails": "1,200 dev minutes + 100 AI completions/month",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Core $20/mo annual (~$25/mo monthly) includes $20 of usage credit; Pro $100/mo for larger teams. Unused credits don't roll over — switches to pay-as-you-go once spent."
         },
         {
           "name": "Base44",
@@ -176,22 +197,27 @@
           "why": "Popular with non-technical founders for going from prompt to working app fast, with credits that renew every month.",
           "pricing": "free-credits",
           "freeDetails": "25 message credits + 100 integration credits/month",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Starter $16/mo, Builder $40/mo, Pro $80/mo, Elite $160/mo (annual billing, ~20% more month-to-month)."
         },
         {
           "name": "Dyad",
           "url": "https://dyad.sh",
-          "why": "A free, open-source app builder that runs on your own machine \u2014 no signup, no card, and your code stays private by default.",
+          "why": "A free, open-source app builder that runs on your own machine — no signup, no card, and your code stays private by default.",
           "pricing": "free",
           "freeDetails": "Free & open source, runs locally",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "access": "Runs entirely on your own computer — download and install it, no account or hosted service involved.",
+          "paidPlan": "None — it's free and open source with no paid tier. You only pay if you connect it to a paid LLM API key."
         },
         {
           "name": "Google AI Studio (Build mode)",
           "url": "https://aistudio.google.com",
-          "why": "Google's free 'vibe coding' surface \u2014 describe an app in plain English and Gemini assembles a working React/Tailwind or native Android app, with free Cloud Run deployment for new builders and no card on file.",
+          "why": "Google's free 'vibe coding' surface — describe an app in plain English and Gemini assembles a working React/Tailwind or native Android app, with free Cloud Run deployment for new builders and no card on file.",
           "pricing": "free",
           "freeDetails": "Free, no card required; includes free Cloud Run deployment for new builders",
+          "paidPlan": "The Studio interface itself stays free with no paid tier; costs only appear if you exceed the free Gemini API quota and enable Cloud billing (pay-per-token), or outgrow the free Cloud Run starter allowance (2 free full-stack app deployments)",
+          "addedOn": "2026-07-10",
           "lastVerified": "2026-07-10"
         }
       ]
@@ -199,15 +225,16 @@
     {
       "id": "top-ai-coding-assistant-tools",
       "title": "Top AI Coding Assistant Tools",
-      "blurb": "In-editor AI pair programmers that autocomplete, refactor and chat through your codebase \u2014 recurring free quotas, no credit card required.",
+      "blurb": "In-editor AI pair programmers that autocomplete, refactor and chat through your codebase — recurring free quotas, no credit card required.",
       "tools": [
         {
           "name": "Cursor",
           "url": "https://cursor.com",
-          "why": "The dominant AI-native code editor right now \u2014 a real monthly allowance of completions and premium requests on the free Hobby tier.",
+          "why": "The dominant AI-native code editor right now — a real monthly allowance of completions and premium requests on the free Hobby tier.",
           "pricing": "free-credits",
           "freeDetails": "2,000 completions + 50 premium requests/month",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Pro $20/mo, Pro+ $60/mo, Ultra $200/mo, Teams from $40/user/mo. Each includes a monthly credit pool spent only when you pick a premium model manually."
         },
         {
           "name": "GitHub Copilot Free",
@@ -215,7 +242,8 @@
           "why": "The highest-rated coding assistant on G2/Capterra, with a genuinely free monthly tier bundled straight into your GitHub account.",
           "pricing": "free-credits",
           "freeDetails": "2,000 completions + 50 chat requests/month",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Pro $10/mo, Pro+ $39/mo, Max $100/mo for individuals; Business $19/user/mo, Enterprise $39/user/mo for teams. Inline code completions stay free/unmetered on every paid plan — only chat and agent mode draw down credits."
         },
         {
           "name": "Windsurf",
@@ -223,46 +251,56 @@
           "why": "Unlimited autocomplete plus a recurring agent quota make this a strong Copilot alternative for founders coding solo.",
           "pricing": "free-credits",
           "freeDetails": "Unlimited Tab autocomplete + recurring Cascade quota",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Pro $20/mo, Max $200/mo, Teams $40/user/mo (~17% cheaper annually). Note: Windsurf was rebranded to \"Devin Desktop\" by Cognition in June 2026 — same pricing, new name, now found at devin.ai."
         },
         {
           "name": "Cline",
           "url": "https://cline.bot",
-          "why": "Free and open source with no platform credits to run out of \u2014 bring your own API key and it runs in VS Code or JetBrains indefinitely.",
+          "why": "Free and open source with no platform credits to run out of — bring your own API key and it runs in VS Code or JetBrains indefinitely.",
           "pricing": "free",
           "freeDetails": "Free & open source (bring your own API key)",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "access": "Free and open source, but it's an empty shell without an LLM behind it — you must bring your own paid API key from a provider like Anthropic or OpenAI, and pay that provider directly for actual usage.",
+          "paidPlan": "Cline itself has no subscription fee — all cost comes from whichever LLM API key you connect (pay-as-you-go with that provider)."
         },
         {
           "name": "Google Jules",
           "url": "https://jules.google",
-          "why": "Google's async coding agent hands off whole tasks \u2014 bug fixes, PRs \u2014 for free every day with just a Google account.",
+          "why": "Google's async coding agent hands off whole tasks — bug fixes, PRs — for free every day with just a Google account.",
           "pricing": "free-credits",
-          "freeDetails": "15\u201320 tasks/day",
-          "lastVerified": "2026-07-10"
+          "freeDetails": "15–20 tasks/day",
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Bundled into Google AI plans, not sold separately: AI Pro $19.99/mo (100 tasks/day), AI Ultra $124.99/mo (300 tasks/day)."
         },
         {
           "name": "Gemini CLI",
           "url": "https://github.com/google-gemini/gemini-cli",
-          "why": "The lowest-friction way to get an AI coding agent in your terminal \u2014 genuinely free with no account required for basic use.",
+          "why": "The lowest-friction way to get an AI coding agent in your terminal — genuinely free with no account required for basic use.",
           "pricing": "free",
           "freeDetails": "Free, no account required for basic use",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "access": "A command-line tool — runs in a terminal, not a website. Needs installing (via npm or a package manager), which is a bit more technical than clicking a signup link.",
+          "paidPlan": "The CLI itself stays free; heavier usage draws on the same Google AI Pro ($19.99/mo) / Ultra plans that raise quotas for Gemini's other developer tools."
         },
         {
           "name": "Gemini Code Assist",
           "url": "https://codeassist.google",
-          "why": "By far the largest free coding quota available anywhere \u2014 roughly 90x GitHub Copilot's free tier \u2014 running on Gemini 2.5 Pro inside VS Code, JetBrains and Android Studio.",
+          "why": "By far the largest free coding quota available anywhere — roughly 90x GitHub Copilot's free tier — running on Gemini 2.5 Pro inside VS Code, JetBrains and Android Studio.",
           "pricing": "free",
           "freeDetails": "180,000 completions/month (~6,000/day) + 240 chat messages/day",
+          "paidPlan": "Standard $19/seat/mo billed annually ($22.80 monthly); Enterprise $45/seat/mo billed annually ($54 monthly) adds pooled usage, advanced security and a no-training guarantee on your code",
+          "addedOn": "2026-07-10",
           "lastVerified": "2026-07-10"
         },
         {
           "name": "Amazon Q Developer",
           "url": "https://aws.amazon.com/q/developer/",
-          "why": "AWS's free coding assistant \u2014 unlimited inline suggestions plus a recurring monthly quota of agentic tasks, signed up for free with just an AWS Builder ID (no AWS account or card needed).",
+          "why": "AWS's free coding assistant — unlimited inline suggestions plus a recurring monthly quota of agentic tasks, signed up for free with just an AWS Builder ID (no AWS account or card needed).",
           "pricing": "free-credits",
           "freeDetails": "Unlimited code suggestions + 50 agentic requests/month",
+          "paidPlan": "Pro $19/user/month (pooled lines-of-code allowance, overage billed per line). Note: AWS is sunsetting Q Developer's IDE plugins and paid subscriptions — new signups closed 2026-05-15, support ends 2027-04-30, in favor of its successor Kiro",
+          "addedOn": "2026-07-10",
           "lastVerified": "2026-07-10"
         }
       ]
@@ -270,15 +308,17 @@
     {
       "id": "top-ai-agents-automation-tools",
       "title": "Top AI Agents & Automation Tools",
-      "blurb": "Automate repetitive busywork and build AI agents that run your workflows \u2014 recurring free tasks or credits, no credit card required.",
+      "blurb": "Automate repetitive busywork and build AI agents that run your workflows — recurring free tasks or credits, no credit card required.",
       "tools": [
         {
           "name": "n8n",
           "url": "https://n8n.io",
-          "why": "The most popular open-source automation platform \u2014 self-host the Community Edition for unlimited workflows at zero cost (n8n's own cloud free tier has since been discontinued).",
+          "why": "The most popular open-source automation platform — self-host the Community Edition for unlimited workflows at zero cost (n8n's own cloud free tier has since been discontinued).",
           "pricing": "free",
           "freeDetails": "Free self-hosted Community Edition, unlimited executions",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "access": "This free tier is self-hosted only — you run the Community Edition on your own server (technical setup, e.g. a $4-7/mo VPS). n8n's own free cloud tier has been discontinued.",
+          "paidPlan": "n8n Cloud (optional, fully hosted, no server needed): Starter ~$20/mo (2,500 executions), Pro ~$50/mo (10,000), Business ~$667/mo (40,000). Self-hosting stays free forever regardless."
         },
         {
           "name": "Zapier",
@@ -286,7 +326,8 @@
           "why": "8,000+ app connections and the easiest on-ramp for non-technical teams, with a permanent free plan that renews every month.",
           "pricing": "free-credits",
           "freeDetails": "100 tasks/month, resets monthly",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Professional $19.99-29.99/mo (750 tasks), Team ~$103.50/mo (2,000 tasks), scaling up to ~$5,999/mo at 2M tasks. Annual billing saves ~33%."
         },
         {
           "name": "Latenode",
@@ -294,7 +335,8 @@
           "why": "Free tier is priced in raw compute (CPU-seconds) rather than opaque credits, so simple workflows stretch further before you hit a paywall.",
           "pricing": "free-credits",
           "freeDetails": "10,000 CPU-seconds/month (~10K executions)",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Free plus metered pay-as-you-go after that (billed per second of execution time rather than per task) — e.g. roughly $1-11/mo at 20,000-100,000 runs on the cheapest qualifying plan."
         },
         {
           "name": "Activepieces",
@@ -302,7 +344,9 @@
           "why": "An open-source Zapier alternative with a genuinely free cloud tier, or self-host the Community Edition for unlimited automations.",
           "pricing": "free-credits",
           "freeDetails": "1,000 tasks + 200 AI credits/month (cloud); unlimited if self-hosted",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "access": "The generous \"unlimited\" tier requires self-hosting the Community Edition yourself; the hosted cloud free plan runs on daily credits with real limits.",
+          "paidPlan": "Activepieces Cloud (optional): Standard $5/active flow/mo (unlimited runs on that flow), custom Ultimate tier with added governance/compliance. Self-hosting stays free forever regardless."
         },
         {
           "name": "Gumloop",
@@ -310,15 +354,17 @@
           "why": "A visual agent builder with one of the more generous monthly credit allowances for building real automations without paying.",
           "pricing": "free-credits",
           "freeDetails": "~2,000 credits/month",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Pro from $37/mo (20,000 credits, scales up to $1,840/mo at 1M credits). Note: Gumloop removed its permanent free tier as of 2026-07-30 — confirm current free access before recommending it."
         },
         {
           "name": "Lindy",
           "url": "https://www.lindy.ai",
-          "why": "An \"AI employee\" builder popular on r/nocode for handling email, scheduling and support \u2014 400 credits renew every month.",
+          "why": "An \"AI employee\" builder popular on r/nocode for handling email, scheduling and support — 400 credits renew every month.",
           "pricing": "free-credits",
           "freeDetails": "400 credits/month",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Plus $49.99/mo, Pro $99.99/mo, Max $199.99/mo. Note: Lindy dropped its free plan entirely in 2026 — now only a 7-day free trial, monthly billing only (no annual discount)."
         },
         {
           "name": "Botpress",
@@ -326,7 +372,8 @@
           "why": "A well-regarded platform for building support and sales chatbots, with a pay-as-you-go free plan that never requires a card to start.",
           "pricing": "free-credits",
           "freeDetails": "500 messages + $5 AI credit/month",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Plus $150/mo, Team $750/mo, plus custom Managed/Enterprise tiers. Every paid plan now includes unlimited bots and AI usage costs at no extra charge (as of the May 2026 pricing update)."
         },
         {
           "name": "Dify",
@@ -334,7 +381,10 @@
           "why": "A production-grade open-source platform for building RAG-powered agents and workflows — self-host the Community Edition for free with no usage caps and full data control.",
           "pricing": "free",
           "freeDetails": "Free self-hosted Community Edition, unlimited usage",
-          "lastVerified": "2026-07-10"
+          "paidPlan": "Dify Cloud (optional, if you don't want to self-host): Professional $59/workspace/mo (5,000 message credits), Team $159/workspace/mo (10,000 credits), custom Enterprise (annual only). Self-hosting stays free forever regardless.",
+          "addedOn": "2026-07-10",
+          "lastVerified": "2026-07-10",
+          "access": "The free, uncapped tier is self-hosted only — you run the Community Edition on your own server. Dify's hosted Cloud free tier is capped at 200 total message credits (not renewing monthly)."
         },
         {
           "name": "Flowise",
@@ -342,14 +392,17 @@
           "why": "A LangChain-based drag-and-drop agent builder under a permissive MIT license — free to self-host and use commercially with no restrictions.",
           "pricing": "free",
           "freeDetails": "Free & open source (MIT), self-hosted, unlimited",
-          "lastVerified": "2026-07-10"
+          "paidPlan": "Flowise Cloud (optional): Starter $35/mo (10,000 predictions/mo), Pro $65/mo (50,000 predictions/mo, +$15/extra user). Self-hosting stays free forever regardless.",
+          "addedOn": "2026-07-10",
+          "lastVerified": "2026-07-10",
+          "access": "The free, uncapped tier is self-hosted only — you run it on your own server. Flowise's hosted Cloud free tier caps out at 100 predictions/month."
         }
       ]
     },
     {
       "id": "top-ai-writing-copywriting-tools",
       "title": "Top AI Writing & Copywriting Tools",
-      "blurb": "Draft ad copy, landing pages, emails and blog posts faster \u2014 recurring free words or prompts, no credit card required.",
+      "blurb": "Draft ad copy, landing pages, emails and blog posts faster — recurring free words or prompts, no credit card required.",
       "tools": [
         {
           "name": "Copy.ai",
@@ -357,7 +410,8 @@
           "why": "Consistently named the best free AI writer for marketing copy, with 90+ templates for ads, social and email.",
           "pricing": "free-credits",
           "freeDetails": "2,000 words/month, resets monthly",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Chat $29/mo, Pro $49/mo (5 seats + Brand Voice), then a steep jump to $1,000+/mo workflow-automation tiers for larger teams."
         },
         {
           "name": "Rytr",
@@ -365,7 +419,8 @@
           "why": "The most generous true-free AI writer for short-form copy, covering 40+ use cases and 20+ tones.",
           "pricing": "free-credits",
           "freeDetails": "10,000 characters/month, resets monthly",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Unlimited $9/mo (unlimited characters), Premium $29/mo (adds team features + more plagiarism checks). ~20% cheaper billed annually."
         },
         {
           "name": "Writesonic",
@@ -373,23 +428,26 @@
           "why": "A favorite in SEO and content-marketing circles for its template range and built-in SEO checker, on a free plan that renews monthly.",
           "pricing": "free-credits",
           "freeDetails": "~10,000 words/month, resets monthly",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Paid plans start around $79/mo (annual) and scale to $399+/mo for larger teams — Writesonic has renamed tiers repeatedly, so confirm current names/caps on writesonic.com before quoting a plan."
         },
         {
           "name": "QuillBot",
           "url": "https://quillbot.com",
-          "why": "One of the most-recommended free rewriting and editing tools on Reddit and G2 \u2014 unlimited paraphrasing plus 50 AI prompts every day.",
+          "why": "One of the most-recommended free rewriting and editing tools on Reddit and G2 — unlimited paraphrasing plus 50 AI prompts every day.",
           "pricing": "freemium",
           "freeDetails": "Unlimited paraphrasing + 50 AI prompts/day",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Premium ~$10-20/mo depending on billing term (monthly $19.95, annual ~$10/mo). Verified students get it for ~$6.25/mo."
         },
         {
           "name": "Grammarly",
           "url": "https://www.grammarly.com",
-          "why": "Free writing cleanup everywhere you type \u2014 still the near-universal recommendation for a quick quality upgrade on customer-facing copy.",
+          "why": "Free writing cleanup everywhere you type — still the near-universal recommendation for a quick quality upgrade on customer-facing copy.",
           "pricing": "freemium",
           "freeDetails": "Free tier with unlimited core suggestions",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Grammarly merged Premium and Business into one \"Pro\" plan in 2026: $12/mo billed annually ($30/mo month-to-month), covering individuals through teams up to 149 members."
         },
         {
           "name": "Wordtune",
@@ -397,6 +455,8 @@
           "why": "The most-recommended free AI rewriting tool for tightening tone and clarity sentence-by-sentence, rather than generating copy from scratch.",
           "pricing": "free-credits",
           "freeDetails": "10 rewrites/day + 3 AI summaries/month",
+          "paidPlan": "Advanced $6.99/mo ($4.89/mo annual): 30 rewrites/day + 15 summaries/mo. Unlimited $9.99/mo ($6.99/mo annual): unlimited rewrites and summaries. Teams $15.99/seat/mo ($7.99/mo annual).",
+          "addedOn": "2026-07-10",
           "lastVerified": "2026-07-10"
         }
       ]
@@ -404,23 +464,25 @@
     {
       "id": "top-ai-design-tools",
       "title": "Top AI Design Tools",
-      "blurb": "Brand kits, social templates and design assistance for founders without a design team \u2014 recurring free credits, no credit card required.",
+      "blurb": "Brand kits, social templates and design assistance for founders without a design team — recurring free credits, no credit card required.",
       "tools": [
         {
           "name": "Canva",
           "url": "https://www.canva.com",
-          "why": "Still the #1 design tool for non-designers \u2014 a genuinely permanent free tier plus Magic Studio AI credits that renew monthly.",
+          "why": "Still the #1 design tool for non-designers — a genuinely permanent free tier plus Magic Studio AI credits that renew monthly.",
           "pricing": "freemium",
           "freeDetails": "Free forever plan + monthly Magic Studio AI credits",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Canva Pro $18/mo (or $12/mo billed annually), Canva Business $25/user/mo, Enterprise custom."
         },
         {
           "name": "Recraft",
           "url": "https://www.recraft.ai",
-          "why": "The only major free AI tool producing true scalable SVG vectors \u2014 the go-to for logos and brand illustration.",
+          "why": "The only major free AI tool producing true scalable SVG vectors — the go-to for logos and brand illustration.",
           "pricing": "free-credits",
           "freeDetails": "30 credits/day, resets every 24h",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Basic $10/mo (1,000 credits, adds commercial rights — the free tier's images are public with no license to use them commercially), scaling to Pro $48-160/mo for heavier use."
         },
         {
           "name": "Adobe Express",
@@ -428,30 +490,35 @@
           "why": "Adobe-quality templates and Firefly-powered generation with commercially-safe training data, on a plan that renews monthly.",
           "pricing": "freemium",
           "freeDetails": "Free plan + 25 generative credits/month",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Premium $9.99/mo ($99.99/yr), or Firefly Pro $19.99/mo which bundles Express Premium with more generative credits and web Photoshop."
         },
         {
           "name": "Microsoft Designer",
           "url": "https://designer.microsoft.com",
-          "why": "A free, DALL\u00b7E-powered design tool tightly integrated with Bing \u2014 fast for social graphics with just a Microsoft account.",
+          "why": "A free, DALL·E-powered design tool tightly integrated with Bing — fast for social graphics with just a Microsoft account.",
           "pricing": "free-credits",
           "freeDetails": "15 AI credits/month, resets monthly",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "No standalone paid plan — more credits come bundled into Microsoft 365 Personal ($9.99/mo), Family ($12.99/mo), or Premium ($19.99/mo)."
         },
         {
           "name": "Figma",
           "url": "https://www.figma.com",
-          "why": "The professional standard for UI and marketing design \u2014 the free Starter plan is usable indefinitely, not a trial, and now bundles daily AI credits.",
+          "why": "The professional standard for UI and marketing design — the free Starter plan is usable indefinitely, not a trial, and now bundles daily AI credits.",
           "pricing": "freemium",
           "freeDetails": "Free Starter plan (3 projects) + 150 AI credits/day (500/month), no expiry",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Professional from $12-20/editor/mo depending on seat type and billing term (Figma recently restructured seats into Full/Dev/Collab tiers priced separately) — confirm current seat pricing on figma.com before quoting a number."
         },
         {
           "name": "Google Stitch",
           "url": "https://stitch.withgoogle.com",
-          "why": "Google's free AI UI designer \u2014 describe an app and get a multi-screen interface exportable straight to Figma or code. Note: it's still a Google Labs beta, and access has been reported as unreliable or blocked in some countries, including Ukraine, parts of the Balkans (North Macedonia, Serbia, Bosnia and Herzegovina), the UAE, Andorra and Spain.",
+          "why": "Google's free AI UI designer — describe an app and get a multi-screen interface exportable straight to Figma or code. Note: it's still a Google Labs beta, and access has been reported as unreliable or blocked in some countries, including Ukraine, parts of the Balkans (North Macedonia, Serbia, Bosnia and Herzegovina), the UAE, Andorra and Spain.",
           "pricing": "free",
           "freeDetails": "550 generations/month (350 standard + 200 Pro); access unreliable in a handful of countries",
+          "paidPlan": "No paid tier yet — still 100% free while in Google Labs beta. A paid tier is expected once it exits beta (industry estimates ~$10-15/mo, undercutting Figma), but nothing is confirmed or scheduled.",
+          "addedOn": "2026-07-10",
           "lastVerified": "2026-07-10"
         }
       ]
@@ -459,39 +526,44 @@
     {
       "id": "top-ai-voice-transcription-tools",
       "title": "Top AI Voice & Transcription Tools",
-      "blurb": "Natural AI voice-overs and accurate speech-to-text for podcasts, reels and meeting notes \u2014 recurring free minutes or characters, no credit card required.",
+      "blurb": "Natural AI voice-overs and accurate speech-to-text for podcasts, reels and meeting notes — recurring free minutes or characters, no credit card required.",
       "tools": [
         {
           "name": "ElevenLabs",
           "url": "https://elevenlabs.io",
-          "why": "The most realistic AI voices available \u2014 10,000 free characters a month is enough for weekly short-form voice-overs.",
+          "why": "The most realistic AI voices available — 10,000 free characters a month is enough for weekly short-form voice-overs.",
           "pricing": "free-credits",
           "freeDetails": "10,000 characters/month, resets monthly",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Starter $6/mo, Creator $22/mo (unlocks professional voice cloning), Pro $99/mo, Scale $299/mo, Business $990/mo. Commercial use requires at least the $6 Starter tier."
         },
         {
           "name": "Otter.ai",
           "url": "https://otter.ai",
-          "why": "The most-recommended free meeting-transcription tool on Reddit and G2 \u2014 300 minutes reset every month.",
+          "why": "The most-recommended free meeting-transcription tool on Reddit and G2 — 300 minutes reset every month.",
           "pricing": "free-credits",
           "freeDetails": "300 minutes/month, resets monthly",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Pro ~$8-17/mo (1,200 min/mo), Business ~$20-30/user/mo (unlimited transcription, 5-seat minimum)."
         },
         {
           "name": "OpenAI Whisper",
           "url": "https://github.com/openai/whisper",
-          "why": "Unlimited free offline transcription in 99+ languages \u2014 the open-source workhorse behind most transcription apps, free forever if self-hosted.",
+          "why": "Unlimited free offline transcription in 99+ languages — the open-source workhorse behind most transcription apps, free forever if self-hosted.",
           "pricing": "free",
           "freeDetails": "Unlimited, open source, self-hosted",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "access": "Self-hosted only — this is an open-source model you download and run yourself (needs some technical comfort, e.g. Python/command line), not a website.",
+          "paidPlan": "No official paid tier for Whisper itself; OpenAI's hosted Whisper API is pay-as-you-go per audio minute for developers who don't want to self-host."
         },
         {
           "name": "Wispr Flow",
           "url": "https://wisprflow.ai",
-          "why": "Real-time voice dictation into any app on your computer or phone \u2014 talk instead of type, with a weekly word allowance that resets every Sunday.",
+          "why": "Real-time voice dictation into any app on your computer or phone — talk instead of type, with a weekly word allowance that resets every Sunday.",
           "pricing": "free-credits",
           "freeDetails": "2,000 words/week on desktop, resets weekly",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Flow Pro $15/mo ($12/mo billed annually) — unlocks unlimited dictation and custom AI Commands. Students get 3 months free, then $6/mo."
         },
         {
           "name": "Fish Audio",
@@ -499,30 +571,35 @@
           "why": "A lightweight ElevenLabs alternative with a genuine monthly reload and a community library of 2M+ cloned voices.",
           "pricing": "free-credits",
           "freeDetails": "8,000 credits/month (~7 min TTS), resets monthly",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Plus $15/mo (250,000 credits, API access), Pro $100/mo (2M credits, team seats). Free tier is personal-use only — no commercial rights."
         },
         {
           "name": "Descript",
           "url": "https://www.descript.com",
-          "why": "An all-in-one audio/video editor with transcript-based editing \u2014 60 free minutes a month is enough for short-form creator workflows.",
+          "why": "An all-in-one audio/video editor with transcript-based editing — 60 free minutes a month is enough for short-form creator workflows.",
           "pricing": "free-credits",
           "freeDetails": "60 transcription/media minutes/month",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Hobbyist $16/mo, Creator $24/mo (~10 hrs transcription, full AI features), Business $40-50/mo. Annual billing saves up to ~35%."
         },
         {
           "name": "NaturalReader",
           "url": "https://www.naturalreaders.com",
-          "why": "Unlimited free text-to-speech listening with standard voices \u2014 the long-standing pick for turning articles and PDFs into audio.",
+          "why": "Unlimited free text-to-speech listening with standard voices — the long-standing pick for turning articles and PDFs into audio.",
           "pricing": "freemium",
           "freeDetails": "Unlimited standard-voice TTS, free web app",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Personal listening plans: Lite $13.90/mo, Plus $20.90/mo, Pro $25.90/mo. Separate commercial/publishing plans (AI Voice Generator) start at $29/mo — the free tier is listening-only, not for publishable voiceovers."
         },
         {
           "name": "TTSMaker",
           "url": "https://ttsmaker.com",
-          "why": "The most generous no-signup text-to-speech tool \u2014 a real weekly character allowance with no account required, handy for quick voice-overs without commitment.",
+          "why": "The most generous no-signup text-to-speech tool — a real weekly character allowance with no account required, handy for quick voice-overs without commitment.",
           "pricing": "free",
           "freeDetails": "20,000 characters/week, no signup required",
+          "paidPlan": "TTSMaker Pro (paid subscription): more character quota, API access for developers, advanced sound editing, priority conversion. Exact price wasn't clearly published — check pro.ttsmaker.com/pricing directly before recommending a number to customers.",
+          "addedOn": "2026-07-10",
           "lastVerified": "2026-07-10"
         }
       ]
@@ -530,15 +607,16 @@
     {
       "id": "top-ai-music-audio-tools",
       "title": "Top AI Music & Audio Generation Tools",
-      "blurb": "Generate original background music, jingles and full songs for content and ads \u2014 recurring free credits, no credit card required.",
+      "blurb": "Generate original background music, jingles and full songs for content and ads — recurring free credits, no credit card required.",
       "tools": [
         {
           "name": "Suno",
           "url": "https://suno.com",
-          "why": "The consensus pick for best free AI music generator \u2014 natural-sounding vocals and the easiest prompt-to-song workflow, with credits that renew daily.",
+          "why": "The consensus pick for best free AI music generator — natural-sounding vocals and the easiest prompt-to-song workflow, with credits that renew daily.",
           "pricing": "free-credits",
           "freeDetails": "50 credits/day (~10 songs), resets daily",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Pro $10/mo (2,500 credits, ~500 songs, commercial license), Premier $30/mo (10,000 credits, ~2,000 songs). Free-tier songs are watermarked and non-commercial."
         },
         {
           "name": "Udio",
@@ -546,7 +624,8 @@
           "why": "Praised for high-fidelity instrumentals and finer creative control than most rivals, on credits that renew monthly and daily.",
           "pricing": "free-credits",
           "freeDetails": "100 credits/month + 10/day, resets monthly/daily",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Standard $10/mo (2,400 credits, private songs), Pro $30/mo (6,000 credits + commercial licensing)."
         },
         {
           "name": "Boomy",
@@ -554,7 +633,8 @@
           "why": "The fastest path from idea to finished song for non-musicians, with a monthly allowance and an optional (paid) Spotify distribution path.",
           "pricing": "free-credits",
           "freeDetails": "25 song creations/month, resets monthly",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Paid tiers roughly $3-30/mo depending on source (Boomy has re-priced repeatedly) — mainly unlock a higher creator royalty share on tracks you distribute to streaming platforms. Confirm current pricing on boomy.com."
         },
         {
           "name": "AIVA",
@@ -562,7 +642,8 @@
           "why": "A long-standing favorite among indie creators for instrumental and orchestral scoring, with a free download allowance every month.",
           "pricing": "free-credits",
           "freeDetails": "3 downloads/month, resets monthly (non-commercial)",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Standard and Pro plans up to ~$33/mo — Standard allows monetized use on YouTube/TikTok/Instagram (AIVA keeps copyright), Pro adds full copyright ownership and unrestricted commercial use."
         }
       ]
     },
@@ -574,26 +655,29 @@
         {
           "name": "ChatGPT",
           "url": "https://chatgpt.com",
-          "why": "The default AI assistant \u2014 free access to GPT-5-class models for writing, planning and coding, refreshing on a rolling daily window.",
+          "why": "The default AI assistant — free access to GPT-5-class models for writing, planning and coding, refreshing on a rolling daily window.",
           "pricing": "freemium",
           "freeDetails": "Free tier, rolling daily/hourly message limits",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "ChatGPT Plus $20/mo removes most limits and unlocks advanced models (see \"AI Tools Worth Paying For\" below)."
         },
         {
           "name": "Claude",
           "url": "https://claude.ai",
-          "why": "The strongest free assistant for long documents and careful writing \u2014 paste an entire business plan and get thoughtful feedback.",
+          "why": "The strongest free assistant for long documents and careful writing — paste an entire business plan and get thoughtful feedback.",
           "pricing": "freemium",
           "freeDetails": "Free tier, resets on a rolling 5-hour window",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Claude Pro $20/mo for much higher usage limits (see \"AI Tools Worth Paying For\" below)."
         },
         {
           "name": "Perplexity",
           "url": "https://perplexity.ai",
-          "why": "AI search with citations \u2014 unlimited standard search plus a handful of free Pro searches every day to verify competitors and market data.",
+          "why": "AI search with citations — unlimited standard search plus a handful of free Pro searches every day to verify competitors and market data.",
           "pricing": "freemium",
           "freeDetails": "Unlimited standard search + 5 Pro searches/day",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Pro $20/mo (or $10/mo for verified students), Max $200/mo for the heaviest research use."
         },
         {
           "name": "Google Gemini",
@@ -601,31 +685,35 @@
           "why": "A strong free ChatGPT alternative with deep multimodal and image-generation features, backed by a Google account only.",
           "pricing": "freemium",
           "freeDetails": "Free tier, rolling 5-hour usage window",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Bundled into Google AI plans, not sold separately (see \"AI Tools Worth Paying For\" below for Google AI Pro)."
         },
         {
           "name": "NotebookLM",
           "url": "https://notebooklm.google.com",
-          "why": "Upload your own documents and get a grounded research assistant, plus one-click audio overviews \u2014 completely free with a Google account.",
+          "why": "Upload your own documents and get a grounded research assistant, plus one-click audio overviews — completely free with a Google account.",
           "pricing": "free",
           "freeDetails": "100 notebooks, 50 chats + 3 audio overviews/day",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "NotebookLM Plus comes bundled into Google AI Pro ($19.99/mo) or Google Workspace plans — adds more notebooks, more daily queries and team sharing."
         },
         {
           "name": "DeepSeek",
           "url": "https://chat.deepseek.com",
-          "why": "A genuinely free, unmetered chat assistant frequently recommended on Reddit for coding and reasoning tasks at zero cost.",
+          "why": "A genuinely free, unmetered chat assistant you can use right now at chat.deepseek.com — just sign up, no card, no subscription tier at all (unlike ChatGPT/Claude, there's no \"DeepSeek Plus\"). Heavy global traffic can slow responses at peak times, but there's no hard usage cap. Its underlying model is also open-weight, so developers can separately choose to self-host it — but that's not required for normal use.",
           "pricing": "free",
-          "freeDetails": "Free, unmetered chat usage",
-          "lastVerified": "2026-07-10"
+          "freeDetails": "Free, hosted web/app chat at chat.deepseek.com — no card, no published message cap (may respond slower under heavy load)",
+          "lastVerified": "2026-07-10",
+          "paidPlan": "No consumer subscription tier exists. Developers only pay if they use DeepSeek's API directly (pay-per-token) instead of the free chat app."
         },
         {
           "name": "HubSpot CRM",
           "url": "https://www.hubspot.com/products/crm",
-          "why": "The strongest free CRM for founders \u2014 contacts, pipeline and email tracking free forever, no card required to start.",
+          "why": "The strongest free CRM for founders — contacts, pipeline and email tracking free forever, no card required to start.",
           "pricing": "freemium",
           "freeDetails": "Free forever core CRM (1,000 contacts, 2 users)",
-          "lastVerified": "2026-07-10"
+          "lastVerified": "2026-07-10",
+          "paidPlan": "Starter $20/seat/mo (~$9-15/mo with common promos), Professional $90/seat/mo + $1,500 onboarding, Enterprise $150/seat/mo + $7,000 onboarding."
         }
       ]
     },
@@ -637,7 +725,7 @@
         {
           "name": "ChatGPT Plus",
           "url": "https://chatgpt.com",
-          "why": "$20/month removes the limits on your most-used assistant \u2014 priority access, advanced models and heavier custom-GPT usage.",
+          "why": "$20/month removes the limits on your most-used assistant — priority access, advanced models and heavier custom-GPT usage.",
           "pricing": "freemium",
           "freeDetails": "$20/month",
           "lastVerified": "2026-07-10"
@@ -645,7 +733,7 @@
         {
           "name": "Claude Pro",
           "url": "https://claude.ai",
-          "why": "$20/month for much higher limits on the best long-document assistant \u2014 worth it the week you start writing serious content.",
+          "why": "$20/month for much higher limits on the best long-document assistant — worth it the week you start writing serious content.",
           "pricing": "freemium",
           "freeDetails": "$20/month",
           "lastVerified": "2026-07-10"
@@ -653,7 +741,7 @@
         {
           "name": "Canva Pro",
           "url": "https://www.canva.com",
-          "why": "$15/month unlocks the brand kit, background remover and premium templates \u2014 the single best value upgrade for solo founders.",
+          "why": "$15/month unlocks the brand kit, background remover and premium templates — the single best value upgrade for solo founders.",
           "pricing": "freemium",
           "freeDetails": "$15/month per user",
           "lastVerified": "2026-07-10"
@@ -661,7 +749,7 @@
         {
           "name": "Google AI Pro",
           "url": "https://one.google.com/ai",
-          "why": "$19.99/month bundles Gemini's top models, Veo video credits and 2TB storage \u2014 the broadest AI bundle per dollar.",
+          "why": "$19.99/month bundles Gemini's top models, Veo video credits and 2TB storage — the broadest AI bundle per dollar.",
           "pricing": "freemium",
           "freeDetails": "$19.99/month",
           "lastVerified": "2026-07-10"

@@ -41,12 +41,12 @@ export async function POST(req: NextRequest) {
       matter.stringify(content, data)
     );
     fs.unlinkSync(src);
-    logEvent("draft.published", "admin", { slug });
+    await logEvent("draft.published", "admin", { slug });
   } else if (action === "reject") {
     const rejectedDir = path.join(CONTENT, "drafts", "rejected");
     fs.mkdirSync(rejectedDir, { recursive: true });
     fs.renameSync(src, path.join(rejectedDir, `${slug}.md`));
-    logEvent("draft.rejected", "admin", { slug });
+    await logEvent("draft.rejected", "admin", { slug });
   }
   return NextResponse.redirect(new URL("/admin", req.url), 303);
 }

@@ -37,6 +37,6 @@ export async function POST(req: NextRequest) {
   };
   data.mentions = [...data.mentions.filter((m: { url: string }) => m.url !== mention.url), mention];
   fs.writeFileSync(FILE, JSON.stringify(data, null, 1));
-  logEvent("mention.added", "agent-api", mention);
+  await logEvent("mention.added", "agent-api", mention);
   return NextResponse.json({ ok: true, count: data.mentions.length });
 }

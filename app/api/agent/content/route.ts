@@ -64,6 +64,6 @@ export async function POST(req: NextRequest) {
   const file = path.join(process.cwd(), "content", "posts", `${slug}.md`);
   const existed = fs.existsSync(file);
   fs.writeFileSync(file, md);
-  logEvent(existed ? "content.updated" : "content.created", "agent-api", { slug });
+  await logEvent(existed ? "content.updated" : "content.created", "agent-api", { slug });
   return NextResponse.json({ ok: true, slug, action: existed ? "updated" : "created", url: `/${slug}` });
 }

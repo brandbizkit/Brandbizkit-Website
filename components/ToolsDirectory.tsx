@@ -88,7 +88,19 @@ export default function ToolsDirectoryView({
                   </span>
                 </div>
                 <p className="mt-1.5 text-xs font-semibold text-brand-periwinkle-dark">{t.freeDetails}</p>
+                {t.access && (
+                  <p className="mt-1.5 flex items-start gap-1.5 text-xs leading-snug text-brand-orange">
+                    <span aria-hidden>⚠️</span>
+                    <span>{t.access}</span>
+                  </p>
+                )}
                 <p className="mt-3 flex-1 text-sm leading-relaxed text-brand-text/80">{t.why}</p>
+                {t.paidPlan && (
+                  <p className="mt-3 rounded-lg bg-brand-light p-2.5 text-xs leading-relaxed text-brand-text/70">
+                    <span className="font-semibold text-brand-ink">If you outgrow the free tier: </span>
+                    {t.paidPlan}
+                  </p>
+                )}
                 <a
                   href={t.url}
                   rel="noopener"

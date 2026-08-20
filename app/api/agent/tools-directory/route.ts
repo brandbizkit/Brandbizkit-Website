@@ -81,7 +81,7 @@ export async function POST(req: NextRequest) {
   if (body.updateNote) data.updateNote = String(body.updateNote);
 
   fs.writeFileSync(FILE, JSON.stringify(data, null, 1));
-  logEvent("tools-directory.updated", "agent-api", {
+  await logEvent("tools-directory.updated", "agent-api", {
     mode: body.merge ? "merge" : "replace",
     note: body.updateNote ?? "",
     categories: (body.categories as ToolCategory[]).map((c) => c.id),

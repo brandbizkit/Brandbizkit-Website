@@ -1,6 +1,7 @@
 import { cookies } from "next/headers";
 import { listLeads, listSubscribers, listEvents } from "@/lib/db";
 import { getAllSlugs, getPosts, getDrafts, getVideos } from "@/lib/content";
+import { getToolsDirectory } from "@/lib/tools-directory";
 
 export const dynamic = "force-dynamic";
 export const metadata = { title: "Admin — BrandBizkit CMS", robots: { index: false } };
@@ -37,11 +38,15 @@ export default async function AdminPage({
   const leads = await listLeads();
   const drafts = getDrafts();
   const subs = await listSubscribers();
-  const events = listEvents(50);
+  const events = await listEvents(50);
   const slugs = getAllSlugs();
   const posts = getPosts();
   const videos = getVideos();
   const missingTranscripts = videos.filter((v) => !v.transcript).length;
+  const directory = getToolsDirectory();
+  const newTools = directory.categories.flatMap((c) =>
+    c.tools.filter((t) => t.addedOn).map((t) => ({ ...t, category: c.title }))
+  );
 
   return (
     <div className="mx-auto max-w-6xl px-4 py-12">
@@ -102,6 +107,54 @@ export default async function AdminPage({
                   <button className="btn btn-outline px-5 py-2 text-sm">Reject</button>
                 </form>
               </div>
+            </div>
+          ))}
+        </div>
+      )}
+
+      <h2 className="mt-12 font-display text-xl font-bold">🆕 Newly added free AI tools</h2>
+      <p className="mt-1 text-sm text-brand-text/60">
+        Free or free-to-use-with-credits tools added to the directory in the last update — no
+        credit card required for the free tier. Directory updated {directory.updatedAt}.
+      </p>
+      {newTools.length === 0 ? (
+        <p className="mt-4 rounded-xl border border-dashed border-brand-ink/20 p-5 text-sm text-brand-text/50">
+          No newly added tools since the last weekly research run.
+        </p>
+      ) : (
+        <div className="mt-4 grid gap-3 md:grid-cols-2">
+          {newTools.map((t) => (
+            <div key={t.name} className="card p-5">
+              <div className="flex flex-wrap items-start justify-between gap-2">
+                <a
+                  href={t.url}
+                  target="_blank"
+                  rel="noopener"
+                  className="font-display font-bold text-brand-ink hover:text-brand-accent"
+                >
+                  {t.name}
+                </a>
+                <span className="rounded-full bg-brand-light px-2.5 py-1 text-xs font-semibold text-brand-periwinkle">
+                  {directory.pricingLabels[t.pricing] ?? t.pricing}
+                </span>
+              </div>
+              <p className="mt-1 text-xs text-brand-text/50">{t.category}</p>
+              <p className="mt-2 text-sm text-brand-text/80">{t.why}</p>
+              <dl className="mt-3 grid gap-1.5 text-sm">
+                <div>
+                  <dt className="inline font-semibold text-brand-text/70">Free limit: </dt>
+                  <dd className="inline text-brand-text/70">{t.freeDetails}</dd>
+                </div>
+                {t.paidPlan && (
+                  <div>
+                    <dt className="inline font-semibold text-brand-text/70">Paid plans: </dt>
+                    <dd className="inline text-brand-text/70">{t.paidPlan}</dd>
+                  </div>
+                )}
+              </dl>
+              <p className="mt-2 text-xs text-brand-text/40">
+                Added {t.addedOn} · verified {t.lastVerified}
+              </p>
             </div>
           ))}
         </div>

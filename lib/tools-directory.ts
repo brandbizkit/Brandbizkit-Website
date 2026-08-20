@@ -8,6 +8,12 @@ export type DirectoryTool = {
   why: string;
   pricing: "free" | "free-credits" | "freemium";
   freeDetails: string;
+  /** Only set when getting the free tier requires more than just visiting the site
+   *  and signing up — self-hosting, a technical install, or bringing your own paid
+   *  API key from elsewhere. Rendered as a distinct warning-style badge. */
+  access?: string;
+  paidPlan?: string;
+  addedOn?: string;
   lastVerified: string;
 };
 

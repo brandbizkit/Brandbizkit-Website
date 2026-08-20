@@ -1,37 +1,12 @@
 /**
  * CRM datastore.
  *
- * Leads and newsletter subscribers — the actual customer-facing data — live
- * in Supabase (see lib/supabase.ts + supabase/schema.sql) so they survive a
- * serverless deploy and are queryable outside this codebase. The internal
- * agent/admin event log stays on local SQLite: it's a low-stakes debug
- * trail, not customer data, and doesn't need to be durable across deploys.
+ * Leads, newsletter subscribers, and the internal agent/admin event log all
+ * live in Supabase (see lib/supabase.ts + supabase/schema.sql) so they
+ * survive serverless deploys (Netlify/Vercel functions have a read-only
+ * filesystem, so local SQLite doesn't work there).
  */
-import Database from "better-sqlite3";
-import fs from "fs";
-import path from "path";
 import { getSupabaseAdmin } from "./supabase";
-
-const DATA_DIR = path.join(process.cwd(), "data");
-if (!fs.existsSync(DATA_DIR)) fs.mkdirSync(DATA_DIR, { recursive: true });
-
-let db: Database.Database | null = null;
-
-function getDb(): Database.Database {
-  if (db) return db;
-  db = new Database(path.join(DATA_DIR, "crm.db"));
-  db.pragma("journal_mode = WAL");
-  db.exec(`
-    CREATE TABLE IF NOT EXISTS events (
-      id INTEGER PRIMARY KEY AUTOINCREMENT,
-      type TEXT NOT NULL,
-      actor TEXT NOT NULL DEFAULT 'system',
-      payload TEXT,
-      created_at TEXT DEFAULT (datetime('now'))
-    );
-  `);
-  return db;
-}
 
 export type Lead = {
   id: string;
@@ -81,7 +56,7 @@ export async function insertLead(lead: {
     .select("id")
     .single();
   if (error) throw new Error(`Supabase insertLead failed: ${error.message}`);
-  logEvent("lead.created", "website", lead);
+  await logEvent("lead.created", "website", lead);
   return data.id as string;
 }
 
@@ -115,7 +90,7 @@ export async function insertSubscriber(
       { onConflict: "email", ignoreDuplicates: true }
     );
   if (error) throw new Error(`Supabase insertSubscriber failed: ${error.message}`);
-  logEvent("subscriber.created", "website", { email, source, pagePath });
+  await logEvent("subscriber.created", "website", { email, source, pagePath });
 }
 
 export async function listSubscribers(): Promise<Subscriber[]> {
@@ -127,14 +102,21 @@ export async function listSubscribers(): Promise<Subscriber[]> {
   return (data ?? []) as Subscriber[];
 }
 
-export function logEvent(type: string, actor: string, payload: unknown): void {
-  getDb()
-    .prepare("INSERT INTO events (type, actor, payload) VALUES (?, ?, ?)")
-    .run(type, actor, JSON.stringify(payload ?? {}));
+export async function logEvent(type: string, actor: string, payload: unknown): Promise<void> {
+  const { error } = await getSupabaseAdmin()
+    .from("events")
+    .insert({ type, actor, payload: payload ?? {} });
+  if (error) throw new Error(`Supabase logEvent failed: ${error.message}`);
 }
 
-export function listEvents(limit = 100): { type: string; actor: string; payload: string; created_at: string }[] {
-  return getDb()
-    .prepare("SELECT * FROM events ORDER BY created_at DESC LIMIT ?")
-    .all(limit) as { type: string; actor: string; payload: string; created_at: string }[];
+export async function listEvents(
+  limit = 100
+): Promise<{ type: string; actor: string; payload: string; created_at: string }[]> {
+  const { data, error } = await getSupabaseAdmin()
+    .from("events")
+    .select("type, actor, payload, created_at")
+    .order("created_at", { ascending: false })
+    .limit(limit);
+  if (error) throw new Error(`Supabase listEvents failed: ${error.message}`);
+  return (data ?? []).map((e) => ({ ...e, payload: JSON.stringify(e.payload ?? {}) }));
 }
