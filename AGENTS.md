@@ -1,5 +1,9 @@
 # AGENTS.md — BrandBizkit agent contract
 
+Before major implementation work, read `PROJECT_PLAN.md` (approved scope/architecture — don't
+redesign it without a genuine blocker) and `CURRENT_STATE.md` (what's actually built and what's
+next right now). This file covers the stable rules that don't change session to session.
+
 This site is agent-native. AI agents (and this repo's own automation) interact with it in two ways:
 
 ## 1. Reading (no auth)
@@ -38,13 +42,15 @@ change in `content/`, so agent publishes are git-reviewable.
 
 ## CRM / lead capture
 
-Leads and newsletter subscribers live in **Supabase** (Postgres), not SQLite — see
-`lib/supabase.ts` + `supabase/schema.sql`. Run the schema once in the Supabase SQL
-Editor, then set `SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY` in `.env`. Both tables
-have RLS enabled with zero public policies — every read/write goes through our own
-API routes using the service role key server-side; the key must never reach the
-browser. The internal agent/admin `events` log stays on local SQLite (low-stakes,
-not customer data — doesn't need to survive a deploy).
+Leads, newsletter subscribers, and the internal agent/admin `events` log all live in
+**Supabase** (Postgres) — see `lib/supabase.ts` + `supabase/schema.sql` +
+`supabase/migrations/`. Run each schema/migration file once in the Supabase SQL Editor,
+then set `SUPABASE_URL` + `SUPABASE_SERVICE_ROLE_KEY` in `.env`. All three tables have
+RLS enabled with zero public policies — every read/write goes through our own API
+routes using the service role key server-side; the key must never reach the browser.
+Nothing may rely on writing to local disk at runtime — the app must survive a
+serverless deploy (Netlify/Vercel-style read-only filesystem), which is why the events
+log moved off local SQLite.
 
 Touch-points feeding Supabase, each tagged with a `source` for attribution:
 - `LeadForm` (the "Let's Talk" contact form in `ServicesTail`, on every page) → `/api/leads` → `leads` table

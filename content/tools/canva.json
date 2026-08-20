@@ -33,5 +33,36 @@
   }
  ],
  "videos": [],
- "cardImage": "/assets/reimagined_canva_brandbizkit-m5Kn3jlR42tW4eeo.png"
+ "cardImage": "/assets/reimagined_canva_brandbizkit-m5Kn3jlR42tW4eeo.png",
+ "lastVerified": "2026-08-20",
+ "capabilities": {
+  "heading": "What Can Canva Do?",
+  "sub": "A quick look at what's actually in Canva today — this gets re-checked regularly as new Magic Studio features ship.",
+  "items": [
+   {
+    "title": "Templates & Drag-and-Drop Design",
+    "text": "Thousands of ready-made templates for social posts, presentations, posters and more — no design experience required to get something polished fast."
+   },
+   {
+    "title": "Magic Design",
+    "text": "Describe what you need or upload a photo, and Canva generates full layout options built around it in seconds."
+   },
+   {
+    "title": "Dream Lab",
+    "text": "Canva's text-to-image generator — type a prompt, pick a style, and drop the result straight into your design without leaving the workspace."
+   },
+   {
+    "title": "Magic Write",
+    "text": "AI copywriting built directly into every text box, for headlines, captions and body copy you can refine in place."
+   },
+   {
+    "title": "Magic Eraser & Expand",
+    "text": "Remove unwanted objects from a photo or extend it beyond its original borders, all inside the same editor."
+   },
+   {
+    "title": "Brand Kit",
+    "text": "Save your logos, fonts and colors once so every new design — yours or a teammate's — stays on-brand automatically."
+   }
+  ]
+ }
 }

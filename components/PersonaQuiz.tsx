@@ -219,6 +219,24 @@ function scoreQuiz(answers: Answers): Scores {
   return scores;
 }
 
+/**
+ * Carries the visitor's actual Q3/Q6/Q7 answers to the result page as a
+ * compact query string, so the "Brand Launch Kit" there can recommend tools
+ * for their specific obstacles/business type instead of just the persona
+ * default. See lib/persona-kits.ts (parsePersonaAnswers / getPersonalizedKit).
+ */
+function buildResultUrl(baseUrl: string, answers: Answers): string {
+  const params = new URLSearchParams();
+  const obstacles = answers.q6 as string[] | undefined;
+  const business = answers.q3 as string[] | undefined;
+  const comfort = answers.q7 as number | undefined;
+  if (obstacles?.length) params.set("obstacles", obstacles.join(","));
+  if (business?.length) params.set("business", business.join(","));
+  if (comfort !== undefined) params.set("comfort", String(comfort));
+  const qs = params.toString();
+  return qs ? `${baseUrl}?${qs}` : baseUrl;
+}
+
 function calculatePersona(scores: Scores) {
   let max = -1;
   let assigned = PERSONAS[0];
@@ -335,7 +353,7 @@ export default function PersonaQuiz() {
         </div>
         <p className="mt-6 text-brand-text/75">If you would like to know more — click here</p>
         <div className="mt-4 flex flex-col justify-center gap-4 sm:flex-row">
-          <Link href={persona.url} className={orangeBtn}>
+          <Link href={buildResultUrl(persona.url, answers)} className={orangeBtn}>
             YES, I&apos;M INTERESTED
           </Link>
           <button

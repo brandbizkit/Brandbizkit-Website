@@ -1,5 +1,6 @@
 import Link from "next/link";
 import Image from "next/image";
+import { Fragment } from "react";
 import type { Block, LandingPage } from "@/lib/content";
 
 function isInternal(href?: string | null): boolean {
@@ -42,9 +43,19 @@ function BlockEl({ block }: { block: Block }) {
  * by the page's image gallery. Keeps 1:1 copy parity with the live site while
  * individual pages get upgraded to bespoke sections over time.
  */
-export default function BlockRenderer({ page }: { page: LandingPage }) {
+export default function BlockRenderer({
+  page,
+  bannerImage,
+}: {
+  page: LandingPage;
+  /** When set, renders one image right below the h1 instead of the trailing
+   *  repeated-image gallery — used by the persona-quiz result pages. */
+  bannerImage?: { src: string; alt: string };
+}) {
   const blocks = page.blocks;
   const hasH1 = blocks.some((b) => b.tag === "h1");
+  const firstH1Index = blocks.findIndex((b) => b.tag === "h1");
+
   return (
     <div className="mx-auto max-w-4xl px-4 py-14">
       <div className="flex flex-col gap-4">
@@ -54,11 +65,23 @@ export default function BlockRenderer({ page }: { page: LandingPage }) {
           </h1>
         )}
         {blocks.map((b, i) => (
-          <BlockEl key={i} block={b} />
+          <Fragment key={i}>
+            <BlockEl block={b} />
+            {bannerImage && i === firstH1Index && (
+              <Image
+                src={bannerImage.src}
+                alt={bannerImage.alt}
+                width={896}
+                height={480}
+                priority
+                className="w-full rounded-2xl object-cover shadow-[0_18px_44px_rgb(13_20_26/0.12)]"
+              />
+            )}
+          </Fragment>
         ))}
       </div>
 
-      {page.images.length > 0 && (
+      {!bannerImage && page.images.length > 0 && (
         <div className="mt-12 grid grid-cols-2 gap-5 md:grid-cols-3">
           {page.images.map((img, i) => (
             <Image

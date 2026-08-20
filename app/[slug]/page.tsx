@@ -20,7 +20,12 @@ import {
   schemaScript,
 } from "@/lib/schema";
 import { mdToHtml } from "@/lib/markdown";
-import { getToolsDirectory, getCategoriesForPage, matchToolsPageSlug } from "@/lib/tools-directory";
+import {
+  getToolsDirectory,
+  getCategoriesForPage,
+  matchToolsPageSlug,
+  canonicalToolsSlug,
+} from "@/lib/tools-directory";
 import { interpolateYear } from "@/lib/year";
 import fs from "fs";
 import path from "path";
@@ -33,6 +38,9 @@ import ToolsDirectoryView from "@/components/ToolsDirectory";
 import ToolCategoryButtons from "@/components/ToolCategoryButtons";
 import WannaLearn from "@/components/WannaLearn";
 import ChatGptTools from "@/components/ChatGptTools";
+import PopularAiToolsGrid from "@/components/PopularAiToolsGrid";
+import BrandLaunchKit from "@/components/BrandLaunchKit";
+import { parsePersonaAnswers, getPersonalizedKit } from "@/lib/persona-kits";
 import BizToolKits, { type KitSection } from "@/components/BizToolKits";
 import AiSchoolLeadForm from "@/components/AiSchoolLeadForm";
 import PricingKits from "@/components/PricingKits";
@@ -91,6 +99,7 @@ export async function generateMetadata({
       description: page.description,
       pathName: `/${slug}`,
       image: page.image,
+      noindex: slug === "free-ai-tools",
     });
   const legal = getLegal(slug);
   if (legal)
@@ -119,8 +128,10 @@ function Videos({ pathName }: { pathName: string }) {
 
 export default async function ContentPage({
   params,
+  searchParams,
 }: {
   params: Promise<{ slug: string }>;
+  searchParams: Promise<Record<string, string | string[] | undefined>>;
 }) {
   const { slug } = await params;
   const pathName = `/${slug}`;
@@ -191,13 +202,21 @@ export default async function ContentPage({
           )}
         </section>
 
-        {/* Capability cards (green band) — replicated from the original page */}
+        {/* Capability cards — on-brand periwinkle band (was a hardcoded green) */}
         {tool.capabilities && (
-          <section className="bg-[#0e5c46] py-16 text-white">
+          <section className="bg-brand-periwinkle-dark py-16 text-white">
             <div className="mx-auto max-w-6xl px-4">
-              <h2 className="text-center font-display text-3xl font-bold text-white">
-                {tool.capabilities.heading}
-              </h2>
+              <div className="flex flex-col items-center gap-2">
+                <h2 className="text-center font-display text-3xl font-bold text-white">
+                  {tool.capabilities.heading}
+                </h2>
+                {tool.lastVerified && (
+                  <span className="inline-flex items-center gap-1.5 rounded-full bg-white/10 px-3.5 py-1 text-xs font-semibold text-white/85 ring-1 ring-white/20">
+                    <span aria-hidden className="h-1.5 w-1.5 rounded-full bg-brand-yellow" />
+                    Last verified {tool.lastVerified}
+                  </span>
+                )}
+              </div>
               <p className="mt-2 text-center text-white/80">{tool.capabilities.sub}</p>
               <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
                 {tool.capabilities.items.map((c) => (
@@ -215,7 +234,7 @@ export default async function ContentPage({
         )}
 
         {tool.howItWorks && (
-          <section className="bg-[#0b4a39] py-16 text-white">
+          <section className="bg-brand-ink py-16 text-white">
             <div className="mx-auto max-w-6xl px-4">
               <h2 className="text-center font-display text-3xl font-bold text-white">
                 {tool.howItWorks.heading}
@@ -224,7 +243,7 @@ export default async function ContentPage({
               <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
                 {tool.howItWorks.steps.map((s, i) => (
                   <article key={s.title} className="rounded-2xl border border-white/10 bg-white/10 p-6 transition duration-200 hover:-translate-y-1.5 hover:bg-white/15">
-                    <p className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-yellow font-display font-bold text-brand-ink">
+                    <p className="flex h-9 w-9 items-center justify-center rounded-full bg-brand-accent font-display font-bold text-white">
                       {i + 1}
                     </p>
                     <h3 className="mt-3 font-display text-lg font-bold text-white">{s.title}</h3>
@@ -327,7 +346,15 @@ export default async function ContentPage({
             <p className="mt-4 max-w-3xl text-lg leading-relaxed text-brand-text/75">{description}</p>
           </div>
           <div className="mt-8">
-            <ToolsDirectoryView directory={directory} categories={directoryCategories} />
+            <ToolsDirectoryView
+              directory={directory}
+              categories={directoryCategories}
+              allToolsHref={
+                toolsMatch.base === "top-free-ai-tools"
+                  ? undefined
+                  : `/${canonicalToolsSlug("top-free-ai-tools")}`
+              }
+            />
           </div>
           <Videos pathName={pathName} />
           <ServicesTail source={toolsMatch.base} />
@@ -401,10 +428,12 @@ export default async function ContentPage({
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: schemaScript(listSchema(page)) }}
         />
+        <PopularAiToolsGrid headingLevel="h1" />
+        <ToolCategoryButtons />
         <section className="bg-brand-light py-16">
           <div className="mx-auto max-w-6xl px-4">
             <p className="section-eyebrow block text-center">Free guides</p>
-            <h1 className="mt-2 text-center font-display text-4xl font-bold tracking-tight md:text-5xl">AI Powered Workflows</h1>
+            <h2 className="mt-2 text-center font-display text-4xl font-bold tracking-tight md:text-5xl">AI Powered Workflows</h2>
             <p className="section-sub mx-auto text-center">
               Build your brand with free AI powered workflows for developing and verifying new
               ideas, handling social media, and lead generation
@@ -433,12 +462,6 @@ export default async function ContentPage({
           </div>
         </section>
         <WannaLearn />
-        <ChatGptTools
-          heading="Build Your Brand with ChatGPT"
-          sub="Build your brand and get ahead of the game with our free AI ChatGPT tools. Generate ideas for your new business, create your unique brand identity, or research a product you want to launch. We've got the tools for you."
-        />
-        <ToolCategoryButtons />
-        <Videos pathName={pathName} />
         <ServicesTail source={slug} />
       </>
     );
@@ -491,13 +514,23 @@ export default async function ContentPage({
   if (page) {
     const isNewsIndex = slug === "ai-news";
     const isPersonaResult = slug.endsWith("-persona-quiz");
+    let kit: { tools: string[]; note: string | null } | undefined;
+    if (isPersonaResult) {
+      const sp = await searchParams;
+      const answers = parsePersonaAnswers(sp);
+      kit = getPersonalizedKit(slug, answers);
+    }
     return (
       <>
         <script
           type="application/ld+json"
           dangerouslySetInnerHTML={{ __html: schemaScript(listSchema(page)) }}
         />
-        <BlockRenderer page={page} />
+        <BlockRenderer
+          page={page}
+          bannerImage={isPersonaResult && page.images[0] ? page.images[0] : undefined}
+        />
+        {kit && <BrandLaunchKit toolNames={kit.tools} note={kit.note} />}
         {isPersonaResult && (
           <p className="mx-auto max-w-4xl px-4 pb-8">
             <Link

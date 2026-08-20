@@ -42,7 +42,7 @@
     },
     {
       "label": "FREE Ai Tools",
-      "href": "/free-ai-tools",
+      "href": "/top-free-ai-tools-{YEAR}",
       "children": [
         {
           "label": "Top FREE Ai Tools {YEAR}",
@@ -59,6 +59,10 @@
         {
           "label": "Top FREE Ai no-code tools {YEAR}",
           "href": "/top-free-ai-no-code-tools-{YEAR}"
+        },
+        {
+          "label": "Top FREE Ai productivity tools {YEAR}",
+          "href": "/top-free-ai-productivity-tools-{YEAR}"
         }
       ]
     },

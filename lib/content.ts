@@ -77,6 +77,10 @@ export type Tool = {
     sub: string;
     steps: { title: string; text: string }[];
   };
+  /** ISO date this tool's capabilities were last checked against the live
+   *  product — these pages should be re-verified periodically since AI
+   *  tools ship new features often. */
+  lastVerified?: string;
 };
 
 export type Block = { tag: string; text: string; href?: string | null };
@@ -204,17 +208,27 @@ export function getVideosForPage(pathName: string): Video[] {
   return getVideos().filter((v) => v.pages.includes(pathName));
 }
 
+/**
+ * Landing-page slugs temporarily hidden from nav, sitemap and static
+ * pre-rendering — the page itself still resolves if requested directly
+ * (dynamicParams is on), it's just no longer linked or promoted anywhere.
+ * Remove a slug from here to fully restore it.
+ */
+const HIDDEN_PAGE_SLUGS = new Set(["free-ai-tools"]);
+
 /** Every public content slug on the site (excluding home). Used by sitemap, llms.txt, md mirrors. */
 export function getAllSlugs(): { slug: string; type: "post" | "tool" | "page" | "legal" }[] {
   return [
     ...getPosts().map((p) => ({ slug: p.slug, type: "post" as const })),
     ...getTools().map((t) => ({ slug: t.slug, type: "tool" as const })),
-    ...getLandingPages().map((p) => ({
-      // Tools-directory pages are stored under a year-less base id; their
-      // public slug is the current-year canonical one (rolls forward yearly).
-      slug: p.slug in TOOLS_PAGE_CATEGORIES ? canonicalToolsSlug(p.slug) : p.slug,
-      type: "page" as const,
-    })),
+    ...getLandingPages()
+      .filter((p) => !HIDDEN_PAGE_SLUGS.has(p.slug))
+      .map((p) => ({
+        // Tools-directory pages are stored under a year-less base id; their
+        // public slug is the current-year canonical one (rolls forward yearly).
+        slug: p.slug in TOOLS_PAGE_CATEGORIES ? canonicalToolsSlug(p.slug) : p.slug,
+        type: "page" as const,
+      })),
     ...getLegalSlugs().map((s) => ({ slug: s, type: "legal" as const })),
   ];
 }

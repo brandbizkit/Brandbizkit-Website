@@ -1,4 +1,6 @@
+import Link from "next/link";
 import type { ToolCategory, ToolsDirectory } from "@/lib/tools-directory";
+import ScrollToTopButton from "./ScrollToTopButton";
 
 const PRICING_STYLES: Record<string, string> = {
   free: "bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200",
@@ -16,6 +18,7 @@ const CATEGORY_ICONS: Record<string, string> = {
   "top-ai-coding-assistants": "💻",
   "top-ai-writing-copywriting-tools": "✍️",
   "top-ai-music-audio-tools": "🎵",
+  "top-ai-productivity-tools": "🧠",
   "other-free-ai-tools": "🧰",
   "ai-tools-worth-paying-for": "💎",
 };
@@ -28,9 +31,14 @@ const CATEGORY_ICONS: Record<string, string> = {
 export default function ToolsDirectoryView({
   directory,
   categories,
+  allToolsHref,
 }: {
   directory: ToolsDirectory;
   categories: ToolCategory[];
+  /** When set, this page shows a filtered subset of categories — render a
+   *  "Show All Tools" button next to the chips that links back to the full,
+   *  unfiltered directory. */
+  allToolsHref?: string;
 }) {
   return (
     <div className="mx-auto max-w-6xl px-4 pb-20">
@@ -45,7 +53,7 @@ export default function ToolsDirectoryView({
       </div>
 
       {/* Category anchor chips (as on the original page) */}
-      <nav aria-label="Tool categories" className="mt-7 flex flex-wrap gap-2">
+      <nav aria-label="Tool categories" className="mt-7 flex flex-wrap items-center gap-2">
         {categories.map((c) => (
           <a
             key={c.id}
@@ -56,6 +64,15 @@ export default function ToolsDirectoryView({
             {c.title.replace(/^Top AI /, "").replace(/ Tools$/, "")}
           </a>
         ))}
+        {allToolsHref && (
+          <Link
+            href={allToolsHref}
+            className="rounded-full bg-brand-ink px-4 py-1.5 text-sm font-semibold text-white shadow-sm transition hover:-translate-y-0.5 hover:bg-brand-ink/85"
+          >
+            <span aria-hidden className="mr-1.5">↺</span>
+            Show All Tools
+          </Link>
+        )}
       </nav>
 
       {categories.map((c) => (
@@ -115,6 +132,7 @@ export default function ToolsDirectoryView({
           </div>
         </section>
       ))}
+      <ScrollToTopButton />
     </div>
   );
 }

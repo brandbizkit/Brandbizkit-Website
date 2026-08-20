@@ -3,13 +3,13 @@ import Link from "next/link";
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 import { pageSchema, schemaScript } from "@/lib/schema";
-import { getTools, getPosts, getVideosForPage } from "@/lib/content";
-import { canonicalToolsSlug } from "@/lib/tools-directory";
+import { getPosts, getVideosForPage } from "@/lib/content";
 import ServicesTail from "@/components/ServicesTail";
 import VideoWithTranscript from "@/components/VideoWithTranscript";
 import PersonaQuiz from "@/components/PersonaQuiz";
 import PodcastWidget from "@/components/PodcastWidget";
 import ToolCategoryButtons from "@/components/ToolCategoryButtons";
+import PopularAiToolsGrid from "@/components/PopularAiToolsGrid";
 
 export function generateMetadata(): Metadata {
   return buildMetadata({
@@ -69,7 +69,6 @@ const SERVICES = [
 ];
 
 export default function HomePage() {
-  const tools = getTools();
   const posts = getPosts().slice(0, 3);
   const videos = getVideosForPage("/");
   const schema = pageSchema({
@@ -290,47 +289,15 @@ export default function HomePage() {
       </section>
 
       {/* Popular AI tools — six cards like the original */}
-      <section id="popularaitools" className="scroll-mt-20 bg-white py-16">
-        <div className="mx-auto max-w-6xl px-4">
-          <p className="section-eyebrow block text-center">Learn the essentials</p>
-          <h2 className="section-title mt-2 text-center">Popular Ai Tools</h2>
-          <p className="section-sub mx-auto text-center">
+      <PopularAiToolsGrid
+        id="popularaitools"
+        sub={
+          <>
             Learn more about the most popular and used AI tools by{" "}
             <strong className="text-brand-accent">clicking the images below</strong>
-          </p>
-          <div className="mt-10 grid grid-cols-1 gap-6 sm:grid-cols-2 lg:grid-cols-3">
-            {tools.map((t) => (
-              <Link
-                key={t.slug}
-                href={`/${t.slug}`}
-                className="card card-hover group overflow-hidden"
-              >
-                {(t.cardImage ?? t.image) && (
-                  <Image
-                    src={t.cardImage ?? t.image!}
-                    alt={`${t.name} — what it is and how to use it`}
-                    width={640}
-                    height={360}
-                    className="aspect-video w-full object-cover transition group-hover:scale-105"
-                  />
-                )}
-              </Link>
-            ))}
-            <Link
-              href={`/${canonicalToolsSlug("top-free-ai-image-tools")}`}
-              className="card card-hover group overflow-hidden"
-            >
-              <Image
-                src="/assets/reimagined_leonardo_brandbizkit-Aq2Jrle7BDcxlkoz.png"
-                alt="Leonardo AI — free daily image generation for brand visuals"
-                width={640}
-                height={360}
-                className="aspect-video w-full object-cover transition group-hover:scale-105"
-              />
-            </Link>
-          </div>
-        </div>
-      </section>
+          </>
+        }
+      />
 
       {/* Latest insights */}
       <section className="bg-brand-light py-16">

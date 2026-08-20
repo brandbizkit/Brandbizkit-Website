@@ -33,5 +33,36 @@
   }
  ],
  "videos": [],
- "cardImage": "/assets/reimagined_claude_brandbizkit-AQEZR08l3LsvaQDn.png"
+ "cardImage": "/assets/reimagined_claude_brandbizkit-AQEZR08l3LsvaQDn.png",
+ "lastVerified": "2026-08-20",
+ "capabilities": {
+  "heading": "What Can Claude Do?",
+  "sub": "A quick look at what's actually in Claude today — this gets re-checked regularly as Anthropic ships updates.",
+  "items": [
+   {
+    "title": "Claude Code",
+    "text": "Anthropic's agentic coding tool works in your terminal, desktop app or IDE — it reads files, runs commands, edits code and calls external tools on a real project."
+   },
+   {
+    "title": "Artifacts",
+    "text": "Ask Claude to build something and it opens in a live side panel — React components, interactive web apps, diagrams and functional tools you can keep iterating on."
+   },
+   {
+    "title": "Projects",
+    "text": "Give a Project its own files, instructions and memory so Claude actually knows the context of a specific client, brand or piece of ongoing work."
+   },
+   {
+    "title": "Connect Your Tools (MCP)",
+    "text": "Model Context Protocol connects Claude directly to Gmail, GitHub, Google Drive, Slack and databases, so it can act on real data instead of just discussing it."
+   },
+   {
+    "title": "Computer Use",
+    "text": "Claude can operate a graphical interface directly — reading the screen, moving the mouse, typing and clicking through multi-step tasks."
+   },
+   {
+    "title": "Long-Document Reasoning",
+    "text": "A large context window and careful, thorough answers make it the strongest pick for reviewing contracts, business plans or lengthy research."
+   }
+  ]
+ }
 }

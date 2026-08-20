@@ -10,6 +10,7 @@ export function buildMetadata(input: {
   type?: "website" | "article";
   publishedTime?: string;
   authors?: string[];
+  noindex?: boolean;
 }): Metadata {
   const site = getSite();
   const url = `${site.url}${input.pathName === "/" ? "" : input.pathName}`;
@@ -40,6 +41,6 @@ export function buildMetadata(input: {
       description: input.description,
       images: [image],
     },
-    robots: { index: true, follow: true },
+    robots: input.noindex ? { index: false, follow: false } : { index: true, follow: true },
   };
 }

@@ -33,5 +33,36 @@
   }
  ],
  "videos": [],
- "cardImage": "/assets/reimagined_gemini_brandbizkit-m6LbeKPnzRcBKwxO.png"
+ "cardImage": "/assets/reimagined_gemini_brandbizkit-m6LbeKPnzRcBKwxO.png",
+ "lastVerified": "2026-08-20",
+ "capabilities": {
+  "heading": "What Can Gemini Do?",
+  "sub": "A quick look at what's actually in the Gemini app today — this gets re-checked regularly as Google ships updates.",
+  "items": [
+   {
+    "title": "Multimodal Understanding",
+    "text": "Understands and combines text, images, audio, video and code in one conversation — describe a problem however is easiest, in whatever format you have."
+   },
+   {
+    "title": "Deep Research",
+    "text": "Hand it a question and it browses the web autonomously across multiple steps, coming back with a cited, structured report instead of a single answer."
+   },
+   {
+    "title": "Built-in Image Generation",
+    "text": "Generate and edit images inline with Google's Nano Banana model, right inside the same chat."
+   },
+   {
+    "title": "Live Voice Conversations",
+    "text": "Real-time, natural spoken conversations through Gemini Live — including sharing your screen or camera as you talk."
+   },
+   {
+    "title": "Custom Gems",
+    "text": "Build a reusable personal assistant tuned to one specific job — a brand voice editor, a research assistant, a coding tutor — without starting from scratch each time."
+   },
+   {
+    "title": "Massive Context Window",
+    "text": "Handles up to 2 million tokens in a single conversation, enough to reason over an entire codebase, book, or set of long documents at once."
+   }
+  ]
+ }
 }

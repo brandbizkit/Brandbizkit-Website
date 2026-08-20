@@ -33,5 +33,36 @@
   }
  ],
  "videos": [],
- "cardImage": "/assets/kling-ai-3d-image-dJoPlDKD7ltrP3JK.png"
+ "cardImage": "/assets/kling-ai-3d-image-dJoPlDKD7ltrP3JK.png",
+ "lastVerified": "2026-08-20",
+ "capabilities": {
+  "heading": "What Can Kling AI Do?",
+  "sub": "A quick look at what's actually in Kling AI today — this gets re-checked regularly as new model versions ship.",
+  "items": [
+   {
+    "title": "Text-to-Video & Image-to-Video",
+    "text": "Describe a scene or animate a still image into motion, at up to 1080p and 48fps."
+   },
+   {
+    "title": "Motion Brush & Camera Control",
+    "text": "Direct exactly how the camera pans, tilts or zooms, and which parts of the frame move — real creative control, not just a random result."
+   },
+   {
+    "title": "Synchronized Audio",
+    "text": "Kling 2.6 and later generate matching audio in the same pass as the video, so you're not bolting on sound separately."
+   },
+   {
+    "title": "Long-Form Generation",
+    "text": "The Pro tier renders continuous clips up to two minutes long, instead of stitching short segments together."
+   },
+   {
+    "title": "Character & Style Consistency",
+    "text": "Upload a reference photo or video so a subject's appearance and motion stay consistent across multiple shots."
+   },
+   {
+    "title": "Negative Prompting",
+    "text": "Tell it exactly what to avoid — blurry textures, warped limbs — for cleaner results on the first try."
+   }
+  ]
+ }
 }

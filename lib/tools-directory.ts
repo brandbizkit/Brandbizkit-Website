@@ -49,6 +49,7 @@ export const PAGE_CATEGORIES: Record<string, string[] | "all"> = {
   "top-free-ai-image-tools": ["top-ai-image-tools", "top-ai-design-tools"],
   "top-free-ai-video-tools": ["top-ai-video-tools", "top-ai-voice-transcription-tools"],
   "top-free-ai-no-code-tools": ["top-ai-website-app-building-tools", "top-ai-agents-automation-tools"],
+  "top-free-ai-productivity-tools": ["top-ai-productivity-tools"],
 };
 
 /** Base ids whose public URL and headline carry the current year. */
@@ -57,6 +58,7 @@ const YEARED_BASES = [
   "top-free-ai-image-tools",
   "top-free-ai-video-tools",
   "top-free-ai-no-code-tools",
+  "top-free-ai-productivity-tools",
 ];
 
 export type ToolsPageMatch = {
@@ -106,6 +108,20 @@ export function getCategoriesForPage(base: string): ToolCategory[] | null {
   const dir = getToolsDirectory();
   if (spec === "all") return dir.categories;
   return dir.categories.filter((c) => spec.includes(c.id));
+}
+
+/**
+ * Look up a single tool by exact name anywhere in the directory (used by the
+ * persona-quiz "Brand Launch Kit" so its recommendations stay in sync with
+ * the same maintained data everyone else sees — no separately-drifting copy).
+ */
+export function findDirectoryTool(name: string): DirectoryTool | null {
+  const dir = getToolsDirectory();
+  for (const c of dir.categories) {
+    const t = c.tools.find((t) => t.name === name);
+    if (t) return t;
+  }
+  return null;
 }
 
 export function directoryToMd(slug: string): string | null {
