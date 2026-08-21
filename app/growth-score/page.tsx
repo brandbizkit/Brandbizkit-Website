@@ -3,12 +3,17 @@ import path from "path";
 import type { Metadata } from "next";
 import { buildMetadata } from "@/lib/seo";
 import { pageSchema, schemaScript } from "@/lib/schema";
+import { interpolateYear } from "@/lib/year";
 import GrowthScore, { type GrowthScoreConfig } from "@/components/GrowthScore";
 
 function getConfig(): GrowthScoreConfig {
-  return JSON.parse(
+  const config: GrowthScoreConfig = JSON.parse(
     fs.readFileSync(path.join(process.cwd(), "content", "growth-score.json"), "utf8")
   );
+  if (config.aiAdoptionRec?.secondaryCta) {
+    config.aiAdoptionRec.secondaryCta.href = interpolateYear(config.aiAdoptionRec.secondaryCta.href);
+  }
+  return config;
 }
 
 const TITLE = "The Business Growth Score — Free 3-Minute Assessment";

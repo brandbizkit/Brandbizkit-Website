@@ -26,14 +26,14 @@ export function generateMetadata(): Metadata {
   return buildMetadata({
     title: "Connect with BrandBizkit — Social Media, Videos & Press",
     description:
-      "Follow BrandBizkit across Instagram, YouTube, TikTok, LinkedIn and more. Watch our AI tool videos with transcripts and see where BrandBizkit is mentioned across the web.",
+      "Follow BrandBizkit across Instagram, YouTube, TikTok, LinkedIn and more. Watch our AI tool videos and see where BrandBizkit is mentioned across the web.",
     pathName: "/connect",
   });
 }
 
 const SOCIAL_META: Record<string, { label: string; blurb: string }> = {
   instagram: { label: "Instagram", blurb: "Daily AI tool tips, brand-building reels and behind-the-scenes." },
-  youtube: { label: "YouTube", blurb: "Full AI tool walkthroughs and masterclasses — every video transcribed." },
+  youtube: { label: "YouTube", blurb: "Full AI tool walkthroughs and masterclasses." },
   tiktok: { label: "TikTok", blurb: "Quick AI hacks for founders in under 60 seconds." },
   facebook: { label: "Facebook", blurb: "Community updates and live sessions." },
   linkedin: { label: "LinkedIn", blurb: "AI transformation insights for businesses and teams." },
@@ -83,10 +83,10 @@ export default function ConnectPage() {
             ))}
         </div>
 
-        <h2 className="mt-14 font-display text-2xl font-bold md:text-3xl">Video library (with transcripts)</h2>
+        <h2 className="mt-14 font-display text-2xl font-bold md:text-3xl">Video library</h2>
         <p className="mt-2 text-sm text-brand-text/70">
-          Every BrandBizkit video ships with a full transcript so both people and AI search
-          engines can find exactly the right moment.
+          Transcripts are rolling out across our video library — so both people and AI
+          search engines can eventually find exactly the right moment. Check back soon.
         </p>
         <div className="mt-6 grid gap-6 md:grid-cols-2">
           {videos.map((v) => (

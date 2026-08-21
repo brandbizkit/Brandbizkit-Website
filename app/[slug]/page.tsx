@@ -196,8 +196,14 @@ export default async function ContentPage({
                 rel="noopener"
                 className="btn btn-quiz mt-5 px-8 font-bold"
               >
-                {tool.courseLabel ?? "FREE COURSE"}
+                {tool.courseLabel ?? `Send Me the Free ${tool.name} Quick-Start`}
               </a>
+              <p className="mt-5 text-sm text-brand-text/70">
+                Building a whole brand, not just learning one tool?{" "}
+                <Link href="/growth-score" className="font-semibold text-brand-accent hover:underline">
+                  Get your free Growth Score →
+                </Link>
+              </p>
             </div>
           )}
         </section>
@@ -479,7 +485,7 @@ export default async function ContentPage({
         <section className="bg-white py-16">
           <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 md:grid-cols-2">
             <div>
-              <p className="section-eyebrow">Ai School</p>
+              <p className="section-eyebrow">AI School</p>
               <h1 className="mt-2 font-display text-4xl font-bold tracking-tight md:text-5xl">
                 {page.h1}
               </h1>
@@ -497,6 +503,16 @@ export default async function ContentPage({
                   className="mt-8 w-full rounded-2xl object-cover shadow-[0_18px_44px_rgb(13_20_26/0.12)]"
                 />
               )}
+              <p className="mt-5 text-sm text-brand-text/70">
+                Already know which tools you want to use — just need to combine them into a real
+                process?{" "}
+                <Link
+                  href="/transform-your-business-with-free-ai-tools"
+                  className="font-semibold text-brand-accent hover:underline"
+                >
+                  Get the free AI Workflows guide →
+                </Link>
+              </p>
             </div>
             <div>
               <AiSchoolLeadForm />

@@ -626,7 +626,7 @@
           "pricing": "free-credits",
           "freeDetails": "~10,000 words/month, resets monthly",
           "lastVerified": "2026-07-10",
-          "paidPlan": "Paid plans start around $79/mo (annual) and scale to $399+/mo for larger teams — Writesonic has renamed tiers repeatedly, so confirm current names/caps on writesonic.com before quoting a plan."
+          "paidPlan": "Starter $79/mo (annual; ~$99/mo month-to-month, 15 AI articles/mo), Basic $199/mo (25 articles/mo), Growth $399/mo (50 articles/mo), custom Enterprise above that — Writesonic renames tiers often, so double-check current names/caps on writesonic.com before quoting a plan to a customer."
         },
         {
           "name": "QuillBot",
@@ -751,7 +751,7 @@
           "why": "The most generous no-signup text-to-speech tool — a real weekly character allowance with no account required, handy for quick voice-overs without commitment.",
           "pricing": "free",
           "freeDetails": "20,000 characters/week, no signup required",
-          "paidPlan": "TTSMaker Pro (paid subscription): more character quota, API access for developers, advanced sound editing, priority conversion. Exact price wasn't clearly published — check pro.ttsmaker.com/pricing directly before recommending a number to customers.",
+          "paidPlan": "TTSMaker Pro: Lite $13.99/mo (300,000 characters/mo), Pro Mini $23.99/mo (600,000 characters/mo, dialogue editing, API access), Pro Max $32.99/mo (1,200,000 characters/mo), Studio $140/mo (highest volume, team use). Confirm current prices on pro.ttsmaker.com/pricing before quoting a number — TTSMaker doesn't publish these on its main site.",
           "addedOn": "2026-07-10",
           "lastVerified": "2026-07-10"
         },
@@ -862,7 +862,7 @@
           "pricing": "free-credits",
           "freeDetails": "25 song creations/month, resets monthly",
           "lastVerified": "2026-07-10",
-          "paidPlan": "Paid tiers roughly $3-30/mo depending on source (Boomy has re-priced repeatedly) — mainly unlock a higher creator royalty share on tracks you distribute to streaming platforms. Confirm current pricing on boomy.com."
+          "paidPlan": "Creator $9.99/mo (500 song saves, 10 MP3 downloads/mo, non-commercial use) and Pro $29.99/mo (unlimited song saves, commercial use including podcasts and social ads) — both add streaming distribution. Boomy has re-priced before, so confirm current rates on boomy.com before quoting a number."
         },
         {
           "name": "AIVA",

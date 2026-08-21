@@ -12,7 +12,7 @@
 import { useMemo, useState } from "react";
 import Link from "next/link";
 
-type PersonaName = "Dreamer" | "Creator" | "Builder" | "Launcher";
+type PersonaName = "Dreamer" | "Creator" | "Builder" | "Launcher" | "Operator";
 type Scores = Record<PersonaName, number>;
 
 type Question = {
@@ -35,6 +35,7 @@ const QUESTIONS: Question[] = [
       { text: "I’m building my brand right now", value: "building_brand" },
       { text: "I already launched but need better systems", value: "launched_need_systems" },
       { text: "I’m rebranding or pivoting", value: "rebranding_pivoting" },
+      { text: "I work at (or already run) an existing business and want to use AI in it", value: "existing_business_ai" },
       { text: "Just curious for now", value: "just_curious" },
     ],
     logic: {
@@ -42,6 +43,7 @@ const QUESTIONS: Question[] = [
       building_brand: { Creator: 2 },
       launched_need_systems: { Builder: 2 },
       rebranding_pivoting: { Launcher: 1 },
+      existing_business_ai: { Operator: 3 },
       just_curious: { Dreamer: 1 },
     },
   },
@@ -54,12 +56,14 @@ const QUESTIONS: Question[] = [
       { text: "🧭 Grand Vision", value: "grand_vision" },
       { text: "🔀 Lots of Ideas", value: "lots_of_ideas" },
       { text: "📣 Platform but No Clients", value: "platform_no_clients" },
+      { text: "🏢 Existing Team or Business", value: "existing_team" },
     ],
     logic: {
       blank_canvas: { Dreamer: 3 },
       grand_vision: { Launcher: 3 },
       lots_of_ideas: { Creator: 3 },
       platform_no_clients: { Builder: 3 },
+      existing_team: { Operator: 3 },
     },
   },
   {
@@ -71,6 +75,7 @@ const QUESTIONS: Question[] = [
       { text: "Coaching or service-based offer", value: "coaching_service" },
       { text: "Content creator/personal brand", value: "content_creator" },
       { text: "Community or movement", value: "community_movement" },
+      { text: "An existing company or team — not building something new", value: "existing_business" },
       { text: "Not sure yet", value: "not_sure" },
     ],
     logic: {},
@@ -101,6 +106,7 @@ const QUESTIONS: Question[] = [
       { text: "Get my first paying client", value: "get_first_client" },
       { text: "Launch with confidence", value: "launch_confidence" },
       { text: "Grow what I’ve started", value: "grow_started" },
+      { text: "Get more out of AI tools in my day-to-day work", value: "ai_in_daily_work" },
     ],
     logic: {
       create_identity: { Dreamer: 2 },
@@ -109,6 +115,7 @@ const QUESTIONS: Question[] = [
       get_first_client: { Creator: 2, Builder: 2 },
       launch_confidence: { Builder: 2, Launcher: 2 },
       grow_started: { Launcher: 2 },
+      ai_in_daily_work: { Operator: 3 },
     },
   },
   {
@@ -193,12 +200,21 @@ const PERSONAS: {
       "AI toolkit, a few starter prompts and your action plan + access to many other free tools to help you on your journey",
     url: "/launcher-persona-quiz",
   },
+  {
+    name: "Operator",
+    badge: "bg-emerald-600",
+    panel: "bg-emerald-600/10",
+    description: "Already working in or running a business, wants AI in the day-to-day",
+    output:
+      "A practical AI toolkit matched to your role, workflow templates for the tasks eating your week, and a path into AI School if you want to go deeper",
+    url: "/operator-persona-quiz",
+  },
 ];
 
 type Answers = Record<string, string | string[] | number>;
 
 function scoreQuiz(answers: Answers): Scores {
-  const scores: Scores = { Dreamer: 0, Creator: 0, Builder: 0, Launcher: 0 };
+  const scores: Scores = { Dreamer: 0, Creator: 0, Builder: 0, Launcher: 0, Operator: 0 };
   for (const q of QUESTIONS) {
     const a = answers[q.id];
     if (a === undefined) continue;
@@ -272,7 +288,7 @@ export default function PersonaQuiz() {
   function next() {
     const a = answers[q.id];
     const empty =
-      a === undefined || (Array.isArray(a) && a.length === 0 && !q.optional);
+      !q.optional && (a === undefined || (Array.isArray(a) && a.length === 0));
     if (q.type === "scale" && a === undefined) {
       setAnswer(3); // original defaults slider to the middle
     } else if (empty && q.type !== "scale") {
@@ -316,17 +332,18 @@ export default function PersonaQuiz() {
           brandbizkit Persona Quiz
         </h3>
         <p className="mt-4 text-xl font-semibold text-brand-ink">
-          ✨ Hey future founder, ready to build something bold?
+          ✨ Ready to put AI to work — for a new brand or the one you're already running?
         </p>
         <p className="mt-4 text-brand-text/75">
           This isn’t your typical quiz — the <strong>brandbizkit Persona quiz</strong> is your
-          shortcut to curated tools, templates, and prompts that match your vibe, your vision,
-          and your level (whether you&apos;re starting from scratch or scaling with style).
+          shortcut to curated tools, templates, and prompts that match your situation and your
+          level, whether you&apos;re starting from scratch, already employed, or running an
+          established business.
         </p>
         <p className="mt-3 text-brand-text/75">
           Just answer a few real-talk questions. In less than 3 minutes, you&apos;ll unlock your{" "}
-          <strong className="text-brand-orange">AI-powered Brand Launch Kit</strong> to get you
-          started building your business with AI today!
+          <strong className="text-brand-orange">AI-powered starter kit</strong> to get you moving
+          with AI today!
         </p>
         <button className={`mt-6 ${orangeBtn} text-xl`} onClick={() => setScreen("quiz")}>
           Ready? Let’s kit your biz.👇

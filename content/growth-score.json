@@ -78,7 +78,8 @@
         { "text": "I have an idea, but haven't started yet", "value": "idea" },
         { "text": "I'm building it — getting ready to launch", "value": "starting" },
         { "text": "I've launched and have my first customers", "value": "launched" },
-        { "text": "I'm established and focused on growing", "value": "growing" }
+        { "text": "I'm established and focused on growing", "value": "growing" },
+        { "text": "I'm not the owner — I work here and want to bring AI in", "value": "employee" }
       ]
     },
     {
@@ -236,6 +237,13 @@
     "idea": { "name": "Starter Kit", "price": "₱11,800 / $199", "why": "You're at idea stage — the Starter Kit gives you the brand, the plan, and the templates to make it real, without paying for things you don't need yet." },
     "starting": { "name": "Launch Kit", "price": "₱21,500 / $359", "why": "You're building toward launch — the Launch Kit gets your website, forms, and online presence built and live for you, so you launch looking established from day one." },
     "launched": { "name": "Launch Kit", "price": "₱21,500 / $359", "why": "You've launched, but your online foundation has gaps that cost you customers. The Launch Kit rebuilds it properly — website, lead capture, and findability on Google and AI search." },
-    "growing": { "name": "Growth Plan", "price": "₱50,000+ / $850+ monthly", "why": "You're past the setup stage — what you need is consistent marketing without doing it yourself. The Growth Plan handles content, posting, and replies every month while you run the business." }
+    "growing": { "name": "Growth Plan", "price": "₱50,000+ / $850+ monthly", "why": "You're past the setup stage — what you need is consistent marketing without doing it yourself. The Growth Plan handles content, posting, and replies every month while you run the business." },
+    "employee": { "name": "AI School", "price": "Free intro session", "why": "You're not building or rebranding a business — you want AI working for you in the job you already have. AI School teaches you the tools and prompts that fit your actual day-to-day, with no brand or website work attached.", "href": "/ai-school" }
+  },
+  "aiAdoptionRec": {
+    "heading": "Your real gap is AI adoption, not branding",
+    "why": "Systems & AI came out as your lowest score — that's about how much of your week AI could be doing for you, not about your logo or website. Before anything else, close this gap: it's the fastest, cheapest win on this whole assessment.",
+    "primaryCta": { "label": "Explore AI School →", "href": "/ai-school" },
+    "secondaryCta": { "label": "Browse the free AI tools directory", "href": "/top-free-ai-tools-{YEAR}" }
   }
 }

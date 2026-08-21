@@ -2,6 +2,46 @@ import Link from "next/link";
 import type { ToolCategory, ToolsDirectory } from "@/lib/tools-directory";
 import ScrollToTopButton from "./ScrollToTopButton";
 
+/** Shown once, after the third category, to catch scroll-drop-off on this
+ *  long page with a path into the Growth Score funnel instead of just SEO
+ *  traffic bouncing after skimming a few tools. */
+function GrowthScoreNudge() {
+  return (
+    <div className="mb-10 flex flex-col items-start gap-4 rounded-2xl bg-brand-light p-6 sm:flex-row sm:items-center sm:justify-between">
+      <p className="font-display text-lg font-semibold text-brand-ink">
+        Overwhelmed by all <span className="text-brand-accent">these tools?</span> Take the
+        free Growth Score — we&apos;ll tell you which ones you actually need.
+      </p>
+      <Link
+        href="/growth-score"
+        className="btn btn-primary shrink-0 px-6 py-2.5 text-sm"
+      >
+        Get My Free Growth Score →
+      </Link>
+    </div>
+  );
+}
+
+/** Shown further down, once someone's seen enough individual tools to start
+ *  wondering how they fit together — points at the workflow guide instead
+ *  of one more single tool. */
+function WorkflowsNudge() {
+  return (
+    <div className="mb-10 flex flex-col items-start gap-4 rounded-2xl border-2 border-brand-periwinkle/25 bg-brand-periwinkle/5 p-6 sm:flex-row sm:items-center sm:justify-between">
+      <p className="font-display text-lg font-semibold text-brand-ink">
+        Already using a few of these? <span className="text-brand-periwinkle-dark">See how they combine</span> into
+        real workflows — idea validation, social media, lead generation, and more.
+      </p>
+      <Link
+        href="/transform-your-business-with-free-ai-tools"
+        className="btn btn-secondary shrink-0 px-6 py-2.5 text-sm"
+      >
+        Get the free AI Workflows guide →
+      </Link>
+    </div>
+  );
+}
+
 const PRICING_STYLES: Record<string, string> = {
   free: "bg-emerald-50 text-emerald-700 ring-1 ring-emerald-200",
   "free-credits": "bg-brand-cream text-brand-orange ring-1 ring-brand-orange/20",
@@ -75,8 +115,10 @@ export default function ToolsDirectoryView({
         )}
       </nav>
 
-      {categories.map((c) => (
+      {categories.map((c, ci) => (
         <section key={c.id} id={c.id} className="mt-16 scroll-mt-24">
+          {ci === 3 && <GrowthScoreNudge />}
+          {ci === 8 && <WorkflowsNudge />}
           <div className="flex items-center gap-3">
             <span aria-hidden className="flex h-11 w-11 items-center justify-center rounded-xl bg-brand-cream text-xl">
               {CATEGORY_ICONS[c.id] ?? "🔧"}

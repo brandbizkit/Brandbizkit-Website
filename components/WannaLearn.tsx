@@ -19,7 +19,7 @@ export default function WannaLearn({
     <section className="bg-brand-cream py-20">
       <div className="mx-auto grid max-w-6xl items-center gap-12 px-4 md:grid-cols-2">
         <div>
-          <p className="section-eyebrow">Ai School</p>
+          <p className="section-eyebrow">AI School</p>
           <h2 className="section-title mt-2">{heading}</h2>
           <p className="section-sub">{body}</p>
           <Link href="/ai-school" className="btn btn-secondary mt-7">

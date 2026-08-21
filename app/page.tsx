@@ -13,9 +13,9 @@ import PopularAiToolsGrid from "@/components/PopularAiToolsGrid";
 
 export function generateMetadata(): Metadata {
   return buildMetadata({
-    title: "Launch Your Brand with FREE AI Tools for your business | BrandBizkit",
+    title: "Learn & Use FREE AI Tools for Your Business | BrandBizkit",
     description:
-      "Empower your entrepreneurial journey with brandbizkit. Access free AI tools for businesses, step-by-step guides, and other brand building resources. Start smart and build fast with our comprehensive platform designed for aspiring entrepreneurs. No design or coding skills needed.",
+      "BrandBizkit helps you put AI to work — whether you're launching a brand, already running a business, or just want to use AI better at your job. Curated free AI tools, real workflows, and step-by-step guides. No design or coding skills needed.",
     pathName: "/",
     image: "/assets/brandbizkit-hero-background3-A0xjDaGWoRIpJQ9B.png",
   });
@@ -44,9 +44,9 @@ const SERVICES = [
   },
   {
     n: "2",
-    name: "Ai Tools Education",
-    sub: "(Ai School)",
-    blurb: "Helping businesses use Ai in their day-to-day:",
+    name: "AI Tools Education",
+    sub: "(AI School)",
+    blurb: "Helping businesses use AI in their day-to-day:",
     items: [
       "Training / Masterclasses: Workshops, webinars, and private sessions teaching AI tools for branding, content, workflows, and business operations.",
       "Affiliate Tool Operations: Technical setup + integration of AI and no-code tools (automation, CRM, funnels, chatbots, analytics).",
@@ -56,7 +56,7 @@ const SERVICES = [
   },
   {
     n: "3",
-    name: "Ai Transformation",
+    name: "AI Transformation",
     sub: "(Consulting)",
     blurb: "End2end AI adoption strategy for organizations:",
     items: [
@@ -90,24 +90,25 @@ export default function HomePage() {
         <div className="relative mx-auto flex max-w-6xl px-4 py-24 md:py-36">
           <div className="max-w-xl text-left">
             <h1 className="font-display text-4xl font-bold leading-[1.1] tracking-tight text-white drop-shadow-[0_2px_10px_rgb(0_0_0/0.25)] md:text-6xl">
-              FREE Ai Tools, Templates, &amp; Guides in ONE BIZKIT
+              FREE AI Tools, Templates, &amp; Guides in ONE BIZKIT
             </h1>
             <p className="mt-6 text-lg text-white/95">
-              brandbizkit empowers aspiring entrepreneurs to launch brands or businesses using
-              curated, free AI tools—with zero coding, zero overwhelm, and step-by-step guidance.
+              Whether you&apos;re launching a brand, already running a business, or want to use AI
+              better at your job — brandbizkit gives you curated, free AI tools and real workflows,
+              with zero coding, zero overwhelm, and step-by-step guidance.
             </p>
-            <div className="mt-8 flex flex-wrap gap-4">
+            <div className="mt-8 flex flex-wrap items-center gap-5">
               <Link
                 href="/growth-score"
                 className="btn border-[3px] border-white bg-brand-yellow px-8 text-xl font-bold text-brand-ink shadow-[0_8px_24px_rgb(0_0_0/0.25)] hover:bg-brand-ink hover:text-white md:text-2xl"
               >
-                &gt;&gt;Start&lt;&lt;
+                Get My Free Growth Score →
               </Link>
               <a
                 href="#popularaitools"
-                className="btn border-2 border-white px-8 text-xl font-semibold text-white hover:bg-white hover:text-brand-ink"
+                className="text-base font-semibold text-white underline underline-offset-4 decoration-white/50 transition hover:decoration-white"
               >
-                🚀 Top FREE AI Tools
+                or browse the free AI tools first
               </a>
             </div>
           </div>

@@ -11,7 +11,7 @@ import { canonicalToolsSlug } from "@/lib/tools-directory";
  */
 export default function PopularAiToolsGrid({
   id,
-  heading = "Popular Ai Tools",
+  heading = "Popular AI Tools",
   sub = "Learn more about the most popular and used AI tools by clicking the images below",
   headingLevel = "h2",
 }: {

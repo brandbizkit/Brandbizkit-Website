@@ -33,7 +33,13 @@ export type GrowthScoreConfig = {
     options: { text: string; points?: number; value?: string }[];
   }[];
   grades: { min: number; label: string; color: string; summary: string }[];
-  kits: Record<string, { name: string; price: string; why: string }>;
+  kits: Record<string, { name: string; price: string; why: string; href?: string }>;
+  aiAdoptionRec?: {
+    heading: string;
+    why: string;
+    primaryCta: { label: string; href: string };
+    secondaryCta: { label: string; href: string };
+  };
 };
 
 type Band = "low" | "mid" | "high";
@@ -230,7 +236,7 @@ export default function GrowthScore({ config }: { config: GrowthScoreConfig }) {
   }
 
   /* ---------------- dashboard ---------------- */
-  const { dims, overall, grade, kit, weakest, strongest } = results;
+  const { dims, overall, grade, kit, weakest, strongest, stage } = results;
   return (
     <div className="mx-auto max-w-4xl">
       {/* confirmation notice */}
@@ -335,10 +341,29 @@ export default function GrowthScore({ config }: { config: GrowthScoreConfig }) {
         </h3>
         <p className="mt-3 max-w-2xl leading-relaxed text-brand-text/80">{kit.why}</p>
         <div className="mt-6 flex flex-wrap gap-3">
-          <Link href="/#services" className="btn btn-primary">See the {kit.name} →</Link>
+          <Link href={kit.href ?? "/#services"} className="btn btn-primary">See the {kit.name} →</Link>
           <Link href="/#lets-talk" className="btn btn-outline">Talk to us first</Link>
         </div>
       </section>
+
+      {/* AI-adoption nudge — shown whenever Systems & AI is the weakest area,
+          unless the primary recommendation above is already AI School (the
+          "employee" stage kit), to avoid saying the same thing twice. */}
+      {config.aiAdoptionRec && weakest.id === "systems" && stage !== "employee" && (
+        <section className="card mt-6 border-2 border-brand-accent/30 bg-brand-cream p-8 md:p-10">
+          <p className="section-eyebrow">Worth noting</p>
+          <h3 className="mt-2 font-display text-2xl font-bold text-brand-ink">{config.aiAdoptionRec.heading}</h3>
+          <p className="mt-3 max-w-2xl leading-relaxed text-brand-text/80">{config.aiAdoptionRec.why}</p>
+          <div className="mt-6 flex flex-wrap gap-3">
+            <Link href={config.aiAdoptionRec.primaryCta.href} className="btn btn-primary">
+              {config.aiAdoptionRec.primaryCta.label}
+            </Link>
+            <Link href={config.aiAdoptionRec.secondaryCta.href} className="btn btn-outline">
+              {config.aiAdoptionRec.secondaryCta.label}
+            </Link>
+          </div>
+        </section>
+      )}
 
       <p className="mt-8 text-center">
         <button

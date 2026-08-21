@@ -1,0 +1,38 @@
+{
+ "slug": "operator-persona-quiz",
+ "title": "Operator Persona Quiz | BrandBizkit",
+ "description": "Take the brandbizkit persona quiz and discover your AI starting point. Are you the Dreamer, Creator, Builder, Launcher, or Operator? We have the tools and workflows you need — whether you're launching something new or bringing AI into a business that's already running. FREE, verified AI tools to help you get started today!",
+ "h1": "The Operator",
+ "image": "/assets/unsplash-photo-1556565681-67b9cd907d20.jpg",
+ "blocks": [
+  {
+   "tag": "h1",
+   "text": "The Operator",
+   "href": null
+  },
+  {
+   "tag": "h3",
+   "text": "You're Already in the Business — Now Let AI Carry Some of the Load",
+   "href": null
+  },
+  {
+   "tag": "p",
+   "text": "You're not starting from a blank page — you're employed at a business, or you already run one, and you want AI to make your actual day-to-day work faster and easier. The Operator doesn't need a brand built from scratch. You need the right tools slotted into the work you're already doing: research, writing, follow-ups, reporting, the repetitive stuff eating your week.",
+   "href": null
+  },
+  {
+   "tag": "p",
+   "text": "Check out your AI toolkit below, matched to your role and your obstacles — plus a few starter prompts and your action plan. If you want to go deeper, join our completely FREE AI introduction course.",
+   "href": null
+  }
+ ],
+ "images": [
+  {
+   "src": "/assets/unsplash-photo-1556565681-67b9cd907d20.jpg",
+   "alt": "Two people working together on laptops at a desk, notes and a coffee mug between them"
+  }
+ ],
+ "videos": [],
+ "iframes": [],
+ "hasForm": true
+}

@@ -39,6 +39,11 @@ export const PERSONA_KITS: Record<string, string[]> = {
   // confidence" or "Grow what I've started", q7 comfort 5 (daily AI user).
   // Needs: speed and scale — automation, fast asset production, autonomous agents.
   "launcher-persona-quiz": ["n8n", "Kling AI", "v0 by Vercel", "Manus AI"],
+  // Operator = q1 "existing business, want AI in it", q2 "Existing Team or
+  // Business", q5 "Get more out of AI tools in my day-to-day work".
+  // Needs: tools that slot into an existing job/operation — research, writing,
+  // and automation that doesn't require rebuilding anything from scratch.
+  "operator-persona-quiz": ["ChatGPT", "Claude", "NotebookLM", "Zapier"],
 };
 
 /** Q6 "Where are you feeling stuck?" → the 1-2 tools that most directly fix that. */
@@ -58,6 +63,7 @@ const BUSINESS_TYPE_BONUS: Record<string, string> = {
   coaching_service: "HubSpot CRM",
   content_creator: "Leonardo.ai",
   community_movement: "n8n",
+  existing_business: "Zapier",
 };
 
 export type PersonaAnswers = {

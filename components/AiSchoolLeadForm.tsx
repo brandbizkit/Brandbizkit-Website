@@ -129,7 +129,7 @@ export default function AiSchoolLeadForm() {
           />
           <span>
             I agree to the terms &amp; conditions provided by the company. By providing my email, I
-            agree to receive offers and invites from brandbizkit and AI Advantage101.
+            agree to receive offers and invites from brandbizkit.
           </span>
         </label>
 

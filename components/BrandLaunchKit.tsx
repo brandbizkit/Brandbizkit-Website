@@ -32,9 +32,9 @@ export default function BrandLaunchKit({
   return (
     <section className="mx-auto max-w-4xl px-4 pb-8">
       <div className="rounded-3xl border border-brand-ink/8 bg-brand-light p-6 md:p-8">
-        <p className="section-eyebrow">Your brand launch kit</p>
+        <p className="section-eyebrow">Your AI starter kit</p>
         <h2 className="mt-1 font-display text-2xl font-bold text-brand-ink md:text-3xl">
-          Free AI tools for your stage
+          Free AI tools for your situation
         </h2>
         <p className="mt-2 text-brand-text/75">
           {note ?? "Picked for where you are right now — every tool below is free to start, no card required."}

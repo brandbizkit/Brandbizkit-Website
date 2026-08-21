@@ -1,12 +1,12 @@
 {
   "name": "BrandBizkit",
   "legalName": "BrandBizkit",
-  "tagline": "FREE Ai Tools, Templates, & Guides in ONE BIZKIT",
+  "tagline": "FREE AI Tools, Templates, & Guides in ONE BIZKIT",
   "url": "https://brandbizkit.com",
   "email": "hello@brandbizkit.com",
   "logo": "/assets/brandbizkit-logo-ALpPa1XW42i4y9oO.png",
   "logoIcon": "/assets/brandbizkit-logo-icon_biz-in-a-box-m2WqBe1lo1IyOwpo.png",
-  "description": "BrandBizkit empowers aspiring entrepreneurs to launch brands or businesses using curated, free AI tools \u2014 with zero coding, zero overwhelm, and step-by-step guidance.",
+  "description": "BrandBizkit helps aspiring entrepreneurs, working professionals, and existing small businesses put AI to work \u2014 curated free AI tools, real workflows, and step-by-step guidance, with zero coding and zero overwhelm.",
   "founders": [
     {
       "name": "Michael Nielsen"
@@ -41,41 +41,45 @@
       "href": "/#services"
     },
     {
-      "label": "FREE Ai Tools",
+      "label": "FREE AI Tools",
       "href": "/top-free-ai-tools-{YEAR}",
       "children": [
         {
-          "label": "Top FREE Ai Tools {YEAR}",
+          "label": "Top FREE AI Tools {YEAR}",
           "href": "/top-free-ai-tools-{YEAR}"
         },
         {
-          "label": "Top FREE Ai image tools {YEAR}",
+          "label": "Top FREE AI image tools {YEAR}",
           "href": "/top-free-ai-image-tools-{YEAR}"
         },
         {
-          "label": "Top FREE Ai video tools {YEAR}",
+          "label": "Top FREE AI video tools {YEAR}",
           "href": "/top-free-ai-video-tools-{YEAR}"
         },
         {
-          "label": "Top FREE Ai no-code tools {YEAR}",
+          "label": "Top FREE AI no-code tools {YEAR}",
           "href": "/top-free-ai-no-code-tools-{YEAR}"
         },
         {
-          "label": "Top FREE Ai productivity tools {YEAR}",
+          "label": "Top FREE AI productivity tools {YEAR}",
           "href": "/top-free-ai-productivity-tools-{YEAR}"
         }
       ]
     },
     {
-      "label": "Popular Ai Tools",
+      "label": "Popular AI Tools",
       "href": "/popular-ai-tools",
       "children": [
+        {
+          "label": "AI Workflows for Your Business",
+          "href": "/transform-your-business-with-free-ai-tools"
+        },
         {
           "label": "ChatGPT",
           "href": "/chatgpt"
         },
         {
-          "label": "Claude Ai",
+          "label": "Claude AI",
           "href": "/claude-ai"
         },
         {
@@ -87,7 +91,7 @@
           "href": "/canva"
         },
         {
-          "label": "Kling Ai",
+          "label": "Kling AI",
           "href": "/kling-ai"
         }
       ]
@@ -97,8 +101,12 @@
       "href": "/ai-news"
     },
     {
-      "label": "Ai School",
-      "href": "/ai-school",
+      "label": "AI School",
+      "href": "/ai-school"
+    },
+    {
+      "label": "Get My Growth Score",
+      "href": "/growth-score",
       "cta": true
     }
   ],

@@ -1,5 +1,6 @@
 import fs from "fs";
 import path from "path";
+import { cookies } from "next/headers";
 
 type Kit = {
   name: string;
@@ -35,9 +36,17 @@ function Check({ popular }: { popular?: boolean }) {
 /**
  * "Biz in a Box" service kits — replicates the live site's pricing cards
  * (Starter Kit / Launch Kit with MOST POPULAR badge / Social Media Management).
+ *
+ * Pricing shown leads with the visitor's local currency (PHP for Philippines
+ * traffic, USD elsewhere) based on the `bk_country` cookie middleware.ts
+ * stamps from Vercel's edge geo header — with the other currency shown
+ * second for reference, so it's always clear which one is actually charged.
  */
-export default function PricingKits() {
+export default async function PricingKits() {
   const pricing = getPricing();
+  const cookieStore = await cookies();
+  const country = cookieStore.get("bk_country")?.value ?? "PH";
+  const isPH = country === "PH";
   return (
     <section className="bg-brand-light py-20">
       <div className="mx-auto max-w-6xl px-4">
@@ -73,11 +82,20 @@ export default function PricingKits() {
                 <p className="mt-2 text-center text-sm leading-relaxed text-brand-text/70">{kit.tagline}</p>
               )}
               <p className="mt-4 text-center">
-                <span className="font-display text-4xl font-extrabold tracking-tight text-brand-ink">{kit.pricePhp}</span>
+                <span className="font-display text-4xl font-extrabold tracking-tight text-brand-ink">
+                  {isPH ? kit.pricePhp : kit.priceUsd}
+                </span>
                 <span className="text-brand-text/50"> / </span>
-                <span className="font-display text-2xl font-bold text-brand-ink">{kit.priceUsd}</span>
+                <span className="font-display text-2xl font-bold text-brand-ink">
+                  {isPH ? kit.priceUsd : kit.pricePhp}
+                </span>
               </p>
               <p className="mt-1 text-center text-sm text-brand-text/55">({kit.cadence})</p>
+              <p className="mt-1 text-center text-xs text-brand-text/45">
+                {isPH
+                  ? "Priced in PHP — USD shown for reference"
+                  : "Priced in USD — PHP shown for reference"}
+              </p>
               <ul className="mt-7 grid gap-3 border-t border-brand-ink/8 pt-7 text-left text-sm leading-relaxed text-brand-text/90">
                 {kit.features.map((f) => (
                   <li key={f} className="flex items-start gap-2.5">
