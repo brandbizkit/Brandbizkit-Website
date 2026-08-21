@@ -26,7 +26,7 @@ export function generateMetadata(): Metadata {
   return buildMetadata({
     title: "Connect with BrandBizkit — Social Media, Videos & Press",
     description:
-      "Follow BrandBizkit across Instagram, YouTube, TikTok, LinkedIn and more. Watch our AI tool videos and see where BrandBizkit is mentioned across the web.",
+      "Follow BrandBizkit across Instagram, YouTube, Facebook, LinkedIn and more. Watch our AI tool videos and see where BrandBizkit is mentioned across the web.",
     pathName: "/connect",
   });
 }
@@ -34,10 +34,8 @@ export function generateMetadata(): Metadata {
 const SOCIAL_META: Record<string, { label: string; blurb: string }> = {
   instagram: { label: "Instagram", blurb: "Daily AI tool tips, brand-building reels and behind-the-scenes." },
   youtube: { label: "YouTube", blurb: "Full AI tool walkthroughs and masterclasses." },
-  tiktok: { label: "TikTok", blurb: "Quick AI hacks for founders in under 60 seconds." },
   facebook: { label: "Facebook", blurb: "Community updates and live sessions." },
   linkedin: { label: "LinkedIn", blurb: "AI transformation insights for businesses and teams." },
-  x: { label: "X (Twitter)", blurb: "Real-time AI news and product updates." },
 };
 
 export default function ConnectPage() {

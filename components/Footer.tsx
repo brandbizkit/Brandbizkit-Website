@@ -6,9 +6,7 @@ const SOCIAL_LABELS: Record<string, string> = {
   instagram: "Instagram",
   facebook: "Facebook",
   youtube: "YouTube",
-  tiktok: "TikTok",
   linkedin: "LinkedIn",
-  x: "X (Twitter)",
 };
 
 const EXPECT_ICONS = ["🧰", "🗺️", "🎨", "🚀"];
