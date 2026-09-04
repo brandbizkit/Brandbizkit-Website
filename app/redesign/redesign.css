@@ -1,0 +1,821 @@
+/*
+ * BrandBizkit — parallel redesign visual system.
+ *
+ * Scope: every rule is nested under `.rd` so nothing here can leak into the
+ * live site. No new brand hues: the palette below is the exact set already in
+ * app/globals.css (@theme) — only the tint/shade steps, backgrounds and the
+ * ratio in which the colours are used have been re-balanced.
+ *
+ *   ink       #0d141a   text  #1d1e20
+ *   accent    #ff4232   accent-strong #d93222 (used where white text needs AA)
+ *   orange    #ff5733   periwinkle #697bdc / #4d5fc4
+ *   yellow    #f3c82e   blue-band #92a7db   cream #fff5ed   light #f4f4f6
+ *   green     #0e5c46   maroon #5c1d0f
+ *
+ * Type: Poppins (already loaded) stays the display face — heavier, tighter,
+ * larger. Inter (already loaded, previously only a body fallback) is promoted
+ * to the real body / UI face so there is a genuine display/body contrast.
+ * Motif: the two dots from the wordmark ("bran·d bizki·t") become one
+ * repeated dot mark — eyebrow prefix, list bullet, section-number accent.
+ */
+
+.rd {
+  --rd-ink: #0d141a;
+  --rd-text: #1d1e20;
+  --rd-accent: #ff4232;
+  --rd-accent-strong: #d93222;
+  --rd-orange: #ff5733;
+  --rd-peri: #697bdc;
+  --rd-peri-dark: #4d5fc4;
+  --rd-yellow: #f3c82e;
+  --rd-yellow-ink: #6b5300;
+  --rd-blue-band: #92a7db;
+  --rd-cream: #fff5ed;
+  --rd-light: #f4f4f6;
+  --rd-green: #0e5c46;
+  --rd-maroon: #5c1d0f;
+
+  --rd-line: rgb(13 20 26 / 0.10);
+  --rd-line-strong: rgb(13 20 26 / 0.18);
+  --rd-muted: rgb(29 30 32 / 0.66);
+
+  --rd-display: var(--font-poppins), "Poppins", sans-serif;
+  --rd-body: var(--font-inter), ui-sans-serif, system-ui, -apple-system, "Segoe UI", sans-serif;
+
+  --rd-maxw: 1180px;
+  --rd-gutter: clamp(1.25rem, 5vw, 3rem);
+  --rd-section-y: clamp(4.5rem, 9vw, 8rem);
+  --rd-radius: 14px;
+
+  color: var(--rd-text);
+  font-family: var(--rd-body);
+  font-size: 17px;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  background: #fff;
+}
+
+.rd *,
+.rd *::before,
+.rd *::after {
+  box-sizing: border-box;
+}
+
+.rd h1,
+.rd h2,
+.rd h3,
+.rd h4 {
+  font-family: var(--rd-display);
+  color: var(--rd-ink);
+  font-weight: 700;
+  letter-spacing: -0.022em;
+  line-height: 1.08;
+  text-wrap: balance;
+  margin: 0;
+}
+
+.rd p {
+  margin: 0;
+}
+
+.rd a {
+  color: inherit;
+  text-decoration: none;
+}
+
+.rd img {
+  display: block;
+  max-width: 100%;
+}
+
+.rd ::selection {
+  background: var(--rd-yellow);
+  color: var(--rd-ink);
+}
+
+.rd :focus-visible {
+  outline: 2px solid var(--rd-peri);
+  outline-offset: 3px;
+  border-radius: 6px;
+}
+
+/* ---------- layout primitives ---------- */
+.rd-wrap {
+  width: 100%;
+  max-width: var(--rd-maxw);
+  margin-inline: auto;
+  padding-inline: var(--rd-gutter);
+}
+
+.rd-section {
+  padding-block: var(--rd-section-y);
+}
+.rd-section--tight {
+  padding-block: clamp(3rem, 6vw, 5rem);
+}
+.rd-section--light {
+  background: var(--rd-light);
+}
+.rd-section--ink {
+  background: var(--rd-ink);
+  color: rgb(255 255 255 / 0.82);
+}
+.rd-section--ink h2,
+.rd-section--ink h3 {
+  color: #fff;
+}
+.rd-section--maroon {
+  background: var(--rd-maroon);
+  color: rgb(255 255 255 / 0.82);
+}
+
+/* ---------- section header ---------- */
+.rd-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  font-family: var(--rd-display);
+  font-size: 0.72rem;
+  font-weight: 700;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--rd-ink);
+}
+.rd-section--ink .rd-eyebrow,
+.rd-section--maroon .rd-eyebrow {
+  color: rgb(255 255 255 / 0.9);
+}
+.rd-eyebrow::before {
+  content: "";
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--rd-accent);
+  flex: none;
+}
+
+.rd-h2 {
+  font-size: clamp(1.9rem, 1.2rem + 3vw, 3rem);
+  margin-top: 1rem;
+}
+.rd-lede {
+  margin-top: 1.1rem;
+  max-width: 46ch;
+  color: var(--rd-muted);
+  font-size: 1.06rem;
+}
+.rd-section--ink .rd-lede,
+.rd-section--maroon .rd-lede {
+  color: rgb(255 255 255 / 0.72);
+}
+.rd-head--center {
+  text-align: center;
+}
+.rd-head--center .rd-eyebrow {
+  justify-content: center;
+}
+.rd-head--center .rd-lede {
+  margin-inline: auto;
+}
+
+/* keyword emphasis inside headings — highlighter, not coloured text,
+   so contrast is never in question */
+.rd-mark {
+  color: var(--rd-ink);
+  background-image: linear-gradient(
+    to top,
+    color-mix(in srgb, var(--rd-accent) 24%, transparent) 0 0.42em,
+    transparent 0.42em
+  );
+  padding-inline: 0.06em;
+}
+.rd-section--ink .rd-mark,
+.rd-section--maroon .rd-mark {
+  color: #fff;
+}
+
+/* ---------- buttons ---------- */
+.rd-btn {
+  --_bg: var(--rd-ink);
+  --_fg: #fff;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  border: 2px solid transparent;
+  border-radius: 999px;
+  padding: 0.85rem 1.7rem;
+  font-family: var(--rd-display);
+  font-weight: 600;
+  font-size: 0.98rem;
+  line-height: 1.2;
+  background: var(--_bg);
+  color: var(--_fg);
+  cursor: pointer;
+  transition: transform 0.18s ease, background-color 0.18s ease, color 0.18s ease,
+    border-color 0.18s ease, box-shadow 0.18s ease;
+}
+.rd-btn:hover {
+  transform: translateY(-2px);
+}
+.rd-btn:active {
+  transform: translateY(0);
+}
+/* primary = accent-strong (#d93222) so white label clears AA (4.8:1) */
+.rd-btn--primary {
+  --_bg: var(--rd-accent-strong);
+  --_fg: #fff;
+  box-shadow: 0 10px 24px rgb(255 66 50 / 0.28);
+}
+.rd-btn--primary:hover {
+  --_bg: #b62a1c;
+  box-shadow: 0 14px 30px rgb(255 66 50 / 0.34);
+}
+.rd-btn--ghost {
+  --_bg: transparent;
+  --_fg: var(--rd-ink);
+  border-color: var(--rd-line-strong);
+}
+.rd-btn--ghost:hover {
+  --_bg: var(--rd-ink);
+  --_fg: #fff;
+  border-color: var(--rd-ink);
+}
+.rd-section--ink .rd-btn--ghost,
+.rd-section--maroon .rd-btn--ghost {
+  --_fg: #fff;
+  border-color: rgb(255 255 255 / 0.45);
+}
+.rd-section--ink .rd-btn--ghost:hover {
+  --_bg: #fff;
+  --_fg: var(--rd-ink);
+}
+/* the single yellow moment — the Growth Score CTA */
+.rd-btn--score {
+  --_bg: var(--rd-yellow);
+  --_fg: var(--rd-ink);
+  border-color: var(--rd-ink);
+  font-weight: 700;
+  padding: 0.95rem 2rem;
+  font-size: 1.05rem;
+}
+.rd-btn--score:hover {
+  --_bg: var(--rd-ink);
+  --_fg: #fff;
+}
+.rd-btn--lg {
+  padding: 1rem 2.1rem;
+  font-size: 1.05rem;
+}
+
+/* text link with animated rule */
+.rd-link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  font-weight: 600;
+  color: var(--rd-peri);
+  background-image: linear-gradient(currentColor, currentColor);
+  background-size: 100% 1px;
+  background-repeat: no-repeat;
+  background-position: 0 100%;
+  transition: color 0.18s ease, background-size 0.22s ease;
+}
+.rd-link:hover {
+  color: var(--rd-peri-dark);
+  background-size: 0% 1px;
+}
+.rd-section--ink .rd-link,
+.rd-section--maroon .rd-link {
+  color: #fff;
+}
+
+/* ---------- cards ---------- */
+.rd-card {
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  background: #fff;
+  border: 1px solid var(--rd-line);
+  border-radius: var(--rd-radius);
+  padding: 1.5rem;
+  transition: transform 0.22s ease, box-shadow 0.22s ease, border-color 0.22s ease;
+}
+.rd-card--link:hover {
+  transform: translateY(-4px);
+  border-color: color-mix(in srgb, var(--rd-accent) 45%, transparent);
+  box-shadow: 0 18px 40px rgb(13 20 26 / 0.12);
+}
+.rd-card__media {
+  border-radius: 10px;
+  overflow: hidden;
+  aspect-ratio: 16 / 9;
+  background: var(--rd-light);
+}
+.rd-card__media img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.3s ease;
+}
+.rd-card--link:hover .rd-card__media img {
+  transform: scale(1.04);
+}
+
+/* ---------- grids ---------- */
+.rd-grid {
+  display: grid;
+  gap: 1.5rem;
+}
+.rd-grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+.rd-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+.rd-grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+.rd-split {
+  display: grid;
+  grid-template-columns: 1.05fr 0.95fr;
+  gap: clamp(2rem, 5vw, 4.5rem);
+  align-items: center;
+}
+.rd-split--wide-right {
+  grid-template-columns: 0.9fr 1.1fr;
+}
+
+/* ---------- hero ---------- */
+.rd-hero {
+  padding-block: clamp(3.5rem, 7vw, 6.5rem) var(--rd-section-y);
+  position: relative;
+  overflow: hidden;
+}
+.rd-hero__grid {
+  display: grid;
+  grid-template-columns: 1.02fr 0.98fr;
+  gap: clamp(2rem, 5vw, 4rem);
+  align-items: center;
+}
+.rd-hero__title {
+  font-size: clamp(2.6rem, 1.4rem + 5.4vw, 4.6rem);
+  letter-spacing: -0.03em;
+}
+.rd-hero__lede {
+  margin-top: 1.6rem;
+  max-width: 44ch;
+  font-size: 1.13rem;
+  color: var(--rd-muted);
+}
+.rd-hero__actions {
+  margin-top: 2.1rem;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  gap: 1.25rem 1.75rem;
+}
+.rd-hero__panel {
+  position: relative;
+  border: 1px solid var(--rd-line-strong);
+  border-radius: 20px;
+  overflow: hidden;
+  aspect-ratio: 4 / 5;
+  background: var(--rd-light);
+}
+.rd-hero__panel img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+.rd-hero__dot {
+  position: absolute;
+  border-radius: 999px;
+  background: var(--rd-accent);
+}
+.rd-hero__dot--a {
+  width: 118px;
+  height: 118px;
+  right: -34px;
+  top: -34px;
+  opacity: 0.9;
+}
+.rd-hero__dot--b {
+  width: 20px;
+  height: 20px;
+  left: -10px;
+  bottom: 64px;
+  background: var(--rd-ink);
+}
+
+/* ---------- misc pieces ---------- */
+.rd-rule {
+  height: 1px;
+  background: var(--rd-line);
+  border: 0;
+  margin: 0;
+}
+
+.rd-clamp-2 {
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.rd-tick-list {
+  margin: 1.4rem 0 0;
+  padding: 0;
+  list-style: none;
+  display: grid;
+  gap: 0.85rem;
+}
+.rd-tick-list li {
+  position: relative;
+  padding-left: 1.9rem;
+  color: var(--rd-text);
+}
+.rd-tick-list li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 0.55em;
+  width: 9px;
+  height: 9px;
+  border-radius: 999px;
+  background: var(--rd-accent);
+}
+
+.rd-idea {
+  margin-top: 2rem;
+  border-radius: var(--rd-radius);
+  padding: 1.6rem;
+  background-image: linear-gradient(135deg, #ff4b2b, #ff416c);
+  color: #fff;
+}
+.rd-idea h4 {
+  color: #fff;
+  font-size: 1.15rem;
+}
+.rd-idea p {
+  margin-top: 0.55rem;
+  color: rgb(255 255 255 / 0.94);
+}
+
+.rd-numeral {
+  font-family: var(--rd-display);
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--rd-accent);
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.rd-numeral::after {
+  content: "";
+  width: 6px;
+  height: 6px;
+  border-radius: 999px;
+  background: var(--rd-accent);
+}
+
+.rd-quote-card {
+  position: absolute;
+  right: 1rem;
+  bottom: -1.5rem;
+  max-width: 16rem;
+  background: #fff;
+  border: 1px solid var(--rd-line);
+  border-radius: 12px;
+  padding: 1rem 1.1rem;
+  box-shadow: 0 18px 40px rgb(13 20 26 / 0.16);
+}
+.rd-quote-card p {
+  font-family: var(--rd-display);
+  font-weight: 600;
+  font-size: 0.92rem;
+  color: var(--rd-ink);
+}
+.rd-quote-card span {
+  display: block;
+  margin-top: 0.5rem;
+  font-size: 0.75rem;
+  color: var(--rd-muted);
+}
+
+.rd-media-frame {
+  border-radius: 18px;
+  overflow: hidden;
+  border: 1px solid var(--rd-line);
+}
+.rd-media-frame img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.rd-stars {
+  color: var(--rd-yellow);
+  letter-spacing: 0.3em;
+  font-size: 1.35rem;
+}
+
+.rd-banner {
+  display: block;
+  border-radius: 18px;
+  background: var(--rd-peri);
+  color: #fff;
+  text-align: center;
+  padding: clamp(1.4rem, 3vw, 2.1rem);
+  font-family: var(--rd-display);
+  font-weight: 700;
+  font-size: clamp(1.5rem, 1rem + 2.4vw, 2.6rem);
+  transition: transform 0.18s ease, background-color 0.18s ease, box-shadow 0.18s ease;
+  box-shadow: 0 12px 30px rgb(105 123 220 / 0.32);
+}
+.rd-banner:hover {
+  transform: translateY(-2px);
+  background: var(--rd-peri-dark);
+  box-shadow: 0 16px 38px rgb(105 123 220 / 0.42);
+}
+
+.rd-cat {
+  border-radius: 14px;
+  overflow: hidden;
+  border: 1px solid var(--rd-line);
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+.rd-cat:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 16px 30px rgb(255 66 50 / 0.22);
+}
+.rd-cat img {
+  width: 100%;
+  height: auto;
+}
+
+/* ---------- nav ---------- */
+.rd-nav {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgb(255 255 255 / 0.9);
+  backdrop-filter: blur(12px);
+  border-bottom: 1px solid var(--rd-line);
+}
+.rd-nav__bar {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 1.5rem;
+  padding-block: 0.85rem;
+}
+.rd-nav__logo img {
+  height: 34px;
+  width: auto;
+}
+.rd-nav__links {
+  display: flex;
+  align-items: center;
+  gap: 0.15rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+.rd-nav__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.3rem;
+  padding: 0.5rem 0.85rem;
+  border-radius: 999px;
+  font-size: 0.9rem;
+  font-weight: 500;
+  color: var(--rd-ink);
+  transition: background-color 0.16s ease, color 0.16s ease;
+}
+.rd-nav__link:hover {
+  background: var(--rd-light);
+  color: var(--rd-accent-strong);
+}
+.rd-nav__item {
+  position: relative;
+}
+.rd-nav__menu {
+  position: absolute;
+  left: 0;
+  top: calc(100% + 6px);
+  min-width: 16rem;
+  background: #fff;
+  border: 1px solid var(--rd-line);
+  border-radius: 14px;
+  padding: 0.5rem;
+  box-shadow: 0 20px 44px rgb(13 20 26 / 0.14);
+  opacity: 0;
+  visibility: hidden;
+  transform: translateY(4px);
+  transition: opacity 0.16s ease, transform 0.16s ease, visibility 0.16s;
+}
+.rd-nav__item:hover .rd-nav__menu,
+.rd-nav__item:focus-within .rd-nav__menu {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+}
+.rd-nav__menu a {
+  display: block;
+  padding: 0.6rem 0.8rem;
+  border-radius: 9px;
+  font-size: 0.88rem;
+  color: var(--rd-muted);
+  transition: background-color 0.16s ease, color 0.16s ease;
+}
+.rd-nav__menu a:hover {
+  background: var(--rd-cream);
+  color: var(--rd-accent-strong);
+}
+.rd-nav__caret {
+  transition: transform 0.16s ease;
+}
+.rd-nav__item:hover .rd-nav__caret {
+  transform: rotate(180deg);
+}
+.rd-nav__toggle {
+  display: none;
+  border: 0;
+  background: transparent;
+  padding: 0.4rem;
+  border-radius: 8px;
+  cursor: pointer;
+}
+.rd-nav__toggle:hover {
+  background: var(--rd-light);
+}
+.rd-nav__mobile {
+  display: none;
+  border-top: 1px solid var(--rd-line);
+  padding: 0.5rem var(--rd-gutter) 1.5rem;
+}
+.rd-nav__mobile a {
+  display: block;
+  padding: 0.7rem 0;
+  font-weight: 500;
+  color: var(--rd-ink);
+}
+.rd-nav__mobile .rd-nav__sub a {
+  padding-left: 1rem;
+  font-size: 0.9rem;
+  font-weight: 400;
+  color: var(--rd-muted);
+}
+
+/* ---------- footer ---------- */
+.rd-foot-expect {
+  background: #fff;
+  border-top: 1px solid var(--rd-line);
+  padding-block: var(--rd-section-y);
+}
+.rd-foot-band {
+  background-image: linear-gradient(135deg, #ff4b2b, #ff416c);
+  color: #fff;
+}
+.rd-foot-band__inner {
+  padding-block: clamp(3rem, 6vw, 4.5rem);
+}
+.rd-foot-band h3 {
+  color: #fff;
+}
+.rd-foot-slogan {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.75rem;
+  font-family: var(--rd-display);
+  font-weight: 700;
+  font-size: clamp(2rem, 1.4rem + 3vw, 3rem);
+}
+.rd-foot-slogan span[aria-hidden] {
+  color: rgb(255 255 255 / 0.4);
+}
+.rd-foot-col {
+  margin-top: 2.5rem;
+  border-top: 1px solid rgb(255 255 255 / 0.25);
+  padding-top: 2rem;
+}
+.rd-foot-links {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem 1.5rem;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  font-size: 0.9rem;
+  color: rgb(255 255 255 / 0.82);
+}
+.rd-foot-links a:hover {
+  color: #fff;
+}
+
+/* ---------- scroll reveal ---------- */
+.rd-reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity 0.6s ease, transform 0.6s ease;
+  will-change: opacity, transform;
+}
+.rd-reveal.is-in {
+  opacity: 1;
+  transform: none;
+}
+
+/* ---------- light theming of reused live components inside .rd ----------
+   These components (PersonaQuiz, NewsletterSignup, LeadForm, PricingKits,
+   ServicesTail, VideoWithTranscript, PodcastWidget) are imported verbatim to
+   keep their forms / API calls / logic intact. Weight, radius and spacing are
+   fair game per the brief, so nudge them to match the redesign — scoped to
+   `.rd` only, their own files are untouched. */
+.rd .btn {
+  border-radius: 999px;
+  font-family: var(--rd-display);
+  font-weight: 600;
+  letter-spacing: -0.005em;
+}
+.rd .btn-primary {
+  background: var(--rd-accent-strong);
+  box-shadow: 0 10px 24px rgb(255 66 50 / 0.26);
+}
+.rd .btn-primary:hover {
+  background: #b62a1c;
+}
+.rd .card {
+  border-radius: var(--rd-radius);
+  border-color: var(--rd-line);
+}
+.rd .section-title {
+  font-family: var(--rd-display);
+  letter-spacing: -0.022em;
+}
+.rd .section-eyebrow {
+  color: var(--rd-ink);
+  letter-spacing: 0.18em;
+}
+
+/* ---------- responsive ---------- */
+@media (max-width: 1000px) {
+  .rd-hero__grid {
+    grid-template-columns: 1fr;
+  }
+  .rd-hero__panel {
+    aspect-ratio: 16 / 11;
+    max-width: 30rem;
+  }
+  .rd-split,
+  .rd-split--wide-right {
+    grid-template-columns: 1fr;
+  }
+  .rd-grid--3,
+  .rd-grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .rd-nav__links {
+    display: none;
+  }
+  .rd-nav__toggle {
+    display: inline-flex;
+  }
+  .rd-nav__mobile.is-open {
+    display: block;
+  }
+}
+
+@media (max-width: 620px) {
+  .rd {
+    font-size: 16px;
+  }
+  .rd-grid--2,
+  .rd-grid--3,
+  .rd-grid--4 {
+    grid-template-columns: 1fr;
+  }
+  .rd-quote-card {
+    position: static;
+    max-width: none;
+    margin-top: 1rem;
+  }
+  .rd-hero__dot--a {
+    width: 80px;
+    height: 80px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .rd *,
+  .rd *::before,
+  .rd *::after {
+    animation-duration: 0.001ms !important;
+    transition-duration: 0.001ms !important;
+  }
+  .rd-reveal {
+    opacity: 1;
+    transform: none;
+  }
+}
