@@ -1,0 +1,10 @@
+{
+  "artboards": [
+    { "file": "Main.dc.html", "x": 0, "y": 0, "w": 1440, "h": 6400, "title": "Homepage — desktop", "is_interactive": true },
+    { "file": "Mobile.dc.html", "x": 1600, "y": 0, "w": 390, "h": 1560, "title": "Homepage — mobile", "is_interactive": true }
+  ],
+  "annotations": [
+    { "id": "note-intro", "x": 0, "y": -150, "w": 620, "text": "BrandBizkit homepage — maximalist playful direction, clickable prototype.\nReal brand palette (coral #FF4232 · periwinkle #697BDC · yellow #F3C82E · cream) + Poppins.\nTry: the persona quiz reveals a tailored kit · the tool-explorer pills filter the grid · the footer email field." }
+  ],
+  "launch": { "view": "canvas" }
+}

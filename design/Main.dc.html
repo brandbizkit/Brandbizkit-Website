@@ -1,0 +1,548 @@
+<!doctype html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <script src="./support.js"></script>
+</head>
+<body>
+<x-dc>
+<helmet>
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700;800&display=swap">
+  <style>
+    * { box-sizing: border-box; }
+    body { margin: 0; }
+    .page {
+      width: 1440px;
+      font-family: "Poppins", "Trebuchet MS", system-ui, sans-serif;
+      color: #1d1e20;
+      background:
+        radial-gradient(circle at 12% 8%, rgba(105,123,220,.16), transparent 38%),
+        radial-gradient(circle at 92% 4%, rgba(243,200,46,.20), transparent 34%),
+        #fffdfb;
+      -webkit-font-smoothing: antialiased;
+      overflow: hidden;
+    }
+    h1, h2, h3, h4 { font-weight: 800; color: #0d141a; letter-spacing: -0.02em; margin: 0; line-height: 1.02; text-wrap: balance; }
+    p { margin: 0; line-height: 1.6; }
+    a { color: #d93222; text-decoration: none; }
+    a:hover { color: #0d141a; }
+    ul { margin: 0; padding: 0; list-style: none; }
+
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 0 40px; }
+    .dots { background-image: radial-gradient(#0d141a 1.4px, transparent 1.5px); background-size: 22px 22px; }
+
+    .sticker {
+      display: inline-flex; align-items: center; gap: 8px;
+      font-weight: 800; font-size: 13px; text-transform: uppercase; letter-spacing: .1em;
+      padding: 8px 14px; border: 3px solid #0d141a; border-radius: 999px;
+      background: #fff; box-shadow: 4px 4px 0 #0d141a;
+    }
+    .chunk {
+      border: 3px solid #0d141a; border-radius: 20px; background: #fff;
+      box-shadow: 8px 8px 0 #0d141a;
+    }
+    .btn {
+      display: inline-flex; align-items: center; gap: 10px; cursor: pointer;
+      font-family: inherit; font-weight: 800; font-size: 18px;
+      padding: 16px 28px; border: 3px solid #0d141a; border-radius: 999px;
+      background: #f3c82e; color: #0d141a; box-shadow: 6px 6px 0 #0d141a;
+      transition: transform .12s ease, box-shadow .12s ease; text-transform: none;
+    }
+    .btn:hover { transform: translate(-2px,-2px); box-shadow: 9px 9px 0 #0d141a; }
+    .btn:active { transform: translate(2px,2px); box-shadow: 3px 3px 0 #0d141a; }
+    .btn.coral { background: #ff4232; color: #fff; }
+    .btn.peri { background: #697bdc; color: #fff; }
+    .btn.ghost { background: transparent; box-shadow: none; border-color: transparent; text-decoration: underline; text-underline-offset: 5px; padding: 16px 6px; }
+    .btn.ghost:hover { transform: none; color: #d93222; }
+
+    .eyebrow { font-weight: 800; font-size: 13px; letter-spacing: .18em; text-transform: uppercase; color: #d93222; }
+    .h2 { font-size: 52px; }
+    .lead { font-size: 19px; color: rgba(29,30,32,.78); }
+
+    .mark { position: relative; white-space: nowrap; z-index: 0; }
+    .mark::before {
+      content: ""; position: absolute; z-index: -1; left: -6px; right: -6px; bottom: 4px; height: 42%;
+      background: #f3c82e; transform: rotate(-1.6deg); border-radius: 4px;
+    }
+    .coral { color: #ff4232; }
+
+    .rise { animation: rise .6s cubic-bezier(.16,1,.3,1) both; }
+    @keyframes rise { from { opacity: 0; transform: translateY(20px); } to { opacity: 1; transform: translateY(0); } }
+    @media (prefers-reduced-motion: reduce) { .rise, .mq-track { animation: none !important; } }
+
+    .mq { overflow: hidden; border-top: 3px solid #0d141a; border-bottom: 3px solid #0d141a; background: #0d141a; }
+    .mq-track { display: flex; gap: 0; width: max-content; animation: slide 26s linear infinite; }
+    .mq-track span { color: #fff; font-weight: 800; font-size: 18px; padding: 14px 26px; text-transform: uppercase; letter-spacing: .06em; display: inline-flex; align-items: center; gap: 26px; }
+    .mq-track span::after { content: "✷"; color: #f3c82e; }
+    @keyframes slide { to { transform: translateX(-50%); } }
+
+    .pill {
+      cursor: pointer; font-family: inherit; font-weight: 800; font-size: 15px;
+      padding: 11px 20px; border: 3px solid #0d141a; border-radius: 999px;
+      box-shadow: 4px 4px 0 #0d141a; transition: transform .1s ease;
+    }
+    .pill:hover { transform: translate(-1px,-1px); }
+
+    .card-lift { transition: transform .14s ease, box-shadow .14s ease; }
+    .card-lift:hover { transform: translate(-3px,-4px); box-shadow: 12px 14px 0 #0d141a; }
+
+    .tool-card { border: 3px solid #0d141a; border-radius: 16px; background: #fff; padding: 18px; box-shadow: 5px 5px 0 #0d141a; }
+    .tag { display: inline-block; font-weight: 800; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; padding: 4px 10px; border: 2px solid #0d141a; border-radius: 999px; background: #fff5ed; }
+
+    .field { font-family: inherit; font-size: 16px; font-weight: 600; padding: 15px 18px; border: 3px solid #0d141a; border-radius: 999px; background: #fff; color: #0d141a; width: 320px; }
+    .field::placeholder { color: rgba(13,20,26,.45); }
+  </style>
+</helmet>
+
+<div class="page">
+
+  <!-- ===== NAV ===== -->
+  <header style="position: relative; z-index: 5;">
+    <div class="wrap" style="display: flex; align-items: center; justify-content: space-between; padding-top: 26px; padding-bottom: 26px;">
+      <div style="display: flex; align-items: center; gap: 10px;">
+        <span style="display: inline-flex; width: 34px; height: 34px; align-items: center; justify-content: center; background: #ff4232; border: 3px solid #0d141a; border-radius: 10px; transform: rotate(-6deg);">
+          <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.9 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8L12 2z" fill="#fff"/></svg>
+        </span>
+        <span style="font-weight: 800; font-size: 21px; letter-spacing: -0.03em; color: #0d141a;">brandbizkit</span>
+      </div>
+      <nav style="display: flex; align-items: center; gap: 30px; font-weight: 700; font-size: 15px;">
+        <a href="#" style="color: #0d141a;">AI School</a>
+        <a href="#" style="color: #0d141a;">Free AI Tools</a>
+        <a href="#" style="color: #0d141a;">Insights</a>
+        <a href="#" style="color: #0d141a;">Services</a>
+        <span class="btn coral" style="font-size: 15px; padding: 12px 20px; box-shadow: 4px 4px 0 #0d141a;">Get My Free Growth Score</span>
+      </nav>
+    </div>
+  </header>
+
+  <!-- ===== HERO ===== -->
+  <section style="position: relative; padding: 40px 0 90px;">
+    <div aria-hidden="true" class="dots" style="position: absolute; inset: 0; opacity: .12;"></div>
+    <div aria-hidden="true" style="position: absolute; top: -60px; left: -80px; width: 320px; height: 320px; background: #697bdc; border-radius: 50%; opacity: .18;"></div>
+    <div aria-hidden="true" style="position: absolute; top: 120px; right: -120px; width: 360px; height: 360px; background: #ff4232; border-radius: 50%; opacity: .12;"></div>
+
+    <div class="wrap" style="position: relative; display: grid; grid-template-columns: 1.05fr .95fr; gap: 46px; align-items: center;">
+      <div>
+        <span class="sticker rise" style="transform: rotate(-2deg); animation-delay: .02s;">
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="9" stroke="#0d141a" stroke-width="3"/><path d="M8 12.5l2.8 2.8L16 9.5" stroke="#0d141a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          100% free · zero code
+        </span>
+        <h1 class="rise" style="margin-top: 22px; font-size: 78px;">
+          <span class="coral">FREE</span> AI tools, templates<br>&amp; guides in <span class="mark">ONE BIZKIT</span>
+        </h1>
+        <p class="lead rise" style="margin-top: 24px; max-width: 33rem; animation-delay: .08s;">
+          Whether you&#39;re launching a brand, already running a business, or just want to use AI
+          better at your job — brandbizkit hands you curated free AI tools and real workflows.
+          Zero overwhelm, step-by-step.
+        </p>
+        <div class="rise" style="margin-top: 34px; display: flex; align-items: center; gap: 18px; animation-delay: .14s;">
+          <span class="btn">Get My Free Growth Score
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M5 12h13M13 6l6 6-6 6" stroke="#0d141a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+          </span>
+          <span class="btn ghost">or browse the tools first</span>
+        </div>
+        <div class="rise" style="margin-top: 40px; display: flex; gap: 14px; animation-delay: .2s;">
+          <span class="sticker" style="background: #fff5ed; transform: rotate(-1.5deg);">74 free tools</span>
+          <span class="sticker" style="background: #fff5ed; transform: rotate(1.5deg);">33 step-by-step guides</span>
+          <span class="sticker" style="background: #fff5ed; transform: rotate(-1deg);">0 lines of code</span>
+        </div>
+      </div>
+
+      <!-- collage -->
+      <div class="rise" style="position: relative; height: 470px; animation-delay: .12s;">
+        <div class="chunk" style="position: absolute; top: 10px; left: 30px; width: 240px; padding: 18px; transform: rotate(-5deg); background: #fff;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="width: 30px; height: 30px; border-radius: 8px; background: #10a37f; display: inline-block;"></span>
+            <strong style="font-size: 15px;">ChatGPT</strong>
+          </div>
+          <p style="margin-top: 10px; font-size: 13px; color: rgba(29,30,32,.7);">Draft, research &amp; brainstorm in seconds.</p>
+        </div>
+        <div class="chunk" style="position: absolute; top: 150px; right: 6px; width: 250px; padding: 18px; transform: rotate(4.5deg); background: #fff;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="width: 30px; height: 30px; border-radius: 8px; background: #7d2ae8; display: inline-block;"></span>
+            <strong style="font-size: 15px;">Canva</strong>
+          </div>
+          <p style="margin-top: 10px; font-size: 13px; color: rgba(29,30,32,.7);">Brand kits, posts &amp; decks, on tap.</p>
+        </div>
+        <div class="chunk" style="position: absolute; bottom: 6px; left: 60px; width: 250px; padding: 18px; transform: rotate(-2.5deg); background: #697bdc; color: #fff; border-color: #0d141a;">
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="width: 30px; height: 30px; border-radius: 8px; background: #f3c82e; display: inline-block;"></span>
+            <strong style="font-size: 15px;">Automation stack</strong>
+          </div>
+          <p style="margin-top: 10px; font-size: 13px; color: rgba(255,255,255,.88);">CRM, funnels &amp; chatbots wired together.</p>
+        </div>
+        <svg aria-hidden="true" style="position: absolute; top: -6px; right: 40px;" width="74" height="74" viewBox="0 0 24 24" fill="none"><path d="M12 1v22M1 12h22M4 4l16 16M20 4L4 20" stroke="#ff4232" stroke-width="2.4" stroke-linecap="round"/></svg>
+        <svg aria-hidden="true" style="position: absolute; bottom: 60px; right: -6px;" width="120" height="90" viewBox="0 0 120 90" fill="none"><path d="M6 12c34 6 64 26 82 66" stroke="#0d141a" stroke-width="3" stroke-linecap="round" stroke-dasharray="2 9"/><path d="M74 74l16 8-4-17" stroke="#0d141a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+      </div>
+    </div>
+  </section>
+
+  <div class="mq"><div class="mq-track">
+    <span>ChatGPT<i></i></span><span>Canva<i></i></span><span>Notion AI<i></i></span><span>Perplexity<i></i></span><span>ElevenLabs<i></i></span><span>Zapier<i></i></span><span>Midjourney<i></i></span><span>Gamma<i></i></span>
+    <span>ChatGPT<i></i></span><span>Canva<i></i></span><span>Notion AI<i></i></span><span>Perplexity<i></i></span><span>ElevenLabs<i></i></span><span>Zapier<i></i></span><span>Midjourney<i></i></span><span>Gamma<i></i></span>
+  </div></div>
+
+  <!-- ===== PERSONA QUIZ (interactive) ===== -->
+  <section style="position: relative; background: #697bdc; padding: 78px 0;">
+    <div aria-hidden="true" class="dots" style="position: absolute; inset: 0; opacity: .1;"></div>
+    <div class="wrap" style="position: relative;">
+      <div style="text-align: center;">
+        <span class="eyebrow" style="color: #f3c82e;">30-second start</span>
+        <h2 style="color: #fff; font-size: 46px; margin-top: 10px;">First — who are you building for?</h2>
+        <p style="color: rgba(255,255,255,.85); margin-top: 12px; font-size: 17px;">Pick one. We&#39;ll point you straight at the right kit.</p>
+      </div>
+
+      <div style="margin-top: 38px; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px;">
+        <sc-for list="{{ personas }}" as="p" hint-placeholder-count="3">
+          <button type="button" class="card-lift" onClick="{{ p.pick }}" style="text-align: left; cursor: pointer; font-family: inherit; padding: 24px; border: 3px solid #0d141a; border-radius: 20px; background: #fffdfb; {{ p.boxStyle }}">
+            <span class="tag" style="background: #f3c82e;">{{ p.tag }}</span>
+            <span style="display: block; margin-top: 14px; font-weight: 800; font-size: 21px; color: #0d141a;">{{ p.label }}</span>
+          </button>
+        </sc-for>
+      </div>
+
+      <sc-if value="{{ showRec }}" hint-placeholder-val="{{ true }}">
+        <div class="chunk rise" style="margin-top: 26px; padding: 32px 34px; background: #fffdfb; display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center;">
+          <div>
+            <span class="eyebrow">{{ rec.title }}</span>
+            <ul style="margin-top: 14px; display: grid; gap: 10px;">
+              <sc-for list="{{ rec.bullets }}" as="b" hint-placeholder-count="3">
+                <li style="display: flex; gap: 12px; font-size: 16px; color: #1d1e20;">
+                  <svg width="22" height="22" viewBox="0 0 24 24" fill="none" style="flex: 0 0 auto; margin-top: 1px;"><path d="M4 13l5 5L20 5" stroke="#ff4232" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                  <span>{{ b }}</span>
+                </li>
+              </sc-for>
+            </ul>
+          </div>
+          <span class="btn coral">Build my BizKit →</span>
+        </div>
+      </sc-if>
+    </div>
+  </section>
+
+  <!-- ===== TOOL EXPLORER (interactive filter) ===== -->
+  <section style="padding: 90px 0;">
+    <div class="wrap">
+      <div style="display: flex; align-items: end; justify-content: space-between; gap: 30px; flex-wrap: wrap;">
+        <div>
+          <span class="eyebrow">The directory</span>
+          <h2 class="h2" style="margin-top: 8px;">Point-and-click<br>your AI stack</h2>
+        </div>
+        <p class="lead" style="max-width: 30rem;">Every tool listed with its real free-tier limits and a plain-English &ldquo;what it&rsquo;s for&rdquo;. Filter, don&rsquo;t scroll.</p>
+      </div>
+
+      <div style="margin-top: 30px; display: flex; flex-wrap: wrap; gap: 12px;">
+        <sc-for list="{{ catButtons }}" as="c" hint-placeholder-count="6">
+          <button type="button" class="pill" onClick="{{ c.pick }}" style="font-family: inherit; {{ c.pillStyle }}">{{ c.name }}</button>
+        </sc-for>
+      </div>
+
+      <div style="margin-top: 26px; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px;">
+        <sc-for list="{{ tools }}" as="t" hint-placeholder-count="6">
+          <div class="tool-card card-lift">
+            <div style="display: flex; align-items: center; justify-content: space-between; gap: 10px;">
+              <strong style="font-size: 17px; color: #0d141a;">{{ t.name }}</strong>
+              <span class="tag">{{ t.cat }}</span>
+            </div>
+            <p style="margin-top: 10px; font-size: 14px; color: rgba(29,30,32,.72);">{{ t.note }}</p>
+            <div style="margin-top: 14px; font-weight: 800; font-size: 13px; color: #0e5c46;">{{ t.free }}</div>
+          </div>
+        </sc-for>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== WHY 10X ===== -->
+  <section style="background: #fff5ed; border-top: 3px solid #0d141a; border-bottom: 3px solid #0d141a; padding: 88px 0;">
+    <div class="wrap" style="display: grid; grid-template-columns: 1fr 1fr; gap: 54px; align-items: center;">
+      <div style="position: relative;">
+        <div class="chunk" style="padding: 0; overflow: hidden; transform: rotate(-2deg); background: #0d141a; aspect-ratio: 16/10; display: flex; align-items: center; justify-content: center;">
+          <span style="width: 78px; height: 78px; border-radius: 999px; background: #f3c82e; border: 3px solid #0d141a; display: flex; align-items: center; justify-content: center;">
+            <svg width="26" height="26" viewBox="0 0 24 24" fill="none"><path d="M8 5l12 7-12 7V5z" fill="#0d141a"/></svg>
+          </span>
+        </div>
+        <span class="sticker" style="position: absolute; bottom: -18px; left: 24px; transform: rotate(3deg); background: #ff4232; color: #fff;">2 min watch</span>
+      </div>
+      <div>
+        <span class="eyebrow">Work smarter</span>
+        <h2 class="h2" style="margin-top: 8px;">Why this 10x&rsquo;s your brand <span class="coral">(without burning out)</span></h2>
+        <p class="lead" style="margin-top: 16px;">Starting used to mean months of designing, writing and guessing. Now you launch fast — <strong>if you know which AI tools to reach for.</strong></p>
+        <ul style="margin-top: 22px; display: grid; gap: 12px;">
+          <li style="display: flex; gap: 12px; font-size: 16px; font-weight: 600;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 13l5 5L20 5" stroke="#697bdc" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>You stop wasting time on busywork</li>
+          <li style="display: flex; gap: 12px; font-size: 16px; font-weight: 600;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 13l5 5L20 5" stroke="#697bdc" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>You become the strategist, not just the doer</li>
+          <li style="display: flex; gap: 12px; font-size: 16px; font-weight: 600;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 13l5 5L20 5" stroke="#697bdc" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>You launch campaigns in days, not weeks</li>
+          <li style="display: flex; gap: 12px; font-size: 16px; font-weight: 600;"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 13l5 5L20 5" stroke="#697bdc" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>You compete with big teams — without hiring one</li>
+        </ul>
+        <div style="margin-top: 26px; display: inline-block; padding: 22px 26px; border: 3px solid #0d141a; border-radius: 20px; background: linear-gradient(135deg, #ff4b2b, #ff416c); color: #fff; box-shadow: 8px 8px 0 #0d141a; transform: rotate(-1.5deg); max-width: 30rem;">
+          <strong style="font-size: 17px;">Big idea</strong>
+          <p style="margin-top: 6px; font-size: 15px; color: rgba(255,255,255,.95);">brandbizkit isn&rsquo;t just a toolkit. It&rsquo;s a new way of working — faster, smarter, way more fun.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOUNDERS ===== -->
+  <section style="padding: 90px 0;">
+    <div class="wrap" style="display: grid; grid-template-columns: .9fr 1.1fr; gap: 54px; align-items: center;">
+      <div style="position: relative;">
+        <div class="chunk" style="aspect-ratio: 4/3; background: #92a7db; transform: rotate(2deg); display: flex; align-items: center; justify-content: center;">
+          <span style="font-weight: 800; color: rgba(13,20,26,.5); font-size: 14px; letter-spacing: .1em; text-transform: uppercase;">Karla &amp; Michael</span>
+        </div>
+        <span style="position: absolute; top: -14px; left: 40%; width: 90px; height: 26px; background: rgba(243,200,46,.85); border: 2px solid #0d141a; transform: rotate(-8deg);"></span>
+      </div>
+      <div>
+        <span class="eyebrow">Meet your guides</span>
+        <h2 class="h2" style="margin-top: 8px;">Just starting out? <span class="coral">We&rsquo;ll help you make sense of it.</span></h2>
+        <p class="lead" style="margin-top: 16px;">Not every founder starts with a plan — some start with a feeling. That you want to launch something. Build a brand that reflects who you are. Bring your idea to life without spending months figuring it out.</p>
+        <p style="margin-top: 14px; font-size: 16px; color: rgba(29,30,32,.8);">That&rsquo;s exactly why we built <strong>brandbizkit</strong>. Starting a business can feel overwhelming — so we simplified it.</p>
+        <span class="btn peri" style="margin-top: 26px;">See the services ↓</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== SERVICES (dark) ===== -->
+  <section style="background: #0d141a; padding: 92px 0;">
+    <div class="wrap">
+      <div style="text-align: center;">
+        <span class="eyebrow" style="color: #f3c82e;">Our services</span>
+        <h2 style="color: #fff; font-size: 54px; margin-top: 8px;">Choose your goal</h2>
+        <p style="color: rgba(255,255,255,.7); margin-top: 12px; font-size: 17px;">Launch effortlessly with free-tool kit recommendations and step-by-step guidance.</p>
+      </div>
+      <div style="margin-top: 44px; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 22px;">
+        <div class="chunk card-lift" style="padding: 0; overflow: hidden; background: #fffdfb;">
+          <div style="height: 12px; background: #ff4232; border-bottom: 3px solid #0d141a;"></div>
+          <div style="padding: 26px;">
+            <span style="font-weight: 800; font-size: 40px; color: rgba(13,20,26,.14);">01</span>
+            <h3 style="font-size: 22px; margin-top: 4px;">Biz in a Box <span class="coral">(Solution Design)</span></h3>
+            <p style="margin-top: 10px; font-size: 14px; color: rgba(29,30,32,.75);">Plug-and-play starter kits. <strong>DIY</strong> templates, guides &amp; automated workflows — or <strong>DFY</strong>, we set the whole system up for you.</p>
+            <span style="display: inline-block; margin-top: 16px; font-weight: 800; color: #697bdc;">Learn more →</span>
+          </div>
+        </div>
+        <div class="chunk card-lift" style="padding: 0; overflow: hidden; background: #fffdfb;">
+          <div style="height: 12px; background: #697bdc; border-bottom: 3px solid #0d141a;"></div>
+          <div style="padding: 26px;">
+            <span style="font-weight: 800; font-size: 40px; color: rgba(13,20,26,.14);">02</span>
+            <h3 style="font-size: 22px; margin-top: 4px;">AI Tools Education <span style="color: #697bdc;">(AI School)</span></h3>
+            <p style="margin-top: 10px; font-size: 14px; color: rgba(29,30,32,.75);">Workshops &amp; masterclasses on AI for branding, content, workflows and ops — plus hands-on tool setup and integration.</p>
+            <span style="display: inline-block; margin-top: 16px; font-weight: 800; color: #697bdc;">Learn more →</span>
+          </div>
+        </div>
+        <div class="chunk card-lift" style="padding: 0; overflow: hidden; background: #fffdfb;">
+          <div style="height: 12px; background: #f3c82e; border-bottom: 3px solid #0d141a;"></div>
+          <div style="padding: 26px;">
+            <span style="font-weight: 800; font-size: 40px; color: rgba(13,20,26,.14);">03</span>
+            <h3 style="font-size: 22px; margin-top: 4px;">AI Transformation <span style="color: #0e5c46;">(Consulting)</span></h3>
+            <p style="margin-top: 10px; font-size: 14px; color: rgba(29,30,32,.75);">End-to-end adoption strategy: business impact + AI readiness assessment, then redesigning processes and customer experiences around AI.</p>
+            <span style="display: inline-block; margin-top: 16px; font-weight: 800; color: #697bdc;">Learn more →</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== TESTIMONIAL BAND ===== -->
+  <section style="position: relative; background: #ff4232; border-bottom: 3px solid #0d141a; padding: 84px 0; text-align: center;">
+    <div class="wrap" style="max-width: 820px;">
+      <div aria-hidden="true" style="display: flex; gap: 6px; justify-content: center;">
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="#f3c82e"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.9 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8L12 2z"/></svg>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="#f3c82e"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.9 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8L12 2z"/></svg>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="#f3c82e"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.9 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8L12 2z"/></svg>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="#f3c82e"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.9 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8L12 2z"/></svg>
+        <svg width="30" height="30" viewBox="0 0 24 24" fill="#f3c82e"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.9 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8L12 2z"/></svg>
+      </div>
+      <blockquote style="margin: 22px 0 0; font-size: 32px; font-weight: 800; color: #fff; line-height: 1.25; letter-spacing: -0.02em;">
+        &ldquo;brandbizkit helped me launch my business effortlessly. The step-by-step guidance and free tools made the whole process smooth — and actually enjoyable.&rdquo;
+      </blockquote>
+      <p style="margin-top: 18px; color: rgba(255,255,255,.85); font-weight: 700;">— Alex Smith</p>
+    </div>
+    <span class="sticker" style="position: absolute; right: 90px; top: 46px; transform: rotate(6deg); background: #fff;">★ real founder</span>
+  </section>
+
+  <!-- ===== POPULAR TOOLS ===== -->
+  <section style="padding: 90px 0;">
+    <div class="wrap">
+      <div style="text-align: center;">
+        <span class="eyebrow">Most reached-for</span>
+        <h2 class="h2" style="margin-top: 8px;">Popular AI tools, explained</h2>
+        <p class="lead" style="margin-top: 12px;">Click any tool for the free-tier breakdown and a workflow you can copy.</p>
+      </div>
+      <div style="margin-top: 36px; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 18px;">
+        <div class="tool-card card-lift"><strong style="font-size: 17px;">ChatGPT</strong><p style="margin-top: 8px; font-size: 14px; color: rgba(29,30,32,.72);">Your everything-assistant for writing, research and planning.</p></div>
+        <div class="tool-card card-lift"><strong style="font-size: 17px;">Canva</strong><p style="margin-top: 8px; font-size: 14px; color: rgba(29,30,32,.72);">Brand kits, social posts and pitch decks without a designer.</p></div>
+        <div class="tool-card card-lift"><strong style="font-size: 17px;">Perplexity</strong><p style="margin-top: 8px; font-size: 14px; color: rgba(29,30,32,.72);">Fast, cited answers for market and competitor research.</p></div>
+        <div class="tool-card card-lift"><strong style="font-size: 17px;">Notion AI</strong><p style="margin-top: 8px; font-size: 14px; color: rgba(29,30,32,.72);">Turn messy notes into SOPs, plans and briefs.</p></div>
+        <div class="tool-card card-lift"><strong style="font-size: 17px;">ElevenLabs</strong><p style="margin-top: 8px; font-size: 14px; color: rgba(29,30,32,.72);">Natural voiceovers for reels, ads and explainers.</p></div>
+        <div class="tool-card card-lift"><strong style="font-size: 17px;">Zapier</strong><p style="margin-top: 8px; font-size: 14px; color: rgba(29,30,32,.72);">Wire your tools together — no code, no ops team.</p></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== INSIGHTS ===== -->
+  <section style="background: #fff5ed; border-top: 3px solid #0d141a; padding: 88px 0;">
+    <div class="wrap">
+      <div style="display: flex; align-items: end; justify-content: space-between;">
+        <div><span class="eyebrow">From the blog</span><h2 class="h2" style="margin-top: 8px;">Latest Bizkit Insights</h2></div>
+        <a href="#" style="font-weight: 800; color: #697bdc;">View all insights →</a>
+      </div>
+      <div style="margin-top: 34px; display: grid; grid-template-columns: repeat(3, minmax(0,1fr)); gap: 20px;">
+        <article class="chunk card-lift" style="padding: 0; overflow: hidden; background: #fff;">
+          <div style="height: 150px; background: #697bdc; border-bottom: 3px solid #0d141a; position: relative;"><span class="tag" style="position: absolute; left: 14px; bottom: -12px; background: #f3c82e;">AI adoption</span></div>
+          <div style="padding: 20px;"><h3 style="font-size: 17px; line-height: 1.3;">The AI adoption &amp; integration gap for small business</h3><p style="margin-top: 8px; font-size: 13px; color: rgba(29,30,32,.6);">brandbizkit · Aug 2026 · 6 min</p></div>
+        </article>
+        <article class="chunk card-lift" style="padding: 0; overflow: hidden; background: #fff;">
+          <div style="height: 150px; background: #ff4232; border-bottom: 3px solid #0d141a; position: relative;"><span class="tag" style="position: absolute; left: 14px; bottom: -12px; background: #fff;">AI agents</span></div>
+          <div style="padding: 20px;"><h3 style="font-size: 17px; line-height: 1.3;">AI agents: the small-business leap of faith</h3><p style="margin-top: 8px; font-size: 13px; color: rgba(29,30,32,.6);">brandbizkit · Aug 2026 · 5 min</p></div>
+        </article>
+        <article class="chunk card-lift" style="padding: 0; overflow: hidden; background: #fff;">
+          <div style="height: 150px; background: #f3c82e; border-bottom: 3px solid #0d141a; position: relative;"><span class="tag" style="position: absolute; left: 14px; bottom: -12px; background: #fff;">Case study</span></div>
+          <div style="padding: 20px;"><h3 style="font-size: 17px; line-height: 1.3;">The Philippines&rsquo; first AI hub for small business</h3><p style="margin-top: 8px; font-size: 13px; color: rgba(29,30,32,.6);">brandbizkit · Aug 2026 · 7 min</p></div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== NEWSLETTER + FOOTER ===== -->
+  <footer style="background: #0d141a; color: #fff; padding: 80px 0 40px;">
+    <div class="wrap">
+      <div class="chunk" style="background: #f3c82e; color: #0d141a; padding: 34px 38px; display: grid; grid-template-columns: 1fr auto; gap: 26px; align-items: center; transform: rotate(-1deg);">
+        <div>
+          <h3 style="font-size: 26px;">One useful AI trick a week.</h3>
+          <p style="margin-top: 6px; font-size: 15px; color: rgba(13,20,26,.8);">No spam, no fluff — just something you can use that day.</p>
+        </div>
+        <sc-if value="{{ joined }}" hint-placeholder-val="{{ false }}">
+          <span style="font-weight: 800; font-size: 18px; display: inline-flex; align-items: center; gap: 10px;">
+            <svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 13l5 5L20 5" stroke="#0d141a" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+            You&rsquo;re on the list ✷
+          </span>
+        </sc-if>
+        <sc-if value="{{ notJoined }}" hint-placeholder-val="{{ true }}">
+          <span style="display: inline-flex; gap: 10px;">
+            <input class="field" type="email" placeholder="you@brand.com" aria-label="Email address">
+            <button type="button" class="btn coral" onClick="{{ join }}">Join free</button>
+          </span>
+        </sc-if>
+      </div>
+
+      <div style="margin-top: 54px; display: grid; grid-template-columns: 1.6fr 1fr 1fr 1fr; gap: 30px;">
+        <div>
+          <div style="display: flex; align-items: center; gap: 10px;">
+            <span style="display: inline-flex; width: 30px; height: 30px; align-items: center; justify-content: center; background: #ff4232; border: 3px solid #fff; border-radius: 9px; transform: rotate(-6deg);"><svg width="14" height="14" viewBox="0 0 24 24" fill="none"><path d="M12 2l2.9 6.3 6.9.8-5.1 4.7 1.4 6.8L12 17.9 5.9 21.4l1.4-6.8L2.2 9.9l6.9-.8L12 2z" fill="#fff"/></svg></span>
+            <strong style="font-size: 19px;">brandbizkit</strong>
+          </div>
+          <p style="margin-top: 14px; font-size: 14px; color: rgba(255,255,255,.6); max-width: 22rem;">Put AI to work — whether you&rsquo;re launching a brand, running a business, or leveling up at your job.</p>
+        </div>
+        <div>
+          <p style="font-weight: 800; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.5);">Explore</p>
+          <ul style="margin-top: 12px; display: grid; gap: 8px; font-size: 14px;"><li><a href="#" style="color: #fff;">Free AI Tools</a></li><li><a href="#" style="color: #fff;">Growth Score</a></li><li><a href="#" style="color: #fff;">Insights</a></li></ul>
+        </div>
+        <div>
+          <p style="font-weight: 800; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.5);">Services</p>
+          <ul style="margin-top: 12px; display: grid; gap: 8px; font-size: 14px;"><li><a href="#" style="color: #fff;">Biz in a Box</a></li><li><a href="#" style="color: #fff;">AI School</a></li><li><a href="#" style="color: #fff;">AI Transformation</a></li></ul>
+        </div>
+        <div>
+          <p style="font-weight: 800; font-size: 13px; letter-spacing: .1em; text-transform: uppercase; color: rgba(255,255,255,.5);">Company</p>
+          <ul style="margin-top: 12px; display: grid; gap: 8px; font-size: 14px;"><li><a href="#" style="color: #fff;">About</a></li><li><a href="#" style="color: #fff;">Connect</a></li><li><a href="#" style="color: #fff;">Admin</a></li></ul>
+        </div>
+      </div>
+      <p style="margin-top: 46px; font-size: 13px; color: rgba(255,255,255,.4);">© 2026 brandbizkit. Made for founders who&rsquo;d rather build than fiddle.</p>
+    </div>
+  </footer>
+
+</div>
+
+</x-dc>
+<script data-dc-script data-props='{"$preview":{"width":1440,"height":6400}}'>
+class Component extends DCLogic {
+  constructor(props) {
+    super(props);
+    this.state = { persona: null, cat: "All", joined: false };
+  }
+  renderVals() {
+
+    const personaDefs = [
+      { id: "launch", tag: "Start from zero", label: "I’m launching a brand" },
+      { id: "run", tag: "Level up ops", label: "I already run a business" },
+      { id: "job", tag: "Skill up fast", label: "I want to use AI better at work" }
+    ];
+    const personas = personaDefs.map((p) => {
+      const selected = this.state.persona === p.id;
+      return {
+        ...p,
+        selected,
+        pick: () => this.setState({ persona: p.id }),
+        boxStyle: selected
+          ? "border-color:#ff4232;box-shadow:8px 8px 0 #ff4232;transform:translate(-2px,-2px);"
+          : "box-shadow:6px 6px 0 #0d141a;"
+      };
+    });
+
+    const recMap = {
+      launch: {
+        title: "Your BizKit — Launch Pad",
+        bullets: [
+          "Biz in a Box DIY kit: brand, site and socials up in a weekend",
+          "Free AI tools for naming, identity and your first content batch",
+          "Run the Growth Score to pressure-test the idea before you spend"
+        ]
+      },
+      run: {
+        title: "Your BizKit — Operator Upgrade",
+        bullets: [
+          "An automation + CRM tool stack that kills the daily busywork",
+          "AI School masterclass on workflows, funnels and chatbots",
+          "AI Transformation assessment when you’re ready for bigger moves"
+        ]
+      },
+      job: {
+        title: "Your BizKit — Skill Sprint",
+        bullets: [
+          "Curated tool guides for content, research and analysis",
+          "Copy-paste workflows you can put to work today",
+          "Weekly Bizkit Insights so you stay ahead of the curve"
+        ]
+      }
+    };
+    const rec = this.state.persona ? recMap[this.state.persona] : null;
+
+    const cats = ["All", "Branding", "Content", "Automation", "Chatbots", "Analytics"];
+    const catButtons = cats.map((c) => {
+      const selected = this.state.cat === c;
+      return {
+        name: c,
+        selected,
+        pick: () => this.setState({ cat: c }),
+        pillStyle: selected ? "background:#0d141a;color:#fff;" : "background:#fff;color:#0d141a;"
+      };
+    });
+
+    const allTools = [
+      { name: "Looka", cat: "Branding", note: "Logo + brand kit generator", free: "Free: preview + low-res logo" },
+      { name: "Canva", cat: "Branding", note: "Brand kits, posts, decks", free: "Free plan: generous" },
+      { name: "ChatGPT", cat: "Content", note: "Drafts, research, ideation", free: "Free: GPT-4o mini + limited 4o" },
+      { name: "Notion AI", cat: "Content", note: "Notes → SOPs, briefs, plans", free: "Free trial credits" },
+      { name: "Perplexity", cat: "Content", note: "Cited answers for research", free: "Free: standard search" },
+      { name: "Zapier", cat: "Automation", note: "Connect your tools, no code", free: "Free: 100 tasks/mo" },
+      { name: "Make", cat: "Automation", note: "Visual multi-step automations", free: "Free: 1,000 ops/mo" },
+      { name: "n8n", cat: "Automation", note: "Open-source workflow engine", free: "Free: self-host" },
+      { name: "Chatbase", cat: "Chatbots", note: "Site chatbot from your docs", free: "Free: 1 bot, limited msgs" },
+      { name: "Voiceflow", cat: "Chatbots", note: "Design assistant flows", free: "Free: 2 assistants" },
+      { name: "PostHog", cat: "Analytics", note: "Product analytics + funnels", free: "Free: 1M events/mo" },
+      { name: "Plausible", cat: "Analytics", note: "Lightweight privacy analytics", free: "Free: self-host" }
+    ];
+    const tools = allTools.filter((t) => this.state.cat === "All" || t.cat === this.state.cat);
+
+    return {
+      personas,
+      rec,
+      showRec: !!rec,
+      catButtons,
+      tools,
+      joined: this.state.joined,
+      notJoined: !this.state.joined,
+      join: () => this.setState({ joined: true })
+    };
+  }
+}
+</script>
+</body>
+</html>
