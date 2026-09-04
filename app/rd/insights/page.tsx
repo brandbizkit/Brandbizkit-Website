@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
 import { getPosts } from "@/lib/content";
-import { StickerPerson } from "../_components/People";
+import { Character } from "../_components/Cast";
 
 export const metadata: Metadata = {
   title: "Bizkit Insights — BrandBizkit Design Preview",
@@ -29,7 +29,7 @@ export default function RdInsights() {
               do it every day.
             </p>
           </div>
-          <StickerPerson skin="deep" shirt="#697bdc" hair={1} size={120} style={{ transform: "rotate(4deg)" }} />
+          <Character id="upskiller" pose="read" size={150} className="rd-hide-sm" style={{ transform: "rotate(3deg)" }} />
         </div>
       </section>
 

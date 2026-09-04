@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import LeadForm from "@/components/LeadForm";
-import { StickerPerson, PhotoSlot } from "../_components/People";
+import { PhotoSlot } from "../_components/People";
+import { CastLineup } from "../_components/Cast";
 
 export const metadata: Metadata = {
   title: "AI School — BrandBizkit Design Preview",
@@ -40,11 +41,7 @@ export default function RdAiSchool() {
               ))}
             </div>
           </div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <StickerPerson skin="deep" shirt="#ff4232" hair={1} size={104} style={{ marginRight: -18, transform: "rotate(-6deg)" }} />
-            <StickerPerson skin="light" shirt="#f3c82e" hair={3} size={124} style={{ zIndex: 1, position: "relative" }} />
-            <StickerPerson skin="warm" shirt="#0e5c46" hair={2} size={104} style={{ marginLeft: -18, transform: "rotate(6deg)" }} />
-          </div>
+          <CastLineup poses={{ launcher: "read", operator: "point", upskiller: "present" }} size={168} className="rd-rise" />
         </div>
       </section>
 

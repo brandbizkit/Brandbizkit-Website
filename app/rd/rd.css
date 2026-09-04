@@ -151,6 +151,8 @@ body:has(.rd-root) { background: var(--paper); }
   .rd-rise, .rd-mq-track { animation: none !important; }
 }
 
+@media (max-width: 960px) { .rd-hide-sm { display: none !important; } }
+
 .rd-section { padding: 84px 0; }
 @media (max-width: 720px) { .rd-section { padding: 56px 0; } }
 

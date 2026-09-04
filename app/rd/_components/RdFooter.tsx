@@ -1,6 +1,6 @@
 import Link from "next/link";
 import NewsletterSignup from "@/components/NewsletterSignup";
-import { PeopleHuddle } from "./People";
+import { CastLineup } from "./Cast";
 
 const COLS = [
   {
@@ -71,7 +71,7 @@ export default function RdFooter() {
               Real people helping you put AI to work — whether you&rsquo;re launching a brand, running a
               business, or leveling up at your job.
             </p>
-            <PeopleHuddle className="rd-foot-people" />
+            <CastLineup poses={{ launcher: "wave", operator: "stand", upskiller: "wave" }} size={112} className="rd-foot-people" />
           </div>
           {COLS.map((c) => (
             <div key={c.head}>

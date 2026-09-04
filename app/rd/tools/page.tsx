@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { getToolsDirectory } from "@/lib/tools-directory";
 import ToolExplorerRD, { type RdTool } from "../_components/ToolExplorerRD";
-import { StickerPerson } from "../_components/People";
+import { CastLineup } from "../_components/Cast";
 
 export const metadata: Metadata = {
   title: "Free AI Tools — BrandBizkit Design Preview",
@@ -37,10 +37,7 @@ export default function RdTools() {
             </p>
             <p style={{ marginTop: 12, fontSize: 13, fontWeight: 700, color: "rgba(29,30,32,0.55)" }}>{dir.updateNote}</p>
           </div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <StickerPerson skin="warm" shirt="#697bdc" hair={0} size={120} style={{ transform: "rotate(-4deg)" }} />
-            <StickerPerson skin="deep" shirt="#f3c82e" hair={2} size={120} style={{ marginLeft: -22, transform: "rotate(5deg)" }} />
-          </div>
+          <CastLineup poses={{ launcher: "point", operator: "read", upskiller: "type" }} size={168} className="rd-rise" />
         </div>
       </section>
 

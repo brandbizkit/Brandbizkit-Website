@@ -3,7 +3,7 @@ import path from "path";
 import type { Metadata } from "next";
 import { interpolateYear } from "@/lib/year";
 import GrowthScore, { type GrowthScoreConfig } from "@/components/GrowthScore";
-import { StickerPerson } from "../_components/People";
+import { CastLineup } from "../_components/Cast";
 
 export const metadata: Metadata = {
   title: "Business Growth Score — BrandBizkit Design Preview",
@@ -35,10 +35,8 @@ export default function RdGrowthScore() {
             14 quick questions on brand, online presence, customers and systems — then a personalized
             dashboard showing exactly what to fix first. A human reviews every result.
           </p>
-          <div style={{ marginTop: 20, display: "flex", justifyContent: "center", gap: 6 }}>
-            <StickerPerson skin="light" shirt="#ff4232" hair={0} size={64} style={{ transform: "rotate(-6deg)" }} />
-            <StickerPerson skin="deep" shirt="#697bdc" hair={1} size={64} />
-            <StickerPerson skin="warm" shirt="#f3c82e" hair={2} size={64} style={{ transform: "rotate(6deg)" }} />
+          <div style={{ marginTop: 12 }}>
+            <CastLineup poses={{ launcher: "wave", operator: "present", upskiller: "read" }} size={132} className="rd-rise" />
           </div>
         </div>
       </section>

@@ -3,7 +3,8 @@ import fs from "fs";
 import path from "path";
 import { getSite } from "@/lib/content";
 import LeadForm from "@/components/LeadForm";
-import { StickerPerson, PhotoSlot } from "../_components/People";
+import { PhotoSlot } from "../_components/People";
+import { CastLineup } from "../_components/Cast";
 
 export const metadata: Metadata = {
   title: "Connect — BrandBizkit Design Preview",
@@ -47,11 +48,7 @@ export default function RdConnect() {
               Follow along, watch the tool walkthroughs, or just send a message. We read everything.
             </p>
           </div>
-          <div style={{ display: "flex", justifyContent: "center" }}>
-            <StickerPerson skin="light" shirt="#f3c82e" hair={0} size={112} style={{ marginRight: -18, transform: "rotate(-6deg)" }} />
-            <StickerPerson skin="deep" shirt="#697bdc" hair={2} size={128} style={{ zIndex: 1, position: "relative" }} />
-            <StickerPerson skin="warm" shirt="#ff4232" hair={1} size={112} style={{ marginLeft: -18, transform: "rotate(6deg)" }} />
-          </div>
+          <CastLineup poses={{ launcher: "wave", operator: "wave", upskiller: "wave" }} size={170} className="rd-rise" />
         </div>
       </section>
 

@@ -3,7 +3,7 @@ import Link from "next/link";
 import { getPosts } from "@/lib/content";
 import PersonaQuizRD from "./_components/PersonaQuizRD";
 import ToolExplorerRD, { type RdTool } from "./_components/ToolExplorerRD";
-import { StickerPerson } from "./_components/People";
+import { Character, CastLineup, CharacterBust, type CastId } from "./_components/Cast";
 
 const TEN_X = [
   "You stop wasting time on busywork",
@@ -73,34 +73,16 @@ export default function RdHome() {
             </div>
           </div>
 
-          {/* collage — people + tools, so it doesn't read as pure automation */}
-          <div className="rd-rise" style={{ position: "relative", minHeight: 460 }}>
-            <div className="rd-chunk" style={{ position: "absolute", top: 0, left: 20, width: 250, padding: 18, transform: "rotate(-5deg)" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                <StickerPerson skin="deep" shirt="#697bdc" hair={1} size={54} />
-                <div>
-                  <strong style={{ fontSize: 14 }}>Karla, founder</strong>
-                  <p style={{ fontSize: 12, color: "rgba(29,30,32,0.65)" }}>&ldquo;Less risk, real launch.&rdquo;</p>
-                </div>
-              </div>
+          {/* hero scene — the cast, mid-work, so it never reads as pure automation */}
+          <div className="rd-rise" style={{ position: "relative", minHeight: 470 }}>
+            <div className="rd-chunk" style={{ position: "absolute", top: 96, right: 0, width: 210, padding: 16, transform: "rotate(4deg)", background: "var(--peri)", color: "#fff" }}>
+              <strong style={{ fontSize: 14 }}>Automation stack</strong>
+              <p style={{ marginTop: 8, fontSize: 12, color: "rgba(255,255,255,0.88)" }}>CRM, funnels &amp; chatbots — wired together for you.</p>
             </div>
-            <div className="rd-chunk" style={{ position: "absolute", top: 150, right: 0, width: 250, padding: 18, transform: "rotate(4.5deg)", background: "var(--peri)", color: "#fff" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 10 }}>
-                <span style={{ width: 30, height: 30, borderRadius: 8, background: "var(--yellow)", display: "inline-block" }} />
-                <strong style={{ fontSize: 15 }}>Automation stack</strong>
-              </div>
-              <p style={{ marginTop: 10, fontSize: 13, color: "rgba(255,255,255,0.88)" }}>CRM, funnels &amp; chatbots — wired together for you.</p>
-            </div>
-            <div className="rd-chunk" style={{ position: "absolute", bottom: 0, left: 54, width: 250, padding: 18, transform: "rotate(-2.5deg)" }}>
-              <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
-                <StickerPerson skin="warm" shirt="#ff4232" hair={2} size={54} />
-                <div>
-                  <strong style={{ fontSize: 14 }}>You + a coach</strong>
-                  <p style={{ fontSize: 12, color: "rgba(29,30,32,0.65)" }}>Real humans in AI School.</p>
-                </div>
-              </div>
-            </div>
-            <svg aria-hidden style={{ position: "absolute", top: -6, right: 40 }} width="70" height="70" viewBox="0 0 24 24" fill="none"><path d="M12 1v22M1 12h22M4 4l16 16M20 4L4 20" stroke="#ff4232" strokeWidth="2.4" strokeLinecap="round" /></svg>
+            <Character id="operator" pose="type" size={250} style={{ position: "absolute", left: 40, top: 40 }} />
+            <Character id="launcher" pose="celebrate" size={150} style={{ position: "absolute", left: -6, bottom: -6 }} />
+            <Character id="upskiller" pose="read" size={140} style={{ position: "absolute", right: 6, bottom: 4 }} />
+            <svg aria-hidden style={{ position: "absolute", top: -6, right: 46 }} width="66" height="66" viewBox="0 0 24 24" fill="none"><path d="M12 1v22M1 12h22M4 4l16 16M20 4L4 20" stroke="#ff4232" strokeWidth="2.4" strokeLinecap="round" /></svg>
           </div>
         </div>
       </section>
@@ -116,7 +98,10 @@ export default function RdHome() {
       <section style={{ position: "relative", background: "var(--peri)", padding: "72px 0" }}>
         <div aria-hidden className="rd-dots" style={{ position: "absolute", inset: 0, opacity: 0.1 }} />
         <div className="rd-wrap" style={{ position: "relative" }}>
-          <PersonaQuizRD />
+          <CastLineup poses={{ launcher: "wave", operator: "present", upskiller: "point" }} size={150} className="rd-rise" />
+          <div style={{ marginTop: 8 }}>
+            <PersonaQuizRD />
+          </div>
         </div>
       </section>
 
@@ -148,6 +133,7 @@ export default function RdHome() {
               </span>
             </div>
             <span className="rd-sticker" style={{ position: "absolute", bottom: -18, left: 24, transform: "rotate(3deg)", background: "var(--coral)", color: "#fff" }}>2 min watch</span>
+            <Character id="upskiller" pose="present" size={168} style={{ position: "absolute", right: -70, bottom: -20 }} className="rd-hide-sm" />
           </div>
           <div>
             <span className="rd-eyebrow">Work smarter</span>
@@ -191,6 +177,7 @@ export default function RdHome() {
             </div>
             <span style={{ position: "absolute", top: -14, left: "38%", width: 90, height: 26, background: "rgba(243,200,46,0.85)", border: "2px solid var(--ink)", transform: "rotate(-8deg)" }} />
             <span className="rd-sticker" style={{ position: "absolute", bottom: -16, right: 20, transform: "rotate(4deg)" }}>👋 Karla &amp; Michael</span>
+            <Character id="launcher" pose="wave" size={130} style={{ position: "absolute", left: -78, bottom: -10 }} className="rd-hide-sm" />
           </div>
           <div>
             <span className="rd-eyebrow">Meet your guides</span>
@@ -247,11 +234,11 @@ export default function RdHome() {
             <h2 className="rd-h2" style={{ marginTop: 8 }}>People who launched with a BizKit</h2>
           </div>
           <div className="rd-grid-3" style={{ marginTop: 36 }}>
-            {[
-              { q: "The step-by-step guidance and free tools made the whole process smooth — and actually enjoyable.", name: "Alex Smith", role: "Founder, retail brand" },
-              { q: "I now build a business for less entrepreneurial risk. That changed everything for me.", name: "Karla K.", role: "Co-founder, brandbizkit" },
-              { q: "Went from spreadsheet chaos to an automated CRM in a weekend, without hiring anyone.", name: "[YOUR CUSTOMER]", role: "[ROLE / BUSINESS]" },
-            ].map((t, i) => (
+            {([
+              { q: "The step-by-step guidance and free tools made the whole process smooth — and actually enjoyable.", name: "Alex Smith", role: "Founder, retail brand", cast: "launcher" as CastId },
+              { q: "Went from spreadsheet chaos to an automated CRM in a weekend, without hiring anyone.", name: "Priya N.", role: "Owner, services business", cast: "operator" as CastId },
+              { q: "I finally use AI properly at work instead of pretending I do in meetings.", name: "[YOUR CUSTOMER]", role: "[ROLE / BUSINESS]", cast: "upskiller" as CastId },
+            ]).map((t, i) => (
               <figure key={i} className="rd-chunk rd-card-lift" style={{ padding: 22, margin: 0 }}>
                 <div style={{ display: "flex", alignItems: "center", gap: 12 }}>
                   {i === 2 ? (
@@ -259,7 +246,7 @@ export default function RdHome() {
                       <span>📷</span>
                     </div>
                   ) : (
-                    <StickerPerson skin={i === 0 ? "light" : "deep"} shirt={i === 0 ? "#ff4232" : "#f3c82e"} hair={i} size={52} />
+                    <CharacterBust id={t.cast} size={52} />
                   )}
                   <div aria-hidden style={{ display: "flex", gap: 2 }}>
                     {Array.from({ length: 5 }).map((_, k) => (

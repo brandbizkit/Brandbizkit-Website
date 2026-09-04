@@ -3,7 +3,7 @@ import Link from "next/link";
 import { notFound } from "next/navigation";
 import { getPosts, getPost } from "@/lib/content";
 import { mdToHtml } from "@/lib/markdown";
-import { StickerPerson } from "../../_components/People";
+import { CharacterBust } from "../../_components/Cast";
 
 export function generateStaticParams() {
   return getPosts().map((p) => ({ slug: p.slug }));
@@ -32,7 +32,7 @@ export default async function RdInsightArticle({ params }: { params: Promise<{ s
           <Link href="/rd/insights" style={{ fontWeight: 800, fontSize: 14 }}>← All insights</Link>
           <h1 style={{ marginTop: 16, fontSize: "clamp(30px,3vw+14px,50px)" }}>{post.title}</h1>
           <div style={{ marginTop: 18, display: "flex", alignItems: "center", gap: 12 }}>
-            <StickerPerson skin="warm" shirt="#697bdc" hair={1} size={44} />
+            <CharacterBust id="operator" size={44} />
             <p style={{ fontSize: 14, color: "rgba(29,30,32,0.6)", fontWeight: 600 }}>
               {post.author} · {post.date}{post.readTime ? ` · ${post.readTime}` : ""}
             </p>

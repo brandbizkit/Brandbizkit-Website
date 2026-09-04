@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import Link from "next/link";
-import { StickerPerson, PhotoSlot } from "../_components/People";
+import { PhotoSlot } from "../_components/People";
+import { CastLineup } from "../_components/Cast";
 
 export const metadata: Metadata = {
   title: "Services — BrandBizkit Design Preview",
@@ -62,11 +63,7 @@ export default function RdServices() {
               Every one comes with real people, not just a download link.
             </p>
           </div>
-          <div style={{ display: "flex", justifyContent: "center", gap: -10 }}>
-            <StickerPerson skin="deep" shirt="#f3c82e" hair={1} size={110} style={{ marginRight: -20, transform: "rotate(-6deg)" }} />
-            <StickerPerson skin="light" shirt="#ff4232" hair={0} size={128} style={{ zIndex: 1, position: "relative" }} />
-            <StickerPerson skin="warm" shirt="#697bdc" hair={2} size={110} style={{ marginLeft: -20, transform: "rotate(6deg)" }} />
-          </div>
+          <CastLineup poses={{ launcher: "present", operator: "carry", upskiller: "type" }} size={172} className="rd-rise" />
         </div>
       </section>
 
