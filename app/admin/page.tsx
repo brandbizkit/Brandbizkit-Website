@@ -27,9 +27,9 @@ function Login({ error }: { error?: boolean }) {
 export default async function AdminPage({
   searchParams,
 }: {
-  searchParams: Promise<{ error?: string }>;
+  searchParams: Promise<{ error?: string; ok?: string; err?: string }>;
 }) {
-  const { error } = await searchParams;
+  const { error, ok, err } = await searchParams;
   const cookieStore = await cookies();
   const adminKey = process.env.ADMIN_KEY;
   const authed = !!adminKey && cookieStore.get("bb_admin")?.value === adminKey;
@@ -53,6 +53,23 @@ export default async function AdminPage({
       <h1 className="font-display text-3xl font-bold">
         Digital Home — <span className="text-brand-accent">Command Center</span>
       </h1>
+
+      {ok && (
+        <div className="mt-4 rounded-xl border border-green-600/30 bg-green-50 p-4 text-sm text-green-800">
+          {ok.startsWith("published:")
+            ? `Published “${ok.slice("published:".length)}” — committed to main. It goes live ~1–2 min after Vercel redeploys (watch the Deployments tab).`
+            : `Draft “${ok.slice("rejected:".length)}” rejected — moved to content/drafts/rejected/.`}
+        </div>
+      )}
+      {err && (
+        <div className="mt-4 rounded-xl border border-red-600/30 bg-red-50 p-4 text-sm text-red-800">
+          {err === "no-github-token"
+            ? "Publishing on the live site needs GITHUB_TOKEN set in Vercel (fine-grained PAT, Contents: Read and write). Add it, redeploy, then try again."
+            : err === "commit-failed"
+              ? "The GitHub commit failed — check GITHUB_TOKEN is valid and has write access, then see the event log below for the error."
+              : `Action failed (${err}).`}
+        </div>
+      )}
 
       <div className="mt-8 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
         {[

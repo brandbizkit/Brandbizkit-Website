@@ -1,6 +1,11 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
+  // The /admin draft actions read content/ files at request time on Vercel.
+  outputFileTracingIncludes: {
+    "/api/admin/drafts": ["./content/**/*"],
+    "/admin": ["./content/**/*"],
+  },
   images: {
     remotePatterns: [
       { protocol: "https", hostname: "assets.zyrosite.com" },
