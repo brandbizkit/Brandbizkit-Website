@@ -21,6 +21,25 @@ export function githubConfigured(): boolean {
   return !!process.env.GITHUB_TOKEN;
 }
 
+/** Read a file from the repo's default branch. Returns null if it doesn't exist. */
+export async function getRepoFile(
+  repoPath: string
+): Promise<{ text: string; sha: string } | null> {
+  try {
+    const res = await gh<{ content: string; encoding: string; sha: string }>(
+      `/contents/${repoPath}?ref=${branch()}`
+    );
+    const text =
+      res.encoding === "base64"
+        ? Buffer.from(res.content, "base64").toString("utf8")
+        : res.content;
+    return { text, sha: res.sha };
+  } catch (e) {
+    if (String(e).includes("→ 404")) return null;
+    throw e;
+  }
+}
+
 function repo(): string {
   return process.env.GITHUB_REPO || "brandbizkit/Brandbizkit-Website";
 }
