@@ -1,29 +1,40 @@
 ---
-title: "Everyone Says They're 'Using AI.' Almost Nobody Has Actually Built It Into Their Business."
-description: "Two new 2026 surveys of U.S. small businesses agree on the headline number — most owners now use AI. They also agree on the number nobody's bragging about: only a small fraction have built it into how the business actually runs."
-date: "2026-08-24"
-author: "Karla Kangleon"
-readTime: "3 min read"
-image: "/assets/insights/ai-adoption-integration-gap-small-business.jpg"
-imageAlt: "Small business owner working on a laptop at a desk"
+title: >-
+  Everyone Says They're 'Using AI.' Almost Nobody Has Actually Built It Into
+  Their Business.
+description: >-
+  Two new 2026 surveys of U.S. small businesses agree on the headline number —
+  most owners now use AI. They also agree on the number nobody's bragging about:
+  only a small fraction have built it into how the business actually runs.
+date: '2026-09-07'
+author: Karla Kangleon
+readTime: 3 min read
+image: /assets/insights/ai-adoption-integration-gap-small-business.jpg
+imageAlt: Small business owner working on a laptop at a desk
 videos: []
 charts:
-  - type: "bar"
-    title: "Small businesses: using AI vs. fully integrated into operations (2026)"
-    unit: "%"
-    source: "Goldman Sachs 10,000 Small Businesses Voices survey, 2026"
+  - type: bar
+    title: 'Small businesses: using AI vs. fully integrated into operations (2026)'
+    unit: '%'
+    source: 'Goldman Sachs 10,000 Small Businesses Voices survey, 2026'
     data:
-      - { label: "Currently using AI", value: 76 }
-      - { label: "Say AI is fully embedded in core operations", value: 14 }
-      - { label: "Want more training to implement it", value: 73 }
-  - type: "bar"
-    title: "What small businesses report once AI use sticks"
-    unit: "% of AI-using owners"
-    source: "Thryv 2026 AI and Small Business Adoption Report"
+      - label: Currently using AI
+        value: 76
+      - label: Say AI is fully embedded in core operations
+        value: 14
+      - label: Want more training to implement it
+        value: 73
+  - type: bar
+    title: What small businesses report once AI use sticks
+    unit: '% of AI-using owners'
+    source: Thryv 2026 AI and Small Business Adoption Report
     data:
-      - { label: "Say AI saves them time", value: 92 }
-      - { label: "Say it increased revenue", value: 70 }
-      - { label: "Say it reduced costs", value: 55 }
+      - label: Say AI saves them time
+        value: 92
+      - label: Say it increased revenue
+        value: 70
+      - label: Say it reduced costs
+        value: 55
 ---
 
 Ask small business owners if they "use AI" in 2026 and most will say yes. Ask if it's actually built into how the business runs, and the room goes quiet.
