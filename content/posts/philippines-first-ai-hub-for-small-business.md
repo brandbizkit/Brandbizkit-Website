@@ -1,27 +1,42 @@
 ---
-title: "The Philippines Just Built Its First AI Hub for Small Businesses. Here's the Gap It's Trying to Close."
-description: "In August 2026, DTI and Converge opened the country's first AI training center for MSMEs in Makati. The numbers behind it: about 77% of Filipino small businesses want digital tools, and only 16% actually use them."
-date: "2026-08-29"
-author: "Michael Nielsen"
-readTime: "3 min read"
-image: "/assets/insights/philippines-first-ai-hub-for-small-business.jpg"
-imageAlt: "A Filipino street food vendor tending his grill stall in front of a dense tangle of electrical meters and wiring"
+title: >-
+  The Philippines Just Built Its First AI Hub for Small Businesses. Here's the
+  Gap It's Trying to Close.
+description: >-
+  In August 2026, DTI and Converge opened the country's first AI training center
+  for MSMEs in Makati. The numbers behind it: about 77% of Filipino small
+  businesses want digital tools, and only 16% actually use them.
+date: '2026-09-08'
+author: Michael Nielsen
+readTime: 3 min read
+image: /assets/insights/philippines-first-ai-hub-for-small-business.jpg
+imageAlt: >-
+  A Filipino street food vendor tending his grill stall in front of a dense
+  tangle of electrical meters and wiring
 videos: []
 charts:
-  - type: "bar"
-    title: "Filipino MSMEs: want digital tools vs. actually use them"
-    unit: "%"
-    source: "Management Association of the Philippines, The SME Investment Paradox, 2026"
+  - type: bar
+    title: 'Filipino MSMEs: want digital tools vs. actually use them'
+    unit: '%'
+    source: >-
+      Management Association of the Philippines, The SME Investment Paradox,
+      2026
     data:
-      - { label: "Want to adopt digital tools", value: 77 }
-      - { label: "Currently use them", value: 16 }
-  - type: "bar"
-    title: "Small businesses reporting higher profits after investing in technology (2024)"
-    unit: "%"
-    source: "CPA Australia Asia-Pacific Small Business Survey 2024–25"
+      - label: Want to adopt digital tools
+        value: 77
+      - label: Currently use them
+        value: 16
+  - type: bar
+    title: >-
+      Small businesses reporting higher profits after investing in technology
+      (2024)
+    unit: '%'
+    source: CPA Australia Asia-Pacific Small Business Survey 2024–25
     data:
-      - { label: "Philippines", value: 69 }
-      - { label: "Asia-Pacific average", value: 56 }
+      - label: Philippines
+        value: 69
+      - label: Asia-Pacific average
+        value: 56
 ---
 
 On August 11, a government building in Makati got an unusual new tenant: the Philippines' first AI training hub built specifically for small businesses.
