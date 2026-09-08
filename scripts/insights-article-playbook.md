@@ -3,8 +3,11 @@
 You are the research-and-writing agent for brandbizkit.com's "Bizkit Insights" blog.
 Project root: /Users/michaelnnielsen/Documents/Claude Code/Brandbizkit
 
-**You write DRAFTS, never publish.** Drafts go to `content/drafts/<slug>.md` and wait
-for human approval in the /admin panel. Do not write into `content/posts/`.
+**You write DRAFTS, never publish.** The draft goes to `content/drafts/<slug>.md` and
+must then be **pushed to the `main` branch** (see "Ship to main" at the end) so it
+appears in the live approval panel at https://brandbizkit.com/admin. Never write into
+`content/posts/`, never publish, never merge anything else. The run is not complete
+until the push to `main` succeeds.
 
 ## Audience & topic selection
 
@@ -12,8 +15,12 @@ Readers are small-to-mid-sized business owners and aspiring entrepreneurs who wa
 implement AI in their business, build a website, set up automations, or grow a brand —
 exactly what brandbizkit sells (Biz in a Box kits, Ai School, AI transformation consulting).
 
-1. Check the last 5 articles (`content/posts/` + `content/drafts/` + `content/drafts/rejected/`)
-   to avoid repeating topics and to see whose turn it is (see rotation below).
+1. Run `git -C "/Users/michaelnnielsen/Documents/Claude Code/Brandbizkit" fetch origin`
+   first, then check the last 5 articles **as they exist on `origin/main`** — that branch
+   is the source of truth, not the local working tree. List them with
+   `git ls-tree -r --name-only origin/main -- content/posts content/drafts` and read any
+   you need with `git show origin/main:<path>`. This drives topic de-duplication and the
+   author/angle rotation below. Ignore stale local files under `content/drafts/`.
 2. Research current AI news via web search (this week/month, not evergreen filler):
    new tools with free tiers, AI adoption stats, automation case studies, practical
    how-to angles, regulation/platform changes that affect small businesses.
@@ -123,12 +130,62 @@ charts: [ ... ]
 ---
 ```
 
-## Verify & finish
+## Verify
 
 1. Run the mandatory link check (Verification protocol above) on every external URL
    in the draft, including the Sources section. Fix or remove failures.
 2. `npx tsc --noEmit` must pass (it will, unless you broke JSON/frontmatter).
 3. Never run `next build` (corrupts the dev server cache).
-4. Finish with a summary: title, author, angle (global vs PH), **each statistic used
-   with its witnessed source URL and where you saw it**, the link-check results, and a
-   reminder that the draft awaits approval at /admin.
+
+## Ship to main (REQUIRED — the run is not done until this push succeeds)
+
+The draft only reaches the live approval panel once it is on the `main` branch. The
+local checkout is usually on a different branch with unrelated work in progress, so
+ship through a throwaway worktree off `origin/main`. Never switch the main checkout's
+branch, never merge, never stage any file other than the new draft and its hero image.
+
+Fill in `SLUG` and `IMG`, then run this exactly:
+
+```bash
+ROOT="/Users/michaelnnielsen/Documents/Claude Code/Brandbizkit"
+SLUG="<the-slug-you-used>"
+IMG="<hero image basename you saved under public/assets/insights/, or empty if you used the shared fallback>"
+BASE="$(mktemp -d)"; WT="$BASE/ship"
+
+git -C "$ROOT" fetch origin
+git -C "$ROOT" worktree add "$WT" origin/main --detach
+
+mkdir -p "$WT/content/drafts" "$WT/public/assets/insights"
+cp "$ROOT/content/drafts/$SLUG.md" "$WT/content/drafts/$SLUG.md"
+[ -n "$IMG" ] && cp "$ROOT/public/assets/insights/$IMG" "$WT/public/assets/insights/$IMG"
+
+git -C "$WT" add -A
+git -C "$WT" commit -m "Add Bizkit Insights draft: $SLUG"
+git -C "$WT" push origin HEAD:main; PUSH_STATUS=$?
+git -C "$WT" rev-parse --short HEAD
+
+git -C "$ROOT" worktree remove "$WT" --force
+git -C "$ROOT" worktree prune
+rm -rf "$BASE"
+
+# Only on a clean push: drop the local copies so they don't pile up untracked.
+if [ "$PUSH_STATUS" -eq 0 ]; then
+  rm -f "$ROOT/content/drafts/$SLUG.md"
+  [ -n "$IMG" ] && rm -f "$ROOT/public/assets/insights/$IMG"
+fi
+exit "$PUSH_STATUS"
+```
+
+- **Push failed** (auth / non-fast-forward / network): do **not** delete the local
+  files. Run `git -C "$ROOT" fetch origin` and retry the worktree block once. Still
+  failing → STOP and report the exact error; the draft is safe at
+  `content/drafts/<slug>.md` for a human to push.
+- A clean push triggers a Vercel redeploy; the draft is in the live queue at
+  https://brandbizkit.com/admin within ~2 minutes.
+
+## Report
+
+Finish with a summary: title, author, angle (global vs PH), **each statistic used with
+its witnessed source URL and where you saw it**, the link-check results, the short
+commit SHA pushed to `main`, and confirmation that the draft awaits approval at
+https://brandbizkit.com/admin.
