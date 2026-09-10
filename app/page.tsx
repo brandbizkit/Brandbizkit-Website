@@ -86,13 +86,16 @@ export default function HomePage() {
 
       {/* Hero — original red-gradient background image (fixed on desktop, mobile variant below md) */}
       <section className="relative bg-cover bg-center bg-[url('/assets/brandbizkit-hero-mobile-background2-YbNJRPl7Xeue9WOL.png')] md:bg-fixed md:bg-[url('/assets/brandbizkit-hero-background3-A0xjDaGWoRIpJQ9B.png')]">
-        <div aria-hidden className="absolute inset-0 bg-gradient-to-r from-black/25 via-black/10 to-transparent" />
+        <div
+          aria-hidden
+          className="absolute inset-0 bg-black/45 md:bg-gradient-to-r md:from-black/25 md:via-black/10 md:to-transparent"
+        />
         <div className="relative mx-auto flex max-w-6xl px-4 py-24 md:py-36">
           <div className="max-w-xl text-left">
-            <h1 className="font-display text-4xl font-bold leading-[1.1] tracking-tight text-white drop-shadow-[0_2px_10px_rgb(0_0_0/0.25)] md:text-6xl">
+            <h1 className="font-display text-4xl font-bold leading-[1.1] tracking-tight text-white drop-shadow-[0_2px_12px_rgb(0_0_0/0.6)] md:text-6xl md:drop-shadow-[0_2px_10px_rgb(0_0_0/0.25)]">
               FREE AI Tools, Templates, &amp; Guides in ONE BIZKIT
             </h1>
-            <p className="mt-6 text-lg text-white/95">
+            <p className="mt-6 text-lg text-white drop-shadow-[0_1px_6px_rgb(0_0_0/0.5)] md:text-white/95 md:drop-shadow-none">
               Whether you&apos;re launching a brand, already running a business, or want to use AI
               better at your job — brandbizkit gives you curated, free AI tools and real workflows,
               with zero coding, zero overwhelm, and step-by-step guidance.
