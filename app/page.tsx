@@ -88,7 +88,7 @@ export default function HomePage() {
       <section className="relative bg-cover bg-center bg-[url('/assets/brandbizkit-hero-mobile-background2-YbNJRPl7Xeue9WOL.png')] md:bg-fixed md:bg-[url('/assets/brandbizkit-hero-background3-A0xjDaGWoRIpJQ9B.png')]">
         <div
           aria-hidden
-          className="absolute inset-0 bg-black/45 md:bg-gradient-to-r md:from-black/25 md:via-black/10 md:to-transparent"
+          className="absolute inset-0 bg-black/45 md:bg-transparent md:bg-gradient-to-r md:from-black/25 md:via-black/10 md:to-transparent"
         />
         <div className="relative mx-auto flex max-w-6xl px-4 py-24 md:py-36">
           <div className="max-w-xl text-left">
