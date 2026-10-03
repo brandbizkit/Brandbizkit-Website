@@ -1,21 +1,26 @@
 name: Supabase keepalive
 
+# Free-tier Supabase projects pause after 7 days of inactivity. This pings the
+# database daily (the Vercel cron in vercel.json is the primary; this is the
+# independent backup). A red run here means the DB was NOT reached.
 on:
   schedule:
-    - cron: "0 6 */3 * *"
+    - cron: "23 0 * * *"
   workflow_dispatch: {}
+
+permissions:
+  contents: read
 
 jobs:
   ping:
     runs-on: ubuntu-latest
     steps:
-      - name: Read one row from leads
-        run: |
-          curl -sf \
-            "${SUPABASE_URL}/rest/v1/leads?select=id&limit=1" \
-            -H "apikey: ${SUPABASE_ANON_KEY}" \
-            -H "Authorization: Bearer ${SUPABASE_ANON_KEY}" \
-            -o /dev/null
+      - uses: actions/checkout@v4
+      - name: Ping Supabase
+        run: node scripts/keep-alive.js
         env:
           SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_ROLE_KEY: ${{ secrets.SUPABASE_SERVICE_ROLE_KEY }}
           SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+          CRON_SECRET: ${{ secrets.CRON_SECRET }}
+          LIVE_URL: https://brandbizkit.com
