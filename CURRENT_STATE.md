@@ -8,7 +8,7 @@ _Last updated: 2026-08-20. This is a snapshot, not a log — overwrite it, don't
 - `/admin` Command Center: drafts queue, leads/subscribers tables, content inventory, event log, and a new "🆕 Newly added free AI tools" digest section.
 - Growth Score funnel (`/growth-score`) — full 14-question flow, scoring, dashboard, Supabase lead capture. Linked from both the homepage hero (`>>Start<<` button) and the "Start your business, stress free" services section.
 - Free AI Tools directory — every tool (74 total) now shows free-tier limits, an explicit paid-plan pricing line, and (where relevant) a ⚠️ access warning for tools requiring self-hosting/technical setup/bring-your-own-API-key.
-- Supabase keepalive (rebuilt 2026-10-03 after the project auto-paused; the old 3-day GitHub workflow had been failing silently since Sep 16 — curl exit 6, host unresolvable): **live** = daily Vercel Cron → `/api/keep-alive` (reads `leads` + `newsletter_subscribers`, verified returning 200). **Pending** = replacing `.github/workflows/supabase-keepalive.yml` with a daily run of `scripts/keep-alive.js` that goes red if the DB isn't reached — blocked because the GitHub token lacks the Workflows permission. Until then the old workflow still runs and still fails; check the Actions tab and the `SUPABASE_*` GitHub secrets rather than assuming it works.
+- Supabase keepalive (rebuilt 2026-10-03 after the project auto-paused; the old 3-day GitHub workflow had been failing silently since Sep 16): daily Vercel Cron → `/api/keep-alive` (reads `leads` + `newsletter_subscribers`) **and** a daily GitHub Actions run (`.github/workflows/supabase-keepalive.yml` → `scripts/keep-alive.js`) that goes red if the DB isn't reached. Both verified working 2026-10-03 (manual run green: direct DB reads + live endpoint HTTP 200). A red run in the Actions tab means the project may be paused again.
 - GitHub repo (`brandbizkit/Brandbizkit-Website`) is public; history was rewritten once (`git filter-branch`) to strip two SQLite WAL files carrying a leftover test lead row before going public. Old refs preserved locally on branch `backup-pre-history-rewrite` and `rewritten-history-attempt` in case they're ever needed.
 
 ## Current architecture
@@ -36,7 +36,7 @@ See `PROJECT_PLAN.md` for the full architecture. Nothing has diverged from that 
 - `components/ToolsDirectory.tsx` — public tool-card rendering.
 - `components/GrowthScore.tsx` + `content/growth-score.json` — the assessment funnel.
 - `app/admin/page.tsx` — the internal Command Center.
-- `app/api/keep-alive/route.ts` + `vercel.json` (cron) + `scripts/keep-alive.js` — DB keepalive automation (GitHub workflow replacement pending).
+- `app/api/keep-alive/route.ts` + `vercel.json` (cron) + `scripts/keep-alive.js` + `.github/workflows/supabase-keepalive.yml` — DB keepalive automation.
 - `AGENTS.md` — serves the role of this project's `CLAUDE.md` (agent/coding-agent contract); read it alongside this file and `PROJECT_PLAN.md`.
 
 ## Current next priorities
