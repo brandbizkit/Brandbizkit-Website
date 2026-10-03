@@ -1,29 +1,40 @@
 ---
-title: "Small Businesses Are Handing AI Agents Real Work — Before the ROI Math Is In"
-description: "A June 2026 Upwork survey found 62% of small business leaders are confident handing high-stakes tasks to AI agents. Most of them can't yet show it's paying off. Here's how to take the leap without gambling."
-date: "2026-09-04"
-author: "Karla Kangleon"
-readTime: "3 min read"
-image: "/assets/insights/ai-agents-small-business-leap-of-faith.jpg"
-imageAlt: "Two people in an office reviewing laptops and printed charts together"
+title: Small Businesses Are Handing AI Agents Real Work — Before the ROI Math Is In
+description: >-
+  A June 2026 Upwork survey found 62% of small business leaders are confident
+  handing high-stakes tasks to AI agents. Most of them can't yet show it's
+  paying off. Here's how to take the leap without gambling.
+date: '2026-10-03'
+author: Karla Kangleon
+readTime: 3 min read
+image: /assets/insights/ai-agents-small-business-leap-of-faith.jpg
+imageAlt: Two people in an office reviewing laptops and printed charts together
 videos: []
 charts:
-  - type: "bar"
-    title: "Where SMBs are piloting AI agents (2026)"
-    unit: "% of SMB leaders piloting"
-    source: "Upwork Research Institute, The State of AI Within SMBs, 2026"
+  - type: bar
+    title: Where SMBs are piloting AI agents (2026)
+    unit: '% of SMB leaders piloting'
+    source: 'Upwork Research Institute, The State of AI Within SMBs, 2026'
     data:
-      - { label: "Decision support", value: 41 }
-      - { label: "Information retrieval", value: 36 }
-      - { label: "Workflow automation", value: 34 }
-      - { label: "Multi-step planning across systems", value: 34 }
-  - type: "bar"
-    title: "Share of U.S. small businesses paying for AI tools"
-    unit: "%"
-    source: "JPMorganChase Institute, Understanding the use of AI among small businesses, 2026"
+      - label: Decision support
+        value: 41
+      - label: Information retrieval
+        value: 36
+      - label: Workflow automation
+        value: 34
+      - label: Multi-step planning across systems
+        value: 34
+  - type: bar
+    title: Share of U.S. small businesses paying for AI tools
+    unit: '%'
+    source: >-
+      JPMorganChase Institute, Understanding the use of AI among small
+      businesses, 2026
     data:
-      - { label: "January 2019", value: 1.7 }
-      - { label: "December 2025", value: 17.7 }
+      - label: January 2019
+        value: 1.7
+      - label: December 2025
+        value: 17.7
 ---
 
 Ask a small business owner in 2026 whether they'd trust software to handle something that actually matters — a lead before a human sees it, a customer reply, a chunk of the books — and a surprising number now say yes.
