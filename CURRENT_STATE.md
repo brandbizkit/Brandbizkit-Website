@@ -8,7 +8,7 @@ _Last updated: 2026-08-20. This is a snapshot, not a log — overwrite it, don't
 - `/admin` Command Center: drafts queue, leads/subscribers tables, content inventory, event log, and a new "🆕 Newly added free AI tools" digest section.
 - Growth Score funnel (`/growth-score`) — full 14-question flow, scoring, dashboard, Supabase lead capture. Linked from both the homepage hero (`>>Start<<` button) and the "Start your business, stress free" services section.
 - Free AI Tools directory — every tool (74 total) now shows free-tier limits, an explicit paid-plan pricing line, and (where relevant) a ⚠️ access warning for tools requiring self-hosting/technical setup/bring-your-own-API-key.
-- Supabase keepalive: GitHub Actions workflow (`.github/workflows/supabase-keepalive.yml`) pinging the DB every 3 days, confirmed running.
+- Supabase keepalive (rebuilt 2026-10-03 after the project auto-paused — the old 3-day GitHub workflow had been failing silently since Sep 16, curl exit 6 = host unresolvable): daily Vercel Cron → `/api/keep-alive` (reads `leads` + `newsletter_subscribers`) plus a daily GitHub Actions run of `scripts/keep-alive.js` that goes red if the DB isn't reached. Needs the `SUPABASE_*` GitHub secrets to be correct — check the Actions tab, don't assume it's running.
 - GitHub repo (`brandbizkit/Brandbizkit-Website`) is public; history was rewritten once (`git filter-branch`) to strip two SQLite WAL files carrying a leftover test lead row before going public. Old refs preserved locally on branch `backup-pre-history-rewrite` and `rewritten-history-attempt` in case they're ever needed.
 
 ## Current architecture
@@ -36,7 +36,7 @@ See `PROJECT_PLAN.md` for the full architecture. Nothing has diverged from that 
 - `components/ToolsDirectory.tsx` — public tool-card rendering.
 - `components/GrowthScore.tsx` + `content/growth-score.json` — the assessment funnel.
 - `app/admin/page.tsx` — the internal Command Center.
-- `.github/workflows/supabase-keepalive.yml` — DB keepalive automation.
+- `app/api/keep-alive/route.ts` + `vercel.json` (cron) + `scripts/keep-alive.js` + `.github/workflows/supabase-keepalive.yml` — DB keepalive automation.
 - `AGENTS.md` — serves the role of this project's `CLAUDE.md` (agent/coding-agent contract); read it alongside this file and `PROJECT_PLAN.md`.
 
 ## Current next priorities
