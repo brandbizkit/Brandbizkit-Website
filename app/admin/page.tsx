@@ -186,7 +186,22 @@ export default async function AdminPage({
                 <td className="p-3">{l.source}</td>
                 <td className="p-3 text-brand-text/60">{l.experience_level ?? "—"}</td>
                 <td className="p-3">{l.synced_to_ghl ? "✅" : "—"}</td>
-                <td className="max-w-xs truncate p-3 text-brand-text/70">{l.message}</td>
+                <td className="max-w-xs p-3 text-brand-text/70">
+                  {l.message && l.message.length > 60 ? (
+                    <details className="group">
+                      <summary className="cursor-pointer list-none">
+                        <span className="block truncate group-open:hidden" title="Click to read the full message">{l.message}</span>
+                        <span className="text-xs font-semibold text-brand-accent">
+                          <span className="group-open:hidden">Show full</span>
+                          <span className="hidden group-open:inline">Hide</span>
+                        </span>
+                      </summary>
+                      <p className="mt-1 whitespace-pre-wrap break-words">{l.message}</p>
+                    </details>
+                  ) : (
+                    l.message
+                  )}
+                </td>
               </tr>
             ))}
           </tbody>
