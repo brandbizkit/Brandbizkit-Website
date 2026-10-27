@@ -1,31 +1,46 @@
 ---
-title: "Small Businesses Adopted AI Faster Than Any Tech Before It. They Still Won't Let It Drive."
-description: "Generative AI use among small businesses jumped from 23% to 58% in two years, but 78% of owners still won't trust it with basic tasks unsupervised. The gap isn't irrational — it's a design problem."
-date: "2026-09-07"
-author: "Michael Nielsen"
-readTime: "3 min read"
-image: "/assets/insights/ai-trust-gap-small-business.jpg"
-imageAlt: "A small business owner sitting at a desk, reviewing work on a laptop"
+title: >-
+  Small Businesses Adopted AI Faster Than Any Tech Before It. They Still Won't
+  Let It Drive.
+description: >-
+  Generative AI use among small businesses jumped from 23% to 58% in two years,
+  but 78% of owners still won't trust it with basic tasks unsupervised. The gap
+  isn't irrational — it's a design problem.
+date: '2026-10-27'
+author: Michael Nielsen
+readTime: 3 min read
+image: /assets/insights/ai-trust-gap-small-business.jpg
+imageAlt: 'A small business owner sitting at a desk, reviewing work on a laptop'
 videos: []
 charts:
-  - type: "line"
-    title: "Generative AI adoption among U.S. small businesses"
-    unit: "%"
-    source: "U.S. Chamber of Commerce C_TEC & Teneo Research, Empowering Small Business, 2025"
+  - type: line
+    title: Generative AI adoption among U.S. small businesses
+    unit: '%'
+    source: >-
+      U.S. Chamber of Commerce C_TEC & Teneo Research, Empowering Small
+      Business, 2025
     data:
-      - { label: "2023", value: 23 }
-      - { label: "2024", value: 40 }
-      - { label: "2025", value: 58 }
-  - type: "bar"
-    title: "What's holding SMBs back from deeper AI use"
-    unit: "% citing barrier"
-    source: "Centiment for Bluevine, 2026 Business Owner Success Survey"
+      - label: '2023'
+        value: 23
+      - label: '2024'
+        value: 40
+      - label: '2025'
+        value: 58
+  - type: bar
+    title: What's holding SMBs back from deeper AI use
+    unit: '% citing barrier'
+    source: 'Centiment for Bluevine, 2026 Business Owner Success Survey'
     data:
-      - { label: "Data security & privacy", value: 33 }
-      - { label: "Distrust of AI accuracy", value: 31 }
-      - { label: "Cost of tools", value: 24 }
-      - { label: "Satisfied with current tools", value: 24 }
-      - { label: "Unclear value", value: 20 }
+      - label: Data security & privacy
+        value: 33
+      - label: Distrust of AI accuracy
+        value: 31
+      - label: Cost of tools
+        value: 24
+      - label: Satisfied with current tools
+        value: 24
+      - label: Unclear value
+        value: 20
 ---
 
 Two years ago, fewer than a quarter of small businesses had touched a generative AI tool. Now more than half have, and roughly one in two small-business workers uses AI at their job on any given week. That's a faster climb than the Chamber of Commerce has tracked for any workplace technology in decades.
